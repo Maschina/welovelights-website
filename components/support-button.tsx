@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { BookOpenTextIcon, BugIcon, ChatCircleIcon, ClockCounterClockwiseIcon, EnvelopeSimpleIcon, HandHeartIcon, LightbulbFilamentIcon, QuestionIcon } from "@phosphor-icons/react";
 import { Separator } from "./ui/separator";
 import useClickOutside from "@/hooks/useClickOutside";
+import { GlobeLock } from "lucide-react";
 
 export default function SupportButton() {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +25,7 @@ export default function SupportButton() {
     return (
         <motion.div
             ref={containerRef}
-            className={`fixed bottom-[21px] right-[21px] bg-white backdrop-blur-md shadow-[0px_4px_4px_#00000040] ${isOpen ? '' : 'cursor-pointer'} overflow-hidden`}
+            className={`fixed z-50 bottom-[21px] right-[21px] bg-white backdrop-blur-md shadow-[0px_4px_4px_#00000040] ${isOpen ? '' : 'cursor-pointer'} overflow-hidden`}
             initial={false}
             animate={{
                 width: isOpen ? '14rem' : '120px',
@@ -48,11 +49,11 @@ export default function SupportButton() {
                         transition={{ duration: 0.2 }}
                         className="flex flex-row justify-center gap-2 items-center h-9 tracking-tighter text-black"
                     >
-                        <HandHeartIcon size={19} weight="fill" />
+                        <HandHeartIcon size={24} weight="fill" />
                         <span className="font-medium">Support</span>
                     </motion.div>
                 ) : (
-                    <motion.div
+                    <motion.nav
                         key="content"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -61,12 +62,12 @@ export default function SupportButton() {
                             className="flex flex-col gap-2 tracking-tight p-5 text-xs"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start">
+                            {/* <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start  hover:bg-primary/40 cursor-pointer">
                             <ChatCircleIcon />
                             <span>Chat</span>
-                        </Button>
+                        </Button> */}
 
-                            <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start" onClick={() => window.location.href = 'mailto:hello@welovelights.app'}>
+                            <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer" onClick={() => window.location.href = 'mailto:hello@welovelights.app'}>
                             <EnvelopeSimpleIcon />
                             <span>E-Mail</span>
                         </Button>
@@ -77,14 +78,14 @@ export default function SupportButton() {
 
                             <Button 
                                 variant="ghost" 
-                                className="w-full rounded-3xl gap-3 justify-start"
+                                className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer"
                                 onClick={() => window.location.href = 'https://feedback.welovelights.app/board/bugs/'}
                             >
                             <BugIcon />
                             <span>File a Bug</span>
                         </Button>
                         
-                            <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start" onClick={() => window.location.href = 'https://feedback.welovelights.app/board/features/'}>
+                            <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer" onClick={() => window.location.href = 'https://feedback.welovelights.app/board/features/'}>
                             <LightbulbFilamentIcon />
                             <span>Request a Feature</span>
                         </Button>
@@ -93,21 +94,30 @@ export default function SupportButton() {
                             <Separator className="my-1" />
                         </div>
 
-                            <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start">
+                            <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer">
                             <BookOpenTextIcon />
                             <span>Documentation</span>
                         </Button>
 
-                            <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start">
+                            <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer">
                             <QuestionIcon />
                             <span>FAQ</span>
                         </Button>
 
-                            <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start">
+                            <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer">
                             <ClockCounterClockwiseIcon />
                             <span>Version History</span>
-                        </Button>
-                    </motion.div>
+                            </Button>
+                            
+                            <div className="mx-3">
+                                <Separator className="my-1" />
+                            </div>
+
+                            <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer">
+                                <GlobeLock strokeWidth={1.5} />
+                                <span>Privacy Policy</span>
+                            </Button>
+                    </motion.nav>
                 )}
             </AnimatePresence>
         </motion.div>

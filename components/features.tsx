@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import downloadOnTheMacAppStoreBadgeUsUkRgbWht092917 from "@/assets/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_wht_092917.svg";
 
 export default function Hero() {
     const features = [
@@ -78,20 +80,18 @@ export default function Hero() {
 
     return (
         <section className="features-bg">
-            <div className="flex flex-col items-center gap-24 top-[51px]">
-                <header className="flex flex-col items-center gap-[26px] self-stretch w-full flex-[0_0_auto]">
-                    <h1 className="relative self-stretch -mt-px font-bold text-white text-[45px] text-center tracking-[-1.80px] leading-9">
+            <div className="flex flex-col items-center gap-5 top-[51px]">
+                <header className="flex flex-col items-center gap-5 bg-features-title shadow-[0px_12px_12px_#00000030] border border-amber-100/10 rounded-4xl px-26 py-6 max-w-[1100px] mx-12">
+                    <h2 className="font-bold text-white text-5xl text-center tracking-[-1.00px] leading-13">
                         For Day-to-Day. For Pros.
-                    </h1>
-                    <p className="relative w-[825px] font-normal text-white text-[22px] text-center tracking-[-0.88px] leading-9">
-                        We Love Lights is the easiest yet most powerful way to control{" "}
-                        <br />
-                        your Philips Hue or Phoscon deCONZ lights and devices <br />
+                    </h2>
+                    <p className="font-normal text-white text-xl text-center leading-8">
+                        We Love Lights is the easiest yet most powerful way to control your Philips Hue or Phoscon deCONZ lights and devices
                         in macOS.
                     </p>
                 </header>
 
-                <div className="grid grid-cols-[200px_200px_200px] grid-rows-[repeat(4,fit-content(100%))] w-[678px] h-[753px] gap-[39px] top-[266px] left-[190px]">
+                <div className="grid grid-cols-[200px_200px_200px] grid-rows-[repeat(4,fit-content(100%))] w-[678px] h-[753px] gap-[39px]">
                     {features.map((feature, index) => (
                         <div
                             key={index}
@@ -112,6 +112,16 @@ export default function Hero() {
                         </div>
                     ))}
                 </div>
+
+                <Link href="https://apps.apple.com/app/apple-store/id1479422551?pt=120333038&ct=WeLoveLights.app&mt=8" className="mt-12">
+                    <Image
+                        className="relative w-[163.05px] h-[41.8px]"
+                        alt="Download on the mac app store"
+                        src={downloadOnTheMacAppStoreBadgeUsUkRgbWht092917}
+                        width={163.05}
+                        height={41.8}
+                    />
+                </Link>
             </div>
         </section>
     );

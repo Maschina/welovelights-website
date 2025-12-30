@@ -78,7 +78,7 @@
   --card-foreground: oklch(0.13 0.028 261.692);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.13 0.028 261.692);
-  --primary: oklch(0.67 0.16 58);
+  --primary: oklch(0.8691 0.1774 92.47);
   --primary-foreground: oklch(0.99 0.02 95);
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
@@ -159,6 +159,34 @@
 /* Hero Section Styles */
 .hero-gradient {
   background: linear-gradient(180deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
+}
+
+.footer-gradient {
+  background: linear-gradient(180deg, rgba(44, 69, 142, 1) 0%, rgba(10, 18, 45, 1) 100%);
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+}
+
+.bg-features-title {
+  /* background-color: rgba(10, 18, 45, 0.4); */
+  background: linear-gradient(180deg, rgba(10, 18, 45, 0.4) 70%, rgba(10, 18, 45, 0.2) 100%);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(180deg, #FDCF04 0%, #AB6000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.bg-gold {
+  background: linear-gradient(180deg, #fdcf0420 0%, #ab610020 100%);
+}
+
+.bg-dark {
+  background-color: var(--hero-gradient-end);
 }
 
 .features-bg {
