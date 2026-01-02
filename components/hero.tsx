@@ -39,7 +39,7 @@ export default function Hero() {
                     <div className="flex w-[219px] h-[45px] items-center justify-between px-0 py-[1.02px] relative">
                         <Image src={textLogoDark} alt="App Logo" width={219} height={45} />
                     </div>
-                    <h1 className="font-bold text-white text-7xl tracking-[-1.60px] leading-[59.7px]">
+                    <h1 className="font-bold text-white text-7xl tracking-[-1.60px] leading-[67px]">
                         Philips Hue <br />
                         on your Mac.
                     </h1>
@@ -47,15 +47,15 @@ export default function Hero() {
                         <Link href="https://apps.apple.com/app/apple-store/id1479422551?pt=120333038&ct=WeLoveLights.app&mt=8">
                             <Image
                                 className="relative w-[163.05px] h-[41.8px]"
-                                alt="Download on the mac app store"
+                                alt="Download on the Mac App Store"
                                 src={downloadOnTheMacAppStoreBadgeUsUkRgbWht092917}
                                 width={163.05}
                                 height={41.8}
                             />
                         </Link>
-                        <p className="flex text-muted text-xs">
+                        <Link href="/changelog" className="flex text-muted text-xs hover:underline">
                             Version 3.6.5, macOS 13.0+
-                        </p>
+                        </Link>
                     </div>
                 </div>
             </div>

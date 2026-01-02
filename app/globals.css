@@ -27,6 +27,9 @@
 }
 
 @theme inline {
+  --breakpoint-xs: 30rem;
+  --breakpoint-3xl: 120rem;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
@@ -56,6 +59,9 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-tertiary-darkest: var(--color-tertiary-darkest);
+  --color-tertiary-darker: var(--color-tertiary-darker);
+  --color-tertiary-dark: var(--color-tertiary-dark);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -72,14 +78,14 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
+  --background: oklch(0 0 0);
   --foreground: oklch(0.13 0.028 261.692);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.13 0.028 261.692);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.13 0.028 261.692);
   --primary: oklch(0.8691 0.1774 92.47);
-  --primary-foreground: oklch(0.99 0.02 95);
+  --primary-foreground: oklch(0.01 0.02 95);
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
   --muted: oklch(0.967 0.003 264.542);
@@ -140,10 +146,11 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
-/* Hero Section Colors */
+/* Background Colors */
 :root {
-  --hero-gradient-start: rgba(10, 18, 45, 1);
-  --hero-gradient-end: rgba(44, 69, 142, 1);
+  --color-tertiary-darkest: rgba(10, 18, 45, 1);
+  --color-tertiary-darker: rgba(23, 33, 71, 1);
+  --color-tertiary-dark: rgba(44, 69, 142, 1);
 }
 
 @layer base {
@@ -158,7 +165,7 @@
 
 /* Hero Section Styles */
 .hero-gradient {
-  background: linear-gradient(180deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
+  background: linear-gradient(180deg, var(--color-tertiary-darker) 0%, var(--color-tertiary-dark) 100%);
 }
 
 .footer-gradient {
@@ -186,11 +193,11 @@
 }
 
 .bg-dark {
-  background-color: var(--hero-gradient-end);
+  background-color: var(--color-tertiary-dark);
 }
 
 .features-bg {
-  background-color: var(--hero-gradient-end);
+  background-color: var(--color-tertiary-dark);
 }
 
 @keyframes spotlight {

@@ -1,0 +1,431 @@
+[
+  {
+    "version": "3.6.5",
+    "date": "Dec 9, 2025",
+    "features": [
+      "Optional telemetry support has been added to improve tracing of user and performance issues",
+      "Added community support with UserJot"
+    ],
+    "bugfixes": [
+      "Resolved connection issues with the Hue Bridge Pro",
+      "Resolved issues with remote connections using Hue Bridge Pro",
+      "Improved performance for SSL handshaking",
+      "Fixed an issue that kept tool windows in the background instead of moving them to the foreground"
+    ]
+  },
+  {
+    "version": "3.6.4",
+    "date": "Oct 23, 2025",
+    "features": [
+      "Upgraded to macOS Tahoe glass design"
+    ],
+    "bugfixes": [
+      "Resolved connection issues with the Hue Bridge Pro",
+      "Fixed SSL connection issues causing interruptions from time to time"
+    ]
+  },
+  {
+    "version": "3.6.3",
+    "date": "May 9, 2025",
+    "bugfixes": [
+      "Fixed the reset of keyboard shortcuts when reloading from the bridge",
+      "Resolved an issue that may cause memory leaks in rare cases when reloading from the bridge",
+      "Resolved an issue that caused an crash when cancelling a searching for Bridges during the mDNS process",
+      "Fixed the app crashing when IP scanning for Bridges is enabled",
+      "Resolved an issue where new devices cannot be added"
+    ]
+  },
+  {
+    "version": "3.6.2",
+    "date": "April 16, 2025",
+    "features": [
+      "App Intents for the Shortcut App support variables"
+    ],
+    "bugfixes": [
+      "Resolved the issue where hotkeys were not functional when Studio was closed",
+      "Addressed the problem that prevented items in the menu from being hidden",
+      "Improved the setup of filters for devices and scenes for better functionality",
+      "Adjusted the configuration sheet size for Motion Sensor and Switches to ensure optimal display",
+      "Corrected the error that stopped scenes from being recalled within the Shortcuts app",
+      "Enhanced the element sorting algorithm to handle multiple bridges effectively",
+      "Eliminated memory issues related to App Intents queries and entities for improved performance"
+    ]
+  },
+  {
+    "version": "3.6.1",
+    "date": "April 2, 2025",
+    "features": [
+      "Add an option to change the order of groups (Rooms before Zones, Zones before Rooms, Mixed)",
+      "Change layout for group items in Menu, when the option is enabled to show a brightness slider",
+      "Rebranding Color rings to Color Halo"
+    ],
+    "bugfixes": [
+      "Fixes an issue where remote connection cannot be established if a local connection already exists",
+      "Fixes an issue causing the Studio window to freeze or crash for remote connections"
+    ]
+  },
+  {
+    "version": "3.6",
+    "date": "March 27, 2025",
+    "features": [
+      "Away From Home: Work seamlessly with your smart home by adding your Hue account and remotely connect to your Hue Bridge",
+      "Split View for groups in Studio: Minimise scrolling with new side-by-side list design for lights/devices and scenes ",
+      "New Settings Window design",
+      "New UI for Rule Conditions and Actions",
+      "Studio will be launched with a separate window instance so that it behaves like a regular macOS app window",
+      "Many design rehauls",
+      "Group color halos and optional brightness slider for Menu"
+    ],
+    "bugfixes": [
+      "Several UI fixes",
+      "Several performance and stability improvements",
+      "Fixes issues that cause the app to crash"
+    ]
+  },
+  {
+    "version": "3.5",
+    "date": "April 10, 2023",
+    "features": [
+      "Added search toolbar item for lights, devices, scenes, motion sensors, switches and status sensors (Studio Mode only)",
+      "Favorites for lights, devices and scenes (for both Menu and Studio Mode)",
+      "Added sorting capabilities in Studio Mode (e.g. sort by name)",
+      "Added \"select all\" via ⌘+A keyboard shortcut for lists in Studio Mode",
+      "Drag and drop to re-sort for status sensor list",
+      "New search field in hotkey settings window"
+    ],
+    "bugfixes": [
+      "Improved performance for logging",
+      "Fixed error/feature submission by transferring mail submission process",
+      "Fixed an error that may occur when using \"Launch at Login\"",
+      "Fixed an issue when using auto-configured switches that caused auto-removal of some related rules",
+      "Minor layout improvements"
+    ]
+  },
+  {
+    "version": "3.4.2",
+    "date": "December 16, 2022",
+    "features": [
+      "Demo mode for testing the app without requiring an active hub connection"
+    ],
+    "bugfixes": [
+      "Fixes missing context menu for Scenes and Status Sensors (macOS Ventura only)"
+    ]
+  },
+  {
+    "version": "3.4.1",
+    "date": "December 14, 2022",
+    "features": [
+      "Added button in Switches configuration to quickly switch over Cycle State mode (offering Automatic Configuration)",
+      "App-wide keyboard shortcut (Cmd+W) to hide the App Window"
+    ],
+    "bugfixes": [
+      "Fixes some translation issues",
+      "Fixes missing context menu for Motion Sensors and Switches",
+      "Fix for an issue where toolbar buttons are missing in some rare cases"
+    ]
+  },
+  {
+    "version": "3.4",
+    "date": "November 29, 2022",
+    "features": [
+      "Support for Shortcut App",
+      "Breaking change: macOS 12+ required as minimum target"
+    ],
+    "bugfixes": [
+      "Fixes and issue with renaming resources that may not properly work in macOS Ventura"
+    ]
+  },
+  {
+    "version": "3.3.4",
+    "date": "November 14, 2022",
+    "bugfixes": [
+      "Fixes an issue that caused connection issues after stand-by, hibernate, or Wifi re-connect"
+    ]
+  },
+  {
+    "version": "3.3.3",
+    "date": "",
+    "features": [
+      "Reload button to enforce bridge update",
+      "Support color gamuts for innr Lights",
+      "Show light id tooltip for each light circle in the scene info dialog",
+      "Automatically hide helper scenes that are generated by the Philips Hue app"
+    ],
+    "bugfixes": [
+      "Fix for an issue that might prevent \"scene creation\" dialog to close",
+      "Current group will be pre-selected in \"scene creation\" dialog",
+      "Fix for an issue that causes the Feature/Bug Reporter to not reset properly",
+      "Fix for an isues that casue no propoer single-selection context menu for scenes and/or devices"
+    ]
+  },
+  {
+    "version": "3.3.2",
+    "date": "October 22, 2022",
+    "features": [
+      "Quickly open Studio in Menu Mode with Hotkey or Command-Click onto app icon",
+      "Better visibility that a list section is collapsed"
+    ],
+    "bugfixes": [
+      "Fix some layout issues in macOS Ventura",
+      "App requires restart when changing Run Mode",
+      "Fix an issue that causes app crash during log file rotation",
+      "Fix an issue for deCONZ in Bug Reporter"
+    ]
+  },
+  {
+    "version": "3.3.1",
+    "date": "September 24, 2022",
+    "bugfixes": [
+      "Remove menu entry \"Add new Bridge\" in Menu Mode ",
+      "Fix a bug where existing lights cannot be added to Zones",
+      "Fix an issue where the \"Add new resource\" menu may show all available entries while no bridge is paired",
+      "Fix a bug where changed sort order in Studio is not immediately reflected when opening Menu from status bar",
+      "Fix some bugs that caused energy impact improvements not work properly",
+      "Change CycleService interval to 5 secs",
+      "Fix some bug that may cause memory leaks",
+      "Fix to not show LightGroups for Hue bridges"
+    ]
+  },
+  {
+    "version": "3.3",
+    "date": "September 15, 2022",
+    "features": [
+      "Configuration wizard for Motion sensors (Time-based pattern and generic pattern)",
+      "Configuration wizard for Switches (Scene-cycle pattern and generic pattern)",
+      "Option to change icon of lights or devices",
+      "Improve energy impact while app is inactive",
+      "Show Switches in Menu Mode",
+      "Wizard to add status items"
+    ],
+    "bugfixes": [
+      "Fix missing compatibilities to Phoscon/deCONZ devices",
+      "Some rewording and fixes in localization",
+      "Fix a bug where connection appears offline in Menu Mode",
+      "Fix a bug where \"Welcome Panel\" will not be shown",
+      "Some polishments for the UI"
+    ]
+  },
+  {
+    "version": "3.2",
+    "date": "June 16, 2022",
+    "features": [
+      "New color pickers for lights (temperature picker for color lights, hue/saturation picker, red/green/blue picker, CIE 1931 color space picker)",
+      "Copy and Paste color and brightness values for lights",
+      "Multi-selecting lights and scenes for batch re-ordering, deleting, hiding and pasting color/brightness",
+      "Improved usability of creating, modifying and sorting rules for Motion Sensors",
+      "Access status sensors",
+      "Improve usability for adding resources (e.g. for new bridge, or lights and sensors)",
+      "Simplify the usability to show/hide resources (e.g. button in the section header)",
+      "Improved usability in Preferences for Bridges and Hotkeys",
+      "Show color temperature while dragging slider for temperature picker",
+      "Change icons of groups",
+      "Show Motion Sensors in Menu Mode",
+      "Restructured and improve usability in Menu Mode",
+      "Remove Floating Mode (Studio Mode is stepping in)",
+      "Bug Reporter can include bridge resources now",
+      "Option in Preferences to hide app icon while being in Studio Mode",
+      "New Switches can be added through the + menu",
+      "Store last used bridge in multi-bridge mode",
+      "Context menu on right-clicking the menu bar icon"
+    ],
+    "bugfixes": [
+      "Fix a bug where menu items were not properly populated during initialization of Menu Mode while menu is open",
+      "When switching on IPscan in Preferences window, it may happen that IPscan will still not be considering for bridge discovery"
+    ]
+  },
+  {
+    "version": "3.1.4",
+    "date": "April 12, 2022",
+    "bugfixes": [
+      "Fix after changes in the bridge firmware 1.50"
+    ]
+  },
+  {
+    "version": "3.1.3",
+    "date": "December 28, 2021",
+    "bugfixes": [
+      "Fixing an issue causing the app hanging after wake-up"
+    ]
+  },
+  {
+    "version": "3.1.2",
+    "date": "December 24, 2021",
+    "bugfixes": [
+      "Fix crash when navigating through group list in Studio/Floating Mode",
+      "Remove auto-hovering in group list while being in Floating Mode"
+    ]
+  },
+  {
+    "version": "3.1.1",
+    "date": "December 10, 2021",
+    "bugfixes": [
+      "Do not unfold menu before downloading data from bridge in Menu Mode",
+      "Scenes are not updated after launch causing no color gradients",
+      "Studio Window is opening sometimes during launch while being in Menu Mode",
+      "Background shining through Menu Mode Switch buttons"
+    ]
+  },
+  {
+    "version": "3.1",
+    "date": "December 1, 2021",
+    "features": [
+      "Bring back Menu Mode (and combine it in a set of 3 different user interface modes)",
+      "Option to open the app silently",
+      "Close window on menu bar icon click while being in Floating Mode",
+      "Minimized layout for Studio Mode and Floating Mode"
+    ],
+    "bugfixes": [
+      "Remove shown Brightness slider for on/off plugs",
+      "Fix Drag n Drop issue with Groups",
+      "Fix Floating Mode not properly working in multi-screen setup"
+    ]
+  },
+  {
+    "version": "3.0.2",
+    "date": "November 11, 2021",
+    "bugfixes": [
+      "Preference window cannot be opened from the menu",
+      "Fix Window/Floating mode control",
+      "Menubar icon not movable",
+      "Invalid value for field 'Summary' when submitting Servicedesk request"
+    ]
+  },
+  {
+    "version": "3.0",
+    "date": "October 30, 2021",
+    "features": [
+      "Rebuild User Interface based on SwiftUI"
+    ],
+    "bugfixes": [
+      "Several fixes and improvements"
+    ]
+  },
+  {
+    "version": "2.2.1",
+    "date": "October 12, 2020",
+    "features": [
+      "Remove of HueSDK to support Apple Silicon architecture"
+    ],
+    "bugfixes": [
+      "Fix an issue with _Launch at Login_ after Macbook restart or waking up Macbook from sleep",
+      "Fix missing status text during initial bridge detection",
+      "Fix missing translatation for status view",
+      "Fix missing characters in the status view"
+    ]
+  },
+  {
+    "version": "2.2",
+    "date": "September 27, 2020",
+    "features": [
+      "Support for multiple connected Hue bridges",
+      "Replace YouTracker with Redmine to improve stability of bug reporting",
+      "Support for macOS Big Sur",
+      "Add Hue bridges manually by adding its IP address (via Preference window)",
+      "New preference option to enable/disable auto group enablement based on lights availability "
+    ],
+    "bugfixes": [
+      "Fix an issue that caused some Hue Bridges not being found in the local network",
+      "Fix an issue that caused disconnection to Hue bridges after waking up Macbook from sleep or coming back from offline mode",
+      "Fix an issue of wrong sorting"
+    ]
+  },
+  {
+    "version": "2.1",
+    "date": "April 17, 2020",
+    "features": [
+      "Support for Zones: A zone describes a group of lights that can be controlled together. Zones can be useful to control a group of lights that belong to a specific area (e.g. attic of a house). Lights can be added to multiple zones."
+    ],
+    "bugfixes": [
+      "Improve slagginess of brightness and color sliders",
+      "Fix a bug that caused chaotic light brightness states if brightness of groups are changed to quickly",
+      "Fix a bug that leaves groups states to \"ON\", even though all comprises lights are not reachable anymore (e.g. after hard switch-off)"
+    ]
+  },
+  {
+    "version": "2.0.2",
+    "date": "April 3, 2020",
+    "features": [
+      "Introduction of We Love Lights Studio: Create, Design and Organize your Hue bridge",
+      "Not only groups, but all resources (Groups, Lights, Scenes) can be set hidden",
+      "Create new rooms",
+      "Create and design new Scenes",
+      "Add existing Hue Lights to a room",
+      "Search and add Zigbee lights not registered to the bridge yet",
+      "Re-order your resources (Groups, Lights, Scenes) to your preferences via drag and drop",
+      "Re-design connection handler to the bridge for better response and stability",
+      "Show icons for each room",
+      "Re-design of the preference window",
+      "New preferences to re-adjust the look and feel of the menu",
+      "Improved Bug Reporter and Feature Reporter with the capability to save and view your log file"
+    ],
+    "bugfixes": [
+      "Fix an issue that caused connection issues under specific network conditions",
+      "Add missing support for vintage bulbs (filaments) & christmas tree light type",
+      "Improve the delay to show updates to indicators after start-up and change of resource attributes",
+      "Improve style of the App icon"
+    ]
+  },
+  {
+    "version": "1.2.1",
+    "date": "January 07, 2020",
+    "bugfixes": [
+      "Fix an issue with discovering new bridges for specific network conditions",
+      "Fix an issue where not all group items have been cleaned-up after disconnecting from the bridge"
+    ]
+  },
+  {
+    "version": "1.2",
+    "date": "December 17, 2019",
+    "features": [
+      "Support for Osram SMART+",
+      "Hidden rooms (hover mouse over group switch)",
+      "Option for \"Launch at login\" (app auto-start at login)",
+      "Completely re-engineered the notification system to enable App napping and to improve the efficiency and development speed of the app",
+      "All menu items are sorted in ascending order",
+      "Improves text label of Scene Buttons"
+    ],
+    "bugfixes": [
+      "Fix an issue with Scene Buttons that did not properly render the buttons with some configurations",
+      "Fix an issue that caused sudden changes of indicators after unfolding the menu"
+    ]
+  },
+  {
+    "version": "1.1.2",
+    "date": "November 19, 2019",
+    "bugfixes": [
+      "Fix an issue with Scene Buttons that made them hard to read in Dark Mode",
+      "Fix an issue with the general display of Scene Button"
+    ]
+  },
+  {
+    "version": "1.1.1",
+    "date": "November 11, 2019",
+    "bugfixes": [
+      "Fix an issue that caused broken connection with some Macbook models",
+      "Fix the foreground text color in the Changelog while being in Dark Mode"
+    ]
+  },
+  {
+    "version": "1.1",
+    "date": "November 6, 2019",
+    "features": [
+      "Add a _Getting Started_ and several help messages to give more explanations",
+      "Add _Release Notes_",
+      "Introduces a new API interface for increased flexibility and reliability",
+      "Provid macOS Catalina compatibility",
+      "Add alphabetic sorting of groups and lights"
+    ],
+    "bugfixes": [
+      "Fix an issue that caused duplicate menu entries of groups and lights",
+      "Fix some translations",
+      "Fix the height of group light buttons"
+    ]
+  },
+  {
+    "version": "1.0.1",
+    "date": "September 15, 2019",
+    "bugfixes": [
+      "Fix minor performance issues"
+    ]
+  }
+]

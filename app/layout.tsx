@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import ScrollBackground from "@/components/scroll-background";
+import SupportButton from "@/components/support-button";
 
 export const metadata: Metadata = {
   title: "We Love Lights - Philips Hue or Phoscon deCONZ lights and devices for macOS",
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a122d",
+  themeColor: "#000000",
 };
 
 export default function RootLayout({
@@ -19,11 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`antialiased`}
+        className={`antialiased bg-tertiary-darkest`}
       >
-        <ScrollBackground>
-          {children}
-        </ScrollBackground>
+        {children}
+        {/* Floating support button */}
+        <SupportButton />
       </body>
     </html>
   );
