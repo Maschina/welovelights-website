@@ -1,0 +1,11 @@
+{
+  "docs": {
+    "display": "hidden",
+    "type": "page"
+  },
+  "home": {
+    "title": "Home",
+    "href": "/",
+    "type": "page"
+  }
+}

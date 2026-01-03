@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import SupportButton from "@/components/support-button";
+import ConditionalSupportButton from "@/components/conditional-support-button";
 
 export const metadata: Metadata = {
   title: "We Love Lights - Philips Hue or Phoscon deCONZ lights and devices for macOS",
@@ -22,8 +22,8 @@ export default function RootLayout({
         className={`antialiased bg-tertiary-darkest`}
       >
         {children}
-        {/* Floating support button */}
-        <SupportButton />
+        {/* Floating support button - hidden on /docs routes */}
+        <ConditionalSupportButton />
       </body>
     </html>
   );

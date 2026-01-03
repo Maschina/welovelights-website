@@ -59,7 +59,7 @@ export default function SupportButton() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.2, delay: 0 }}
-                        className="flex flex-col gap-2 tracking-tight p-5 text-xs"
+                        className="flex flex-col gap-2 tracking-tight p-5 text-xs text-black/95"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start  hover:bg-primary/40 cursor-pointer">
@@ -67,7 +67,7 @@ export default function SupportButton() {
                             <span>Chat</span>
                         </Button> */}
 
-                        <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer" onClick={() => window.location.href = 'mailto:hello@welovelights.app'}>
+                            <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 hover:text-black/95 cursor-pointer" onClick={() => window.location.href = 'mailto:hello@welovelights.app'}>
                             <EnvelopeSimpleIcon />
                             <span>E-Mail</span>
                         </Button>
@@ -78,14 +78,14 @@ export default function SupportButton() {
 
                         <Button
                             variant="ghost"
-                            className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer"
+                                className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 hover:text-black/95 cursor-pointer"
                             onClick={() => window.location.href = 'https://feedback.welovelights.app/board/bugs/'}
                         >
                             <BugIcon />
                             <span>File a Bug</span>
                         </Button>
 
-                        <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer" onClick={() => window.location.href = 'https://feedback.welovelights.app/board/features/'}>
+                        <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 hover:text-black/95 cursor-pointer" onClick={() => window.location.href = 'https://feedback.welovelights.app/board/features/'}>
                             <LightbulbFilamentIcon />
                             <span>Request a Feature</span>
                         </Button>
@@ -94,17 +94,17 @@ export default function SupportButton() {
                             <Separator className="my-1" />
                         </div>
 
-                        {/* <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer">
+                        <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 hover:text-black/95 cursor-pointer" onClick={() => window.location.href = '/docs'}>
                             <BookOpenTextIcon />
                             <span>Documentation</span>
-                        </Button> */}
+                        </Button>
 
                         {/* <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer" onClick={() => window.location.href = '/faq'}>
                             <QuestionIcon />
                             <span>FAQ</span>
                         </Button> */}
 
-                        <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer" onClick={() => window.location.href = '/changelog'}>
+                        <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 hover:text-black/95 cursor-pointer" onClick={() => window.location.href = '/changelog'}>
                             <ClockCounterClockwiseIcon />
                             <span>Changelog</span>
                         </Button>
@@ -113,7 +113,7 @@ export default function SupportButton() {
                             <Separator className="my-1" />
                         </div>
 
-                        <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer" onClick={() => window.location.href = '/privacy'}>
+                        <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 hover:text-black/95 cursor-pointer" onClick={() => window.location.href = '/privacy'}>
                             <GlobeLock strokeWidth={1.5} />
                             <span>Privacy Policy</span>
                         </Button>
