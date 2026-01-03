@@ -1,4 +1,4 @@
-import { CircleCheck, TriangleAlert } from "lucide-react";
+import { BugOff, CirclePlus } from "lucide-react";
 import Link from "next/link"
 import { cn } from "@/lib/utils";
 import fs from "fs";
@@ -96,7 +96,7 @@ const Changelog = async ({
                   {entry.features && entry.features.length > 0 && (
                   <div className="flex flex-col gap-2 w-full">
                     <div className="flex flex-row items-center gap-2">
-                      <CircleCheck className="size-4 text-green-500" />
+                      <CirclePlus className="size-4 text-green-500" />
                       <span className="font-bold">Features</span>
                     </div>
                     <div>
@@ -117,7 +117,7 @@ const Changelog = async ({
                   {entry.bugfixes && entry.bugfixes.length > 0 && (
                   <div className="flex flex-col gap-2 w-full">
                     <div className="flex flex-row items-center gap-2">
-                      <TriangleAlert className="size-4 text-yellow-500" />
+                      <BugOff className="size-4 text-yellow-500" />
                       <span className="font-bold">Resolved Issues</span>
                     </div>
                     <div>

@@ -29,8 +29,8 @@ const Footer = ({
         We Love Lights is a solo-project maintained by <Link href="https://www.linkedin.com/in/profile-robert-hahn/" className="hover:text-primary">Robert Hahn</Link>, made in Germany.
         {/* <Link href="/" className="hover:text-primary">Learn more about the author</Link> */}
       </p> 
-      <p className="text-white/40 flex flex-col justify-between text-sm">
-        &copy; 2025 Robert Hahn. All rights reserved.
+      <p className="text-white/40 text-sm">
+        &copy; 2019-{new Date().getFullYear()} <Link href="https://www.linkedin.com/in/profile-robert-hahn/" className="hover:text-primary">Robert Hahn</Link>. All rights reserved.
       </p>
     </footer>
   );

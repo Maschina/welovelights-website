@@ -113,7 +113,7 @@ export default function SupportButton() {
                                 <Separator className="my-1" />
                             </div>
 
-                            <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer">
+                            <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer" onClick={() => window.location.href = '/privacy'}>
                                 <GlobeLock strokeWidth={1.5} />
                                 <span>Privacy Policy</span>
                             </Button>
