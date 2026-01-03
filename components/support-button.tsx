@@ -99,10 +99,10 @@ export default function SupportButton() {
                             <span>Documentation</span>
                         </Button> */}
 
-                        <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer" onClick={() => window.location.href = '/faq'}>
+                        {/* <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer" onClick={() => window.location.href = '/faq'}>
                             <QuestionIcon />
                             <span>FAQ</span>
-                        </Button>
+                        </Button> */}
 
                         <Button variant="ghost" className="w-full rounded-3xl gap-3 justify-start hover:bg-primary/40 cursor-pointer" onClick={() => window.location.href = '/changelog'}>
                             <ClockCounterClockwiseIcon />
