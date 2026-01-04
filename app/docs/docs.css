@@ -1,0 +1,6 @@
+@layer docs {
+  body {
+    background-color: var(--color-fd-background);
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+}

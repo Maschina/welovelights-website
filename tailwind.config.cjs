@@ -1,8 +1,12 @@
+import { createPreset } from "fumadocs-ui/tailwind-plugin";
+
 module.exports = {
     content: [
-        "./src/**/*.{html,js,ts,jsx,tsx}",
         "app/**/*.{ts,tsx}",
         "components/**/*.{ts,tsx}",
+        "./content/**/*.{md,mdx}",
+        "./mdx-components.{ts,tsx}",
+        "./node_modules/fumadocs-ui/dist/**/*.js",
     ],
     theme: {
         extend: {
@@ -75,5 +79,11 @@ module.exports = {
         container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
     },
     plugins: [],
+    presets: [
+        createPreset({
+            cssPrefix: "fuma-", 
+            addGlobalColors: false,
+        }),
+    ],
     darkMode: ["class"],
 };

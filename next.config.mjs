@@ -1,4 +1,4 @@
-import nextra from 'nextra';
+import { createMDX } from 'fumadocs-mdx/next';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -17,9 +17,9 @@ const nextConfig = {
   },
 };
 
-const withNextra = nextra({
-  contentDirBasePath: '/docs', // serve the content under the "/docs" path
-  // search: false, // disable search
+const withMDX = createMDX({
+  // customise the config file path
+  configPath: "source.config.ts"
 });
 
-export default withNextra(nextConfig);
+export default withMDX(nextConfig);
