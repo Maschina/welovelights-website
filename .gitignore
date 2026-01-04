@@ -61,3 +61,4 @@ database/supabase_backup_20250921_234226.sql
 supabase_backup_*.sql
 .env.test.local
 database-config.mdc
+_pagefind/

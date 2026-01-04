@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postbuild": "pagefind --site .next/server/app/docs --output-path public/_pagefind"
   },
   "dependencies": {
     "@base-ui/react": "^1.0.0",
@@ -40,6 +41,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.0.10",
+    "pagefind": "^1.4.0",
     "tailwindcss": "^4",
     "turbopack-inline-svg-loader": "^1.0.2",
     "typescript": "^5"

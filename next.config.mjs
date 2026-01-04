@@ -18,7 +18,8 @@ const nextConfig = {
 };
 
 const withNextra = nextra({
-  contentDirBasePath: '/docs' // serve the content under the "/docs" path
+  contentDirBasePath: '/docs', // serve the content under the "/docs" path
+  // search: false, // disable search
 });
 
 export default withNextra(nextConfig);
