@@ -1,0 +1,384 @@
+---
+title: Reporting Issues
+description: How to report bugs and request help with We Love Lights
+---
+
+# Reporting Issues
+
+Encountered a bug or need help? This guide explains how to report issues effectively to get the best assistance.
+
+## Before Reporting
+
+### Check Existing Resources
+
+Before submitting a report, check if your issue is already addressed:
+
+1. **[Troubleshooting Guide](/docs/support/troubleshooting)** - Common problems and solutions
+2. **[FAQ](/docs/support/faq)** - Frequently asked questions
+3. **Documentation** - Feature-specific guides
+4. **Recent updates** - Check if recent update addresses issue
+
+### Try Basic Troubleshooting
+
+Attempt these quick fixes:
+
+**Restart Components**:
+- Restart We Love Lights
+- Power cycle bridge
+- Restart Mac (if needed)
+
+**Check Connections**:
+- Bridge online and connected?
+- Network working properly?
+- Mac connected to correct network?
+
+**Verify Setup**:
+- Using latest version of We Love Lights?
+- macOS up to date?
+- Bridge firmware current?
+
+If issue persists after basic troubleshooting, proceed with reporting.
+
+## Using the Built-In Bug Reporter
+
+We Love Lights includes an integrated bug reporting system.
+
+### Accessing Bug Reporter
+
+1. **Open Studio** window
+2. Go to **Help** menu (or similar location in menubar)
+3. Select **"Report Bug"** or **"Send Feedback"**
+4. Bug reporter window opens
+
+### What to Include
+
+The bug reporter will prompt you for:
+
+**Required Information**:
+- **Description**: What happened?
+- **Expected behavior**: What should have happened?
+- **Steps to reproduce**: How can we recreate the issue?
+- **Frequency**: Always, sometimes, once?
+
+**System Information** (usually auto-filled):
+- macOS version
+- We Love Lights version
+- Mac model and specs
+
+**Optional but Helpful**:
+- Screenshots or screen recordings
+- Logs (usually attached automatically)
+- Bridge type and firmware version
+- Number of devices on bridge
+
+### Writing a Good Description
+
+**Be Specific**:
+- ❌ Bad: "Lights don't work"
+- ✅ Good: "Living Room lights don't respond when clicking on/off button in menu bar, but work fine in Studio"
+
+**Include Context**:
+- What were you doing when issue occurred?
+- Did it work before? What changed?
+- Does it happen with all devices or specific ones?
+
+**Steps to Reproduce**:
+```
+1. Open We Love Lights menu bar
+2. Click "Living Room"
+3. Click brightness slider
+4. Observe: Slider moves but lights don't change brightness
+5. Expected: Lights should adjust to slider position
+```
+
+## Attaching Logs
+
+Logs help developers diagnose issues.
+
+### Automatic Log Attachment
+
+Bug reporter usually attaches logs automatically:
+- Recent application logs
+- Crash reports if applicable
+- System information
+
+### Manual Log Collection
+
+If needed to manually collect logs:
+
+1. **Find Logs**:
+   - `~/Library/Logs/We Love Lights/` (typical location)
+   - Or through app's Help menu
+
+2. **What to Include**:
+   - Recent log files (last few days)
+   - Crash reports if applicable
+   - Don't edit or modify logs
+
+3. **Attach**:
+   - Drag into bug reporter
+   - Or zip and attach via email if reporting externally
+
+**Privacy Note**: Logs may contain device names and network info but should not contain passwords.
+
+## Screenshots and Screen Recordings
+
+Visual evidence helps tremendously.
+
+### When to Include Screenshots
+
+**Always helpful for**:
+- UI issues (layout, display problems)
+- Error messages
+- Unexpected behavior
+- Configuration questions
+
+### Taking Screenshots
+
+**Full Window**:
+- ⌘ + Shift + 4, then Space, click window
+
+**Specific Area**:
+- ⌘ + Shift + 4, drag to select area
+
+**Entire Screen**:
+- ⌘ + Shift + 3
+
+### Screen Recordings
+
+For complex or intermittent issues:
+
+**macOS Built-in**:
+- ⌘ + Shift + 5 → Record selected portion
+- Start recording, reproduce issue, stop
+
+**QuickTime**:
+- Open QuickTime Player
+- File → New Screen Recording
+- Record issue reproduction
+
+**Keep it short**:
+- Show just the problem
+- 30-60 seconds ideal
+- Narrate if helpful
+
+## Feature Requests
+
+Requesting new features or enhancements.
+
+### How to Request Features
+
+Use the same bug reporter or designated feature request channel:
+
+**Include**:
+1. **Feature description**: What do you want?
+2. **Use case**: Why do you need it?
+3. **Current workaround**: How do you handle it now (if at all)?
+4. **Priority**: How important is this to you?
+
+**Example**:
+```
+Feature: Scene scheduling within We Love Lights
+
+Use case: I want to schedule scenes to activate at specific 
+times without using Shortcuts app. Built-in scheduling would 
+be more reliable and easier to manage.
+
+Current workaround: Using macOS Shortcuts, but it's complex 
+and sometimes doesn't trigger reliably.
+
+Priority: Would significantly improve my workflow. Use 
+scheduling multiple times daily.
+```
+
+### Setting Expectations
+
+**Remember**:
+- Not all requests can be implemented
+- Development priorities vary
+- Some features may come in future updates
+- Feedback helps shape roadmap
+
+## Sensitive Information
+
+### What NOT to Include
+
+**Never include**:
+- Passwords or credentials
+- API keys or tokens
+- Personal identifying information (beyond what's necessary)
+- Credit card or payment info
+
+**Be Careful With**:
+- Device names (may contain personal info)
+- Scene names (could be revealing)
+- Location information
+
+### Privacy Protection
+
+If logs contain sensitive info:
+- Rename devices temporarily
+- Report issue first
+- Provide specific logs on request
+- Trust app's privacy policy
+
+## Following Up
+
+### After Submitting
+
+**What happens**:
+- Report received by development team
+- Reviewed and prioritized
+- May request more information
+- Will be addressed in future updates
+
+**Response Time**:
+- Varies by severity and volume
+- Critical bugs prioritized
+- May not receive individual response
+- Check release notes for fixes
+
+### Tracking Issues
+
+**App Updates**:
+- Check release notes
+- Your issue may be fixed in update
+- Test fix and provide feedback
+
+**Additional Info Requested**:
+- Respond promptly if asked for more details
+- Provide requested screenshots/logs
+- Help developers reproduce issue
+
+## Getting Immediate Help
+
+### For Urgent Issues
+
+**Can't control lights at all**:
+1. Use official Hue mobile app as backup
+2. Check physical switches
+3. Power cycle bridge
+4. Report issue but use backup in meantime
+
+**App won't launch**:
+1. Check Console app for crash reports
+2. Try reinstalling app
+3. Report with crash logs
+4. Use backup control method
+
+**Data loss concerns**:
+1. Scenes and rules stored on bridge
+2. Should be recoverable
+3. Report issue with details
+4. May be able to restore
+
+### Community Support
+
+Check if there are community resources:
+- User forums
+- Social media groups
+- Reddit communities
+- Discord servers
+
+Other users may have encountered similar issues and found solutions.
+
+## Best Practices
+
+### Effective Bug Reports
+
+**Good Reports**:
+- ✅ Specific and detailed
+- ✅ Include steps to reproduce
+- ✅ Provide system info
+- ✅ Attach relevant logs
+- ✅ Include screenshots
+- ✅ Check for duplicates first
+
+**Poor Reports**:
+- ❌ "It doesn't work"
+- ❌ No reproduction steps
+- ❌ Missing context
+- ❌ No system information
+- ❌ Vague descriptions
+
+### Communication Tips
+
+**Be Clear**:
+- Use precise language
+- Avoid assumptions
+- Explain technical terms if used
+
+**Be Patient**:
+- Developers work on many issues
+- Fixes take time to test and release
+- Your report helps improve the app
+
+**Be Respectful**:
+- Remember there are people behind the app
+- Constructive feedback appreciated
+- Avoid aggressive or demanding language
+
+## Example Bug Report
+
+### Template
+
+```
+**Description**:
+Bedroom lights flash briefly when activating "Bedtime" scene
+
+**Expected Behavior**:
+Lights should smoothly transition to scene settings without flashing
+
+**Steps to Reproduce**:
+1. Bedroom lights currently on at 60% cool white
+2. Click menu bar icon
+3. Click "Scenes"
+4. Click "Bedtime" scene
+5. Observe: Lights flash off briefly, then turn on to scene settings
+
+**Frequency**:
+Happens every time with this specific scene
+
+**Environment**:
+- macOS: 14.2.1 Sonoma
+- We Love Lights: Version 3.6.3
+- Bridge: Philips Hue Bridge v2
+- Devices: 3x Hue Color bulbs in bedroom
+
+**Additional Context**:
+- Issue started after updating to macOS 14.2
+- Other scenes work fine
+- "Bedtime" scene has lights at 5% warm white
+- Doesn't happen when using Hue mobile app
+
+**Attachments**:
+- Screenshot of scene configuration
+- Log file from when issue occurred
+- Screen recording showing the problem
+```
+
+### What Makes This Good
+
+- **Specific**: Clear description of exact problem
+- **Reproducible**: Exact steps provided
+- **Context**: Environment and when it started
+- **Comparison**: Notes it works in other app
+- **Evidence**: Includes logs and recording
+- **Complete**: All relevant information provided
+
+## Next Steps
+
+After reporting an issue:
+
+1. **Continue Using App**: Most issues don't block all functionality
+2. **Check Updates**: Install updates when available
+3. **Monitor Release Notes**: Look for your issue being fixed
+4. **Provide Feedback**: If issue resolved, confirm the fix works
+
+---
+
+**Need More Help?**
+- [Troubleshooting Guide](/docs/support/troubleshooting)
+- [FAQ](/docs/support/faq)
+- [Documentation Home](/docs)
+

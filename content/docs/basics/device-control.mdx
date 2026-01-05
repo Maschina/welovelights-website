@@ -1,0 +1,434 @@
+---
+title: Device Control
+description: Learn how to control lights, smart plugs, and other devices with We Love Lights
+---
+
+# Device Control
+
+We Love Lights gives you complete control over all your Philips Hue and Zigbee devices. This guide covers the basics of controlling lights, smart plugs, and other devices from both the menu bar and Studio window.
+
+## Types of Devices
+
+We Love Lights supports various device types:
+
+### Lights
+- **Color Lights**: Full RGB color control
+- **Color Temperature Lights**: Adjustable white (warm to cool)
+- **Dimmable Lights**: Brightness only (no color)
+- **On/Off Lights**: Simple on/off switching
+
+### Other Devices
+- **Smart Plugs**: Control connected appliances
+- **Motion Sensors**: Detect movement and trigger automation
+- **Smart Switches**: Physical buttons for scene control
+- **Status Sensors**: Temperature, light level, etc.
+
+## Basic Light Control
+
+### Turning Lights On and Off
+
+#### From Menu Bar
+1. Click the **We Love Lights icon**
+2. Find your light or room
+3. Click the **power icon** to toggle
+
+#### From Studio
+1. Open **Studio window**
+2. Select a light from the sidebar
+3. Click the **power toggle** in the main area
+4. Or press **Space bar** with light selected
+
+### Quick On/Off Tips
+- Double-click a room to toggle all lights in it
+- Use "All Off" action for emergency shutoff
+- Create scenes for commonly used on/off patterns
+
+## Brightness Control
+
+Adjust light intensity from 0% (off) to 100% (full brightness).
+
+### Using Brightness Slider
+
+#### Menu Bar
+1. Open menu and find your light/room
+2. Click to expand if needed
+3. Drag the **brightness slider**
+4. Changes apply immediately
+
+#### Studio
+1. Select light in sidebar
+2. Use the **large brightness slider** in main area
+3. Drag left (dimmer) or right (brighter)
+4. See exact percentage displayed
+
+### Brightness Shortcuts
+
+- **Click slider track**: Jump to specific brightness
+- **Arrow keys**: Fine-tune brightness up/down (in Studio)
+- **Keyboard shortcuts**: Set up global hotkeys for brightness control
+
+### Brightness Tips
+
+- **0% = Off**: Setting brightness to zero turns light off
+- **1% = Night Mode**: Useful for very dim night lighting
+- **100% = Maximum**: Some lights may not appear much brighter above 80-90%
+- **Smooth Transitions**: Lights transition smoothly, not instantly
+
+## Color Control
+
+Control the color of your color-capable lights using multiple picker types.
+
+### Color Picker Types
+
+We Love Lights offers several color pickers for different use cases:
+
+#### Temperature Picker
+Perfect for white/ambiance lights:
+- Adjusts color temperature from warm (2000K) to cool (6500K)
+- **Warm**: Orange/yellow tones, cozy feeling
+- **Cool**: Blue/white tones, energizing feeling
+- Drag slider or click temperature value
+
+#### Hue/Saturation Picker
+Classic color wheel:
+- **Hue**: Choose color around the wheel (red, green, blue, etc.)
+- **Saturation**: How vivid the color is (center=white, edge=pure color)
+- Click anywhere on the wheel to select color
+- Great for picking specific colors
+
+#### RGB Picker
+Direct RGB value entry:
+- Enter specific **Red**, **Green**, **Blue** values (0-255)
+- Useful for matching exact colors
+- Supports hex color codes (#RRGGBB)
+- Perfect for brand colors or precise matching
+
+#### CIE 1931 Color Space Picker
+Advanced color picker:
+- Professional color space used by lighting industry
+- Shows full gamut of light's color capability
+- Most accurate color representation
+- Best for technical users
+
+### Selecting Colors
+
+#### From Menu Bar
+1. Click on your light/room
+2. Click the **color indicator** (colored circle)
+3. Choose a picker type from tabs
+4. Select your desired color
+5. Click to apply
+
+#### From Studio
+1. Select light in sidebar
+2. **Color pickers** appear in main area
+3. Choose picker type (tabs at top)
+4. Adjust color using selected picker
+5. See live preview on actual light
+
+### Recent Colors
+
+Both menu bar and Studio remember recently used colors:
+- **Quick access**: Click recent color to reapply
+- **Color history**: Last 10-20 colors saved
+- **Per-session**: Clears when app restarts
+
+### Copying and Pasting Colors
+
+Copy colors between lights:
+
+1. **Copy**: Select a light, right-click, choose "Copy Color"
+2. **Paste**: Select another light, right-click, choose "Paste Color"
+3. Color and brightness transfer to new light
+
+Or use keyboard shortcuts:
+- **⌘ + C**: Copy selected light's color
+- **⌘ + V**: Paste color to selected light
+
+## Controlling Groups and Rooms
+
+Groups control multiple lights simultaneously.
+
+### Group Types
+
+- **Rooms**: Physical rooms (e.g., "Living Room")
+- **Zones**: Sections of rooms (e.g., "Kitchen Island")
+- **Custom Groups**: Groups you create
+
+### Group Controls
+
+When you control a group:
+- **Power**: Turns all lights in group on/off together
+- **Brightness**: Sets all lights to same brightness level
+- **Color**: Applies same color to all color-capable lights
+
+### Individual Control Within Groups
+
+Studio shows individual lights when you select a room:
+1. Select room in sidebar
+2. Main area shows all lights in the room
+3. Control each light individually
+4. Or use group controls at top for all at once
+
+## Multi-Selection
+
+Control multiple devices simultaneously in Studio.
+
+### Selecting Multiple Devices
+
+#### Method 1: Command-Click
+1. Click first device
+2. Hold **⌘** (Command)
+3. Click additional devices
+4. All selected devices highlight
+
+#### Method 2: Shift-Click (Range)
+1. Click first device in range
+2. Hold **Shift**
+3. Click last device in range
+4. All devices in between are selected
+
+#### Method 3: Select All
+- **⌘ + A**: Select all in current view
+
+### Multi-Selection Actions
+
+With multiple devices selected:
+- **Toggle Power**: Turn all on/off together
+- **Set Brightness**: Apply same brightness to all
+- **Apply Color**: Set all to same color
+- **Create Group**: Make a new group from selection
+- **Create Scene**: Save current state as scene
+
+### Multi-Selection Tips
+
+- Works with lights only (not mixed device types)
+- Actions apply to all selected simultaneously
+- Individual device types may have limitations
+
+## Smart Plug Control
+
+Control devices connected to smart plugs.
+
+### Turning Plugs On and Off
+
+Smart plugs have simple on/off control:
+
+#### Menu Bar
+1. Find your smart plug in the menu
+2. Click to toggle on/off
+3. Status shows current state
+
+#### Studio
+1. Navigate to **Plugs** section in sidebar
+2. Select your smart plug
+3. Click the **power toggle**
+
+### Smart Plug Use Cases
+
+- **Lamps**: Control non-smart lamps
+- **Fans**: Turn ceiling fans on/off
+- **Coffee Makers**: Automate morning coffee
+- **Seasonal Decorations**: Control holiday lights
+- **Chargers**: Save energy by turning off when not needed
+
+### Smart Plug Limitations
+
+- Only on/off control (no dimming)
+- No color or brightness settings
+- Binary state: either on or completely off
+- Can be used in scenes and automation
+
+## Device Status and Information
+
+View detailed information about your devices.
+
+### Device Status Indicators
+
+- **On/Off**: Current power state
+- **Brightness**: Current brightness level
+- **Color**: Current color setting
+- **Reachable**: Whether device is responding
+- **Battery**: Battery level for battery-powered devices
+
+### Viewing Device Details
+
+In Studio:
+1. Select any device
+2. Look for **"Device Info"** or **"Details"** section
+3. See complete information:
+   - Model number
+   - Firmware version
+   - Unique ID
+   - Bridge assignment
+   - Last seen/updated time
+
+### Unreachable Devices
+
+If a device shows as "unreachable":
+- Device may be unplugged or out of range
+- Try power cycling the device
+- Check if device is too far from bridge
+- See [troubleshooting guide](/docs/support/troubleshooting#device-not-responding)
+
+## Advanced Device Control
+
+### Transition Time
+
+Control how quickly lights change:
+- **Instant**: Immediate change (0 seconds)
+- **Quick**: Fast transition (0.2-0.5 seconds)  
+- **Smooth**: Default transition (1-2 seconds)
+- **Slow**: Gradual fade (3-5 seconds)
+
+Some interfaces let you set transition time:
+1. Look for transition or speed setting
+2. Adjust seconds or select preset
+3. Applies to next command
+
+### Alert/Blink Effect
+
+Make a light flash to identify it:
+1. Select the light
+2. Right-click (or Control+click)
+3. Choose **"Identify"** or **"Blink"**
+4. Light flashes briefly
+
+Useful for:
+- Finding which physical light corresponds to device
+- Testing if light is responding
+- Getting attention in room
+
+### Power-On Behavior
+
+Some lights remember their state:
+- **Last State**: Returns to previous settings when powered on
+- **Default**: Goes to specific brightness/color
+- **Off**: Stays off until manually turned on
+
+Configure in device settings (if supported by your bridge).
+
+## Device Organization
+
+Keep your devices organized for easier control.
+
+### Renaming Devices
+
+Give devices clear, meaningful names:
+1. Select device in Studio
+2. Click the **name field**
+3. Type new name
+4. Press **Enter** to save
+
+Good naming examples:
+- "Reading Lamp" instead of "Hue Color Lamp 1"
+- "Kitchen Counter" instead of "Lightstrip Plus 3"
+- "Bedroom Main" instead of "Color Bulb A19"
+
+### Assigning to Rooms
+
+Put devices in appropriate rooms:
+1. Select device in Studio
+2. Look for **"Room"** or **"Group"** setting
+3. Choose room from dropdown
+4. Save changes
+
+Devices can be in multiple zones but typically one primary room.
+
+### Hiding Devices
+
+Hide devices you rarely use:
+1. Right-click device
+2. Select **"Hide"**
+3. Device disappears from lists
+
+Unhide later from Settings → Hidden Items.
+
+### Favorites
+
+Mark frequently used devices:
+1. Select or hover over device
+2. Click **star icon** to favorite
+3. Favorites appear at top of lists
+
+## Tips for Effective Device Control
+
+### Speed Tips
+
+1. **Use scenes**: Faster than adjusting multiple devices
+2. **Favorite frequently used**: Quick access to common lights
+3. **Keyboard shortcuts**: Skip the mouse entirely
+4. **Menu bar for quick tasks**: Faster than opening Studio
+5. **Group similar lights**: Control multiple as one
+
+### Organization Tips
+
+1. **Clear naming**: Know what you're controlling instantly
+2. **Logical grouping**: Group by function or location
+3. **Hide unused**: Reduce clutter in interface
+4. **Consistent naming**: Use same conventions throughout
+
+### Workflow Tips
+
+1. **Create scenes for moods**: Morning, evening, movie, work
+2. **Use groups for areas**: Control whole spaces at once
+3. **Automate with sensors**: Lights turn on/off automatically
+4. **Remote access**: Control when away from home
+
+## Troubleshooting Device Control
+
+### Device Not Responding
+
+**Problem**: Commands don't affect the device
+
+**Solutions**:
+- Check device is powered on
+- Verify device is in range of bridge
+- Try power cycling the device
+- Check bridge connection
+- Use "Identify" to see if device responds at all
+
+### Color Not Accurate
+
+**Problem**: Colors don't look as expected
+
+**Solutions**:
+- Remember: different bulb models have different color gamuts
+- Try different color picker (CIE 1931 most accurate)
+- Check bulb supports full color (not just white)
+- Some colors are impossible for lights to produce exactly
+
+### Delayed Response
+
+**Problem**: Lights respond slowly to commands
+
+**Solutions**:
+- Check network connection quality
+- Reduce distance between bridge and lights
+- Avoid sending too many commands too quickly
+- Use local connection instead of remote when possible
+
+### Brightness Won't Change
+
+**Problem**: Slider moves but brightness stays same
+
+**Solutions**:
+- Check light is actually on first
+- Try turning off and on again
+- Verify light supports dimming (not just on/off)
+- Check if light is at minimum/maximum already
+
+## Next Steps
+
+Master device control? Continue learning:
+
+1. **[Groups & Zones](/docs/basics/groups-zones)** - Organize devices into groups
+2. **[Lights](/docs/features/lights)** - Deep dive into light control
+3. **[Scenes](/docs/features/scenes)** - Create lighting scenes
+4. **[Smart Plugs](/docs/features/smart-plugs)** - Advanced plug management
+5. **[Automation](/docs/integration/automation-examples)** - Automate device control
+
+---
+
+Questions? Visit the [FAQ](/docs/support/faq) or [troubleshooting guide](/docs/support/troubleshooting).
+

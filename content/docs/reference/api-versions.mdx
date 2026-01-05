@@ -1,0 +1,454 @@
+---
+title: API Versions and Technical Details
+description: Technical information about bridge APIs and compatibility
+---
+
+# API Versions and Technical Details
+
+We Love Lights communicates with Philips Hue and deCONZ bridges using their respective APIs. This guide provides technical details about API versions, compatibility, and implementation.
+
+## Philips Hue API
+
+### API Version Used
+
+**Hue API V1**
+- Version: 1.x
+- Status: Stable and mature
+- Support: All Hue Bridge v1 and v2
+
+**Why V1?**
+- Maximum compatibility
+- Well-documented
+- Feature-complete for lighting control
+- Stable and reliable
+
+**Not Using V2**:
+- API V2 is newer but less mature
+- V1 provides all needed functionality
+- V2 adoption will come when benefits clear
+- Backward compatibility maintained
+
+### Bridge Versions
+
+**Bridge v1 (BSB001)**
+- API Version: 1.x
+- Released: 2012
+- Status: Still supported
+- Limitations:
+  - No remote API access
+  - Older feature set
+  - Still fully functional locally
+
+**Bridge v2 (BSB002)**
+- API Version: 1.x (with extensions)
+- Released: 2015
+- Status: Fully supported ✅
+- Features:
+  - Remote API access
+  - More devices supported
+  - Additional capabilities
+  - Recommended
+
+### API Features Used
+
+**Device Control**:
+- Lights: On/off, brightness, color, temperature
+- Groups/Rooms: Collective control
+- Scenes: Lighting presets
+
+**Sensors**:
+- Motion sensors: State and configuration
+- Light level: Ambient lux readings
+- Temperature: Environmental monitoring
+- Switch/Button: Button press events
+
+**Rules and Automation**:
+- Rules: Conditional automation
+- Schedules: Time-based actions (limited use)
+- Sensors: Triggers and conditions
+
+**Configuration**:
+- Device discovery and enumeration
+- Bridge settings and information
+- User/app authentication
+
+### API Endpoints
+
+**Base URL Structure**:
+```
+http://[bridge-ip]/api/[username]/[endpoint]
+```
+
+**Common Endpoints**:
+- `/lights` - Light control and status
+- `/groups` - Room and zone control
+- `/scenes` - Scene management
+- `/sensors` - Sensor data and config
+- `/rules` - Automation rules
+- `/config` - Bridge configuration
+
+### Authentication
+
+**Link Button Method**:
+1. POST to `/api` with device identifier
+2. User presses physical button on bridge
+3. Bridge returns username (API key)
+4. Username stored securely in macOS Keychain
+
+**Security**:
+- Username/API key required for all requests
+- Stored encrypted in Keychain
+- Never transmitted except to bridge
+- Can be revoked from bridge settings
+
+## deCONZ API
+
+### API Structure
+
+**REST API**:
+- Similar structure to Hue API
+- Extended capabilities for Zigbee devices
+- Compatible endpoint design
+
+**Base URL**:
+```
+http://[bridge-ip]:[port]/api/[apikey]/[endpoint]
+```
+
+**Default Port**: Usually 80 or 8080
+
+### Compatibility Layer
+
+**Hue API Compatibility**:
+- deCONZ implements Hue API compatibility
+- Most endpoints work identically
+- We Love Lights treats similarly to Hue
+- Some extensions for additional devices
+
+**Differences**:
+- More device types supported
+- Additional configuration options
+- Some Hue-specific features may not work
+- Generally broader Zigbee support
+
+### Authentication
+
+**Gateway Unlock Method**:
+1. Unlock gateway in Phoscon web interface
+2. POST to `/api` with device info
+3. Gateway returns API key (60 second window)
+4. API key stored in Keychain
+
+## Remote Access
+
+### Hue Remote API
+
+**Portal Access**:
+- Uses Philips cloud infrastructure
+- OAuth-based authentication
+- Encrypted communication
+
+**Requirements**:
+- Hue Bridge v2 only
+- Registered to Hue account
+- Internet at home and remote location
+- We Love Lights authorized
+
+**How It Works**:
+1. App authenticates with Hue account (OAuth)
+2. Receives access token
+3. Connects to cloud portal
+4. Portal relays to home bridge
+5. Commands executed on local bridge
+
+**Limitations**:
+- Slightly higher latency (500ms-2s)
+- Requires stable internet both ends
+- Some advanced features may be limited
+
+**Not Available For**:
+- Hue Bridge v1
+- deCONZ bridges (local only)
+
+## Network Communication
+
+### Local Network
+
+**Discovery**:
+- mDNS/Bonjour for automatic discovery
+- Manual IP address entry alternative
+- Broadcast on port 5353
+
+**Communication**:
+- HTTP REST API
+- JSON request/response
+- Typical latency: 50-200ms local network
+
+**Polling**:
+- Regular status updates
+- Heartbeat to detect connection loss
+- Configurable refresh intervals
+
+### Network Requirements
+
+**Bandwidth**:
+- Minimal: &lt;1 MB/hour typical usage
+- Commands: &lt;1 KB each
+- Status updates: Few KB per poll
+
+**Latency**:
+- Local: &lt;200ms ideal
+- Remote: &lt;2s acceptable
+- Higher latency affects responsiveness
+
+**Reliability**:
+- TCP for reliable delivery
+- Retry logic for failed commands
+- Connection monitoring and auto-reconnect
+
+## Zigbee Communication
+
+### Bridge to Devices
+
+**Zigbee Mesh**:
+- Bridge acts as Zigbee coordinator
+- Devices form mesh network
+- Self-healing and auto-routing
+- Range extension through routing devices
+
+**Frequencies**:
+- 2.4 GHz ISM band
+- Channel selection by bridge
+- Coexistence with WiFi
+
+**Device Types**:
+- End devices: Sensors (battery powered)
+- Routers: Plugged devices (lights, plugs)
+- Coordinator: Bridge
+
+### Performance Factors
+
+**Range**:
+- ~30-50 feet per hop in typical home
+- Walls and obstacles reduce range
+- Metal and concrete most problematic
+
+**Mesh Quality**:
+- More routers = better mesh
+- Smart plugs excellent as routers
+- Strategic placement improves reliability
+
+**Interference**:
+- WiFi on same 2.4 GHz band
+- Microwaves and other electronics
+- Multiple Zigbee networks
+
+## Data Formats
+
+### Color Representation
+
+**XY Color Space (CIE 1931)**:
+- Primary color format
+- X: 0.0 to 1.0
+- Y: 0.0 to 1.0
+- Most accurate for lights
+
+**Hue/Saturation**:
+- Hue: 0-65535 (16-bit)
+- Saturation: 0-254 (8-bit)
+- Alternative color specification
+
+**Color Temperature**:
+- Mireds: 153-500 typical
+- Kelvin: 2000-6500K
+- Inverse relationship
+
+**RGB**:
+- Not native to Hue API
+- Converted to XY by We Love Lights
+- Loss of accuracy in conversion
+
+### Brightness
+
+**Range**: 1-254 (not 0-255)
+- 1 = minimum brightness (not off)
+- 254 = maximum brightness
+- 0 reserved for error/unknown state
+
+**Displayed as**: 0-100% in We Love Lights
+
+### Device States
+
+**JSON Structure**:
+```json
+{
+  "on": true,
+  "bri": 200,
+  "hue": 10000,
+  "sat": 200,
+  "xy": [0.5, 0.5],
+  "ct": 350,
+  "colormode": "xy"
+}
+```
+
+## Update and Polling
+
+### Status Updates
+
+**Polling Frequency**:
+- Typically every 1-5 seconds
+- Configurable in app
+- More frequent = more responsive, more battery usage
+
+**Change Detection**:
+- App polls bridge for changes
+- Bridge tracks device states
+- Only changed values returned
+
+**Real-Time Updates**:
+- Not true push notifications
+- Polling with short intervals simulates
+- Trade-off between responsiveness and resources
+
+### Command Execution
+
+**Synchronous**:
+- Command sent to bridge
+- Bridge acknowledges
+- Bridge sends to devices
+- Result polled in next update
+
+**Timing**:
+- Command to bridge: &lt;100ms
+- Bridge to device: &lt;1s typical
+- Total user-perceived: &lt;1.5s
+
+## Version Compatibility
+
+### Bridge Firmware
+
+**Regular Updates**:
+- Philips releases firmware updates
+- Auto-update available
+- Manual update through Hue app
+
+**We Love Lights Compatibility**:
+- Tested with current firmware
+- Should work with future updates
+- API V1 stable and maintained
+
+**Recommendations**:
+- Keep bridge firmware current
+- Test We Love Lights after major updates
+- Report incompatibilities
+
+### macOS Versions
+
+**Requirements**:
+- macOS 12 (Monterey) minimum
+- Tested on Ventura, Sonoma, Sequoia
+- Universal binary (Intel + Apple Silicon)
+
+**System APIs**:
+- Standard networking APIs
+- Bonjour/mDNS for discovery
+- Keychain for secure storage
+
+## Developer Information
+
+### Third-Party Integration
+
+**App Intents**:
+- Exposes actions to Shortcuts app
+- Standard iOS/macOS integration
+- See [Shortcuts Integration](/docs/integration/shortcuts-app)
+
+**URL Schemes**:
+- May be available for automation
+- Check current documentation
+- Deep linking to features
+
+### API Rate Limits
+
+**Hue Bridge Limits**:
+- ~10-15 commands per second
+- More causes queuing
+- Burst then throttle pattern
+
+**Best Practices**:
+- Batch similar commands
+- Don't rapidly poll
+- Use scenes for multi-device changes
+- Respect rate limits
+
+## Technical Support
+
+### Debugging
+
+**Logging**:
+- We Love Lights includes logging
+- Network requests logged
+- API responses captured
+- Useful for troubleshooting
+
+**Network Tools**:
+- Can monitor HTTP traffic
+- Check API requests/responses
+- Verify bridge communication
+
+**Console App**:
+- macOS Console shows app logs
+- Search for We Love Lights
+- Review for errors
+
+### Common Technical Issues
+
+**API Changes**:
+- Rare but possible
+- Bridge firmware updates
+- We Love Lights updates address
+
+**Authentication Expiry**:
+- API keys don't expire normally
+- May be revoked manually
+- Re-authenticate if needed
+
+**Network Conflicts**:
+- IP address changes
+- Network isolation
+- Firewall blocking
+
+## Future Developments
+
+### API Evolution
+
+**Hue API V2**:
+- Newer SSE (Server-Sent Events) based API
+- Real-time updates without polling
+- More efficient
+- Future We Love Lights adoption possible
+
+**Enhanced Features**:
+- Matter protocol support
+- Additional device types
+- Improved automation
+
+### Backward Compatibility
+
+**Commitment**:
+- API V1 maintained by Philips
+- Existing bridges continue working
+- We Love Lights will maintain support
+
+## Next Steps
+
+- **[Supported Devices](/docs/reference/supported-devices)** - Compatible hardware
+- **[Bridge Discovery](/docs/setup/bridge-discovery)** - Connect to bridge
+- **[Troubleshooting](/docs/support/troubleshooting)** - Solve technical issues
+- **[FAQ](/docs/support/faq)** - Common questions
+
+---
+
+Technical questions? [Report an issue](/docs/support/reporting-issues) with technical details.
+

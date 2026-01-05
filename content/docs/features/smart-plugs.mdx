@@ -1,0 +1,511 @@
+---
+title: Smart Plugs
+description: Control appliances and devices using smart plug outlets
+---
+
+# Smart Plugs
+
+Smart plugs extend your smart home beyond lighting, allowing you to control any plugged-in device through We Love Lights. Turn lamps, fans, coffee makers, and more on or off with your Mac, switches, or automation.
+
+## What Are Smart Plugs?
+
+### Smart Plug Basics
+
+Smart plugs are intelligent outlets:
+- **Plug into wall**: Replace standard outlet access
+- **Control power**: Turn connected devices on/off
+- **Wireless**: Zigbee communication with your bridge
+- **No wiring**: Simple plug and play
+- **Automation ready**: Works with scenes and rules
+
+### How Smart Plugs Work
+
+1. **Plug into outlet**: Insert in wall socket
+2. **Connect device**: Plug your device into the smart plug
+3. **Pair with bridge**: Connect to your Philips Hue or Zigbee bridge
+4. **Control**: Turn on/off through We Love Lights
+
+**Important**: Smart plugs control power only - they turn the outlet on or off. The connected device must be left in the "on" position to respond.
+
+## What Can You Control?
+
+### Ideal Devices for Smart Plugs
+
+**Lighting**
+- **Traditional lamps**: Non-smart lamps
+- **Floor lamps**: Standing lights
+- **String lights**: Holiday or decorative lights
+- **Light fixtures**: Plugin fixtures
+- **LED strips**: Non-smart light strips
+
+**Appliances**
+- **Fans**: Desk, floor, or ceiling fans
+- **Coffee makers**: Auto-start morning coffee
+- **Space heaters**: Control heating (safety considerations apply)
+- **Humidifiers**: Moisture control
+- **Air purifiers**: Air quality management
+
+**Decorations**
+- **Holiday lights**: Christmas, Halloween decorations
+- **Seasonal decor**: Light-up decorations
+- **Accent lighting**: Display lighting
+- **Neon signs**: Decorative signs
+
+**Other Devices**
+- **Chargers**: Turn off when not charging
+- **Printers**: Save energy when not in use
+- **Entertainment**: Non-smart speakers, displays
+
+### Devices to AVOID
+
+**Safety Concerns**
+- ❌ Medical equipment
+- ❌ Fish tanks (critical for pet health)
+- ❌ Refrigerators/freezers
+- ❌ Sump pumps
+- ❌ Security systems
+- ❌ Always-on networking equipment
+
+**Technical Limitations**
+- ❌ High-power appliances (check plug rating)
+- ❌ Devices with soft-power buttons (won't turn on with power)
+- ❌ Devices that need to boot (computers, game consoles)
+
+**Best Practice**: Only use smart plugs with devices that:
+1. Are safe to power cycle
+2. Resume operation when power is restored
+3. Are within the plug's power rating
+
+## Supported Smart Plugs
+
+### Philips Hue Smart Plug
+
+The official Hue smart plug:
+- **Maximum load**: Typically 10A or 2300W (check your region)
+- **Compact design**: Doesn't block adjacent outlets
+- **Zigbee repeater**: Extends mesh network range
+- **Easy pairing**: Simple setup with Hue Bridge
+
+### Third-Party Zigbee Plugs
+
+Compatible plugs include:
+- IKEA Trådfri outlets
+- Innr smart plugs
+- Other Zigbee 3.0 compatible outlets
+
+Check [supported devices](/docs/reference/supported-devices) for compatibility.
+
+### Regional Variations
+
+Smart plugs vary by region:
+- **North America**: 120V, Type A/B plugs
+- **Europe**: 230V, Type C/E/F plugs
+- **UK**: 230V, Type G plugs
+- **Other regions**: Various standards
+
+Ensure you purchase plugs for your region's electrical system.
+
+## Viewing Smart Plugs
+
+### In Menu Bar
+
+Quick plug access:
+
+1. Click **We Love Lights icon**
+2. Find **Plugs** section (or mixed with lights)
+3. See status:
+   - On/Off state
+   - Plug name
+
+### In Studio
+
+Detailed plug information:
+
+1. Open **Studio** window
+2. Go to **Plugs** or **Devices** section
+3. Select your plug
+4. View details:
+   - Current state (on/off)
+   - Power status
+   - Model information
+   - Connected to which bridge
+   - Last state change
+
+## Controlling Smart Plugs
+
+### Basic On/Off Control
+
+#### From Menu Bar
+
+1. Click **We Love Lights icon**
+2. Find your smart plug
+3. Click to **toggle on/off**
+4. Device responds immediately
+
+#### From Studio
+
+1. Select plug in sidebar
+2. Click **power toggle** button
+3. Or press **Space bar** with plug selected
+
+### Including in Groups
+
+Add plugs to rooms and groups:
+
+1. Select plug in **Studio**
+2. Look for **"Group"** or **"Room"** setting
+3. Assign to appropriate room
+4. Plug appears with room's devices
+
+Now room controls affect the plug too.
+
+### Using with Scenes
+
+Include plugs in scenes:
+
+1. **Create or edit scene**
+2. **Include smart plug** in scene
+3. **Set state**: On or off
+4. **Save scene**
+
+When you activate the scene, the plug turns on or off accordingly.
+
+**Example**: "Movie Time" scene turns off table lamps (via plugs) and dims overhead lights.
+
+## Smart Plug Automation
+
+### With Motion Sensors
+
+Automate plugs based on motion:
+
+**Example**: Fan control
+1. **Sensor detects motion** → Turn on fan
+2. **No motion for 10 minutes** → Turn off fan
+
+See [Motion Sensors](/docs/features/motion-sensors) for configuration.
+
+### With Switches
+
+Control plugs with physical buttons:
+
+**Example**: Bedside switch
+- **On button** → Turn on bedside lamp (via plug)
+- **Off button** → Turn off lamp
+
+See [Switches](/docs/features/switches) for setup.
+
+### With Schedules
+
+Time-based automation:
+
+**Example**: Coffee maker
+- **6:30 AM weekdays** → Turn on (starts brewing)
+- **7:30 AM** → Turn off
+
+Use [Shortcuts app](/docs/integration/shortcuts-app) for scheduling.
+
+### With Other Devices
+
+Create rules based on other device states:
+
+**Example**: Linked lighting
+- **When overhead lights turn on** → Turn on accent lamp (via plug)
+- **When lights turn off** → Turn off lamp
+
+## Smart Plug Organization
+
+### Naming Smart Plugs
+
+Give plugs descriptive names:
+
+1. Select plug in **Studio**
+2. Click **name field**
+3. Enter meaningful name
+4. Press **Enter** to save
+
+**Good names**:
+- "Living Room Floor Lamp"
+- "Bedroom Fan"
+- "Holiday Lights - Front"
+- "Coffee Maker"
+- "Office Heater"
+
+**Avoid**:
+- "Smart Plug 1"
+- "Outlet"
+- Generic names
+
+### Organizing by Room
+
+Assign plugs to rooms:
+
+1. Create/select room
+2. Add plug to room
+3. Plug appears with other room devices
+
+Easier to control "all bedroom devices" including lamps via plugs.
+
+### Hiding Unused Plugs
+
+If you have seasonal plugs:
+
+1. Right-click plug
+2. Select **"Hide"**
+3. Plug hidden until unhidden
+
+Useful for holiday lights when out of season.
+
+## Power Management
+
+### Energy Savings
+
+Use plugs to save energy:
+
+**Vampire power elimination**
+- Turn off devices that draw standby power
+- Chargers, printers, entertainment systems
+- Use schedules to turn off overnight
+
+**Occupancy-based control**
+- Motion sensors turn off plugs when room empty
+- Automatic shutdown after period of inactivity
+
+**Schedule-based control**
+- Turn off during specific hours
+- Weekend vs weekday schedules
+- Seasonal adjustments
+
+### Safety Considerations
+
+**Power ratings**
+- Check plug's maximum wattage
+- Don't exceed device limits
+- Calculate total load: Watts = Volts × Amps
+
+**Heat**
+- Monitor plug for excessive heat
+- Don't cover or insulate plugs
+- Place in well-ventilated area
+
+**Critical devices**
+- Never use for life-safety equipment
+- Avoid for always-needed devices
+- Have backup plans for automations
+
+## Smart Plug Use Cases
+
+### Lamp Control
+
+**Non-smart lamp automation**
+
+Setup:
+1. Plug lamp into smart plug
+2. Turn lamp's switch to "on" (leave it on)
+3. Control via smart plug
+
+Benefits:
+- Smart control for dumb lamps
+- Include in scenes with other lights
+- Motion-activated lighting
+
+### Seasonal Decorations
+
+**Holiday light automation**
+
+Christmas lights example:
+1. Plug lights into smart plug
+2. Create schedule:
+   - On at sunset
+   - Off at midnight
+   - Off during day
+3. One-click control from app
+
+### Climate Control
+
+**Fan automation**
+
+Summer cooling:
+1. Plug fan into smart plug
+2. Motion sensor turns on with presence
+3. Temperature-based (if you have temp sensor)
+4. Auto-off when room empty
+
+**Heater control**
+- Schedule heating for occupied times
+- Turn off when leaving
+- Safety shutoff timers
+
+⚠️ **Safety Warning**: Never leave high-power heaters unattended. Use with caution and within plug's power rating.
+
+### Morning Routine
+
+**Coffee maker automation**
+
+Setup:
+1. Plug coffee maker into smart plug
+2. Prep coffee night before
+3. Schedule:
+   - Turn on at 6:30 AM
+   - Turn off at 7:30 AM
+4. Wake to fresh coffee
+
+**Note**: Coffee maker must have mechanical switch (stays on when power restored).
+
+### Workspace Management
+
+**Office device control**
+
+Work hours automation:
+- **Start of day**: Turn on desk fan, task lamp, desk accessories
+- **End of day**: Turn all off
+- **Lunch break**: Optional auto-off
+
+### Security & Away Mode
+
+**Simulate presence**
+
+When traveling:
+1. Plug lamps into smart plugs
+2. Create randomized schedule
+3. Lights turn on/off at realistic times
+4. Deters intruders
+
+Combine with scenes for varied lighting patterns.
+
+## Troubleshooting Smart Plugs
+
+### Plug Not Responding
+
+**Problem**: Can't control the plug
+
+**Solutions**:
+- Check plug is receiving power (wall outlet working?)
+- Verify plug is in range of bridge
+- Try power cycling the plug (unplug, wait 10 seconds, replug)
+- Check if device is correctly paired with bridge
+- Refresh devices in We Love Lights
+
+### Connected Device Doesn't Work
+
+**Problem**: Plug turns on but device doesn't
+
+**Solutions**:
+- Verify device is plugged into smart plug properly
+- Check device has power switch in "on" position
+- Test device in regular outlet (is device broken?)
+- Check device is compatible with power cycling
+- Verify plug's power rating is sufficient
+
+### Plug Offline
+
+**Problem**: Plug shows as unreachable
+
+**Solutions**:
+- Check wall outlet has power
+- Verify plug hasn't been unplugged
+- Check plug is in range of bridge or other Zigbee devices
+- Reset plug and re-pair if needed
+- Check bridge connection
+
+### Random On/Off
+
+**Problem**: Plug turns on/off unexpectedly
+
+**Solutions**:
+- Review automation rules (motion sensor, schedules)
+- Check for conflicting scenes
+- Verify no one else controlling the plug
+- Check for power fluctuations causing resets
+- Review Shortcuts automations
+
+### Plug Gets Hot
+
+**Problem**: Smart plug feels very warm or hot
+
+**Solutions**:
+- **Immediately unplug if extremely hot**
+- Check connected device isn't exceeding plug's power rating
+- Ensure plug has ventilation (not covered)
+- Verify outlet itself isn't damaged
+- Consider using lower-power device
+- Replace plug if damaged
+
+### Lost Connection After Power Outage
+
+**Problem**: Plug doesn't reconnect after power loss
+
+**Solutions**:
+- Wait a few minutes for Zigbee mesh to re-establish
+- Power cycle the plug
+- Check if bridge restarted properly
+- Verify other devices also reconnected
+- May need to re-pair plug if persistent
+
+## Advanced Smart Plug Features
+
+### Zigbee Repeater Function
+
+Many smart plugs act as Zigbee repeaters:
+- **Extend network**: Improve range for distant devices
+- **Strengthen mesh**: More robust network
+- **Strategic placement**: Place plugs to bridge gaps
+
+Consider plug location for network benefits.
+
+### Power Monitoring
+
+Some plugs offer power monitoring:
+- Current power consumption
+- Historical usage data
+- Energy cost estimates
+
+Check if your specific plug model supports this (check in Studio device details).
+
+### Firmware Updates
+
+Keep plug firmware current:
+- Updates via bridge
+- May add features or fix bugs
+- Usually automatic
+- Check manufacturer's app for updates
+
+## Best Practices
+
+### Installation Tips
+
+1. **Test first**: Verify plug works in regular outlet
+2. **Pair before installing**: Easier access during setup
+3. **Strategic placement**: Consider both function and network
+4. **Secure connection**: Ensure plug fully inserted
+5. **Accessible location**: Easy to access if needed
+
+### Usage Tips
+
+1. **Label plugs**: Physical labels on device/plug
+2. **Clear naming**: Descriptive names in app
+3. **Document**: Note what's plugged into each
+4. **Monitor heat**: Regularly check for warmth
+5. **Annual check**: Review all automations and usage
+
+### Safety Tips
+
+1. **Check ratings**: Never exceed power limits
+2. **Quality plugs**: Use reputable brands
+3. **Inspect regularly**: Look for damage or wear
+4. **Avoid daisy-chaining**: Don't plug strip into smart plug
+5. **Critical devices**: No medical or essential equipment
+
+## Next Steps
+
+Master smart plugs? Explore more features:
+
+1. **[Scenes](/docs/features/scenes)** - Include plugs in lighting scenes
+2. **[Motion Sensors](/docs/features/motion-sensors)** - Automate plugs with motion
+3. **[Switches](/docs/features/switches)** - Physical control for plugs
+4. **[Automation Examples](/docs/integration/automation-examples)** - Real-world plug automation
+5. **[Shortcuts Integration](/docs/integration/shortcuts-app)** - Advanced scheduling
+
+---
+
+Questions? Check the [FAQ](/docs/support/faq) or [troubleshooting guide](/docs/support/troubleshooting).
+

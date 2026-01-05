@@ -1,0 +1,624 @@
+---
+title: Rules Engine
+description: Create advanced automation rules with sensors, switches, and conditional logic
+---
+
+# Rules Engine
+
+The Rules Engine is the automation brain of We Love Lights, allowing you to create sophisticated, condition-based automation that responds intelligently to sensors, time, and environmental conditions.
+
+## Understanding Rules
+
+### What Are Rules?
+
+Rules are automated behaviors that follow this pattern:
+
+**WHEN** (trigger) something happens
+**IF** (conditions) certain conditions are met
+**THEN** (actions) perform these actions
+
+**Example**:
+- **WHEN**: Motion detected in hallway
+- **IF**: Between 10 PM and 6 AM AND light level < 10 lux
+- **THEN**: Turn on hallway lights to 5% warm white for 2 minutes
+
+### Rules vs Scenes
+
+**Scenes**:
+- Fixed lighting states
+- Manual activation (or triggered by rules)
+- No conditional logic
+- Simple and predictable
+
+**Rules**:
+- Conditional automation
+- Automatic triggers
+- Smart decision making
+- Responds to environment
+
+**Best Practice**: Use rules to activate scenes based on conditions.
+
+## Rule Components
+
+### Triggers
+
+What starts the rule evaluation:
+
+**Motion Sensors**
+- Motion detected
+- Motion cleared (no motion)
+
+**Switches/Buttons**
+- Button pressed
+- Button held
+- Button released
+
+**Time**
+- Specific time of day
+- Sunrise/sunset (if supported)
+- After X minutes/hours
+
+**Device State**
+- Light turned on/off
+- Brightness changed
+- Device becomes reachable/unreachable
+
+### Conditions
+
+Requirements that must be met:
+
+**Time-Based**
+- Current time between X and Y
+- Day of week (weekday vs weekend)
+- Sunrise/sunset relative
+
+**Environmental**
+- Light level (lux) above/below threshold
+- Temperature above/below threshold
+
+**Device State**
+- Specific light is on/off
+- Room is occupied
+- Bridge connection status
+
+**Compound**
+- Multiple conditions combined with AND/OR
+- Complex logic trees
+
+### Actions
+
+What happens when rule executes:
+
+**Light Control**
+- Turn lights on/off
+- Set brightness to specific level
+- Set color or temperature
+- Activate scene
+
+**Smart Plugs**
+- Turn plug on/off
+
+**Delays**
+- Wait X seconds/minutes
+- Turn off after timeout
+
+**Multiple Actions**
+- Execute sequence of actions
+- Parallel or sequential
+
+## Creating Rules
+
+### Method 1: Configuration Wizards
+
+Easiest for common scenarios:
+
+**Motion Sensor Wizard**
+1. Select motion sensor
+2. Click **"Configure Rules"** or **"Setup Wizard"**
+3. Choose pattern:
+   - Simple on/off
+   - Time-based
+   - Light-level conditional
+4. Follow prompts:
+   - Select lights to control
+   - Set brightness and color
+   - Configure time periods
+   - Set timeout duration
+5. Save and test
+
+See [Motion Sensors](/docs/features/motion-sensors) for details.
+
+**Switch Configuration Wizard**
+1. Select switch
+2. Click **"Configure"** or **"Auto-Setup"**
+3. Choose pattern:
+   - Scene cycler
+   - Room control
+   - Custom buttons
+4. Configure each button
+5. Save
+
+See [Switches](/docs/features/switches) for details.
+
+### Method 2: Manual Rule Creation
+
+For advanced custom rules:
+
+1. **Open Studio** → **Rules** section
+2. Click **"New Rule"** or **"+"**
+3. **Configure trigger**:
+   - Select trigger type
+   - Choose device if applicable
+   - Set trigger condition
+4. **Add conditions** (optional):
+   - Click **"Add Condition"**
+   - Select condition type
+   - Configure parameters
+   - Add multiple with AND/OR
+5. **Configure actions**:
+   - Click **"Add Action"**
+   - Choose action type
+   - Set parameters
+   - Add multiple actions
+6. **Name the rule**
+7. **Save and enable**
+
+### Method 3: Duplicate and Modify
+
+Start from existing rule:
+
+1. Find similar rule
+2. Right-click → **"Duplicate"**
+3. Modify as needed
+4. Save with new name
+
+## Motion Sensor Rules
+
+### Time-Based Motion Rules
+
+Different behavior by time of day:
+
+**Example: Bathroom Lighting**
+
+**Daytime (6 AM - 10 PM)**
+- **Trigger**: Motion detected
+- **Condition**: Light level < 50 lux
+- **Action**: Lights to 80% cool white
+- **Timeout**: 5 minutes
+
+**Nighttime (10 PM - 6 AM)**
+- **Trigger**: Motion detected
+- **Condition**: Always
+- **Action**: Lights to 10% warm white
+- **Timeout**: 3 minutes
+
+### Light-Level Conditional Rules
+
+Only trigger when dark:
+
+**Example: Hallway Motion**
+- **Trigger**: Motion in hallway
+- **Condition**: Light level < 30 lux (dark)
+- **Action**: Turn on hallway lights 60%
+- **Timeout**: 2 minutes
+
+**Why**: Don't waste energy during daylight hours
+
+### Multi-Sensor Rules
+
+Require multiple sensors:
+
+**Example: Path Lighting**
+- **Trigger**: Motion in ANY of: garage, mudroom, hallway
+- **Action**: Turn on all three areas
+- **Timeout**: 5 minutes after last motion
+
+**OR Logic**: Any sensor triggers
+
+**AND Logic**: Require all sensors (rare for motion)
+
+### Temperature-Based Rules
+
+Use temperature readings:
+
+**Example: Summer Fan Control**
+- **Trigger**: Motion detected in bedroom
+- **Condition**: Temperature > 24°C (75°F) AND time between 10 AM - 8 PM
+- **Action**: Turn on fan via smart plug
+- **Timeout**: 30 minutes
+
+## Switch Rules
+
+### Scene Cycling Rules
+
+Cycle through scenes with button:
+
+**Example: Living Room Dimmer**
+- **Trigger**: On button pressed
+- **Action**: Cycle through scenes:
+  1. "Bright" (100% daylight)
+  2. "Normal" (60% neutral)
+  3. "Relax" (30% warm)
+  4. "Movie" (10% accent)
+- **Off button**: Turn off lights
+
+### Context-Aware Button Rules
+
+Button behavior changes by context:
+
+**Example: Smart On Button**
+
+**If lights are off**:
+- Morning (6 AM - 12 PM): "Morning" scene (bright cool)
+- Afternoon (12 PM - 6 PM): "Daytime" scene (medium neutral)
+- Evening (6 PM - 12 AM): "Evening" scene (warm medium)
+- Night (12 AM - 6 AM): "Night" scene (very dim warm)
+
+**If lights are on**:
+- Increase brightness by 25%
+
+### Multi-Action Button Rules
+
+One button, multiple actions:
+
+**Example: "Goodnight" Button**
+- **Trigger**: Long press off button
+- **Actions**:
+  1. Turn off all living room lights
+  2. Turn off kitchen lights
+  3. Turn off hallway lights
+  4. Activate "Nightlight" scene in bedroom
+  5. Turn off all smart plugs except bedroom fan
+
+## Advanced Rule Patterns
+
+### Presence Simulation
+
+Simulate occupancy when away:
+
+**Away Mode Rule**
+- **Trigger**: Time-based (evening hours)
+- **Condition**: "Away mode" enabled (via variable or scene)
+- **Action**: Randomly activate rooms for 30-60 minutes
+- **Repeat**: Different rooms on schedule
+
+Requires Shortcuts app or advanced automation.
+
+### Adaptive Lighting
+
+Change throughout day automatically:
+
+**Morning**
+- 6 AM: Gradually brighten to energizing cool white
+- Mimics sunrise
+
+**Daytime**
+- Neutral bright white for productivity
+
+**Evening**
+- 6 PM: Shift to warm white
+- Gradual dimming toward bedtime
+
+**Night**
+- Very dim warm/amber
+- Minimal disruption
+
+### State Machine Rules
+
+Complex multi-state automation:
+
+**Example: Room Occupancy States**
+
+**Vacant** (default)
+- All lights off
+- Wait for motion
+
+**Occupied** (motion detected)
+- Lights on per time of day
+- Maintain while motion continues
+
+**Grace Period** (motion stopped)
+- Keep lights on for timeout
+- Return to Vacant if no motion
+
+**Locked** (manual override)
+- Ignore motion sensor
+- Manual control only
+
+### Cascading Rules
+
+Rules trigger other rules:
+
+**Example: Arrival Home Sequence**
+
+**Rule 1**: Garage motion detected
+- Turn on garage lights
+- Turn on mudroom lights
+- Trigger "Welcome Home" macro
+
+**Rule 2**: "Welcome Home" macro triggered
+- Wait 30 seconds
+- Turn on kitchen lights
+- Turn on living room to "Evening" scene
+- Turn on hallway lights
+
+## Rule Conditions
+
+### Time Conditions
+
+**Specific Times**
+- Between 8:00 AM and 10:00 PM
+- Before 6:00 AM
+- After 11:00 PM
+
+**Relative Times**
+- After sunrise
+- Before sunset
+- Sunrise/sunset +/- X minutes
+
+**Day of Week**
+- Weekdays only (Mon-Fri)
+- Weekends only (Sat-Sun)
+- Specific days
+
+### Environmental Conditions
+
+**Light Level**
+- Less than X lux (dark)
+- Greater than X lux (bright)
+- Between X and Y lux
+
+**Temperature**
+- Above X degrees (hot)
+- Below X degrees (cold)
+- Between X and Y degrees
+
+### Device State Conditions
+
+**Light State**
+- Specific light is on/off
+- Room brightness above/below level
+- Any lights in room on
+
+**Other Sensors**
+- Other motion sensor state
+- Switch button last pressed
+- Device reachable/unreachable
+
+### Compound Conditions
+
+Combine multiple conditions:
+
+**AND Logic** (all must be true)
+- Time is night AND light level is dark AND motion detected
+
+**OR Logic** (any can be true)
+- Kitchen motion OR hallway motion
+
+**NOT Logic** (inverse)
+- NOT daytime (i.e., nighttime)
+
+**Nested Logic**
+- (Time is morning OR evening) AND (light level < 50) AND motion
+
+## Rule Actions
+
+### Light Actions
+
+**Basic Control**
+- Turn on/off
+- Set brightness (0-100%)
+- Set color (hue, saturation, temperature)
+
+**Scene Activation**
+- Activate specific scene
+- Best practice for consistent results
+
+**Transitions**
+- Gradual brightness changes
+- Fade in/out over time
+- Smooth color transitions
+
+### Smart Plug Actions
+
+- Turn plug on
+- Turn plug off
+- Toggle plug state
+
+### Delays and Timeouts
+
+**Fixed Delay**
+- Wait X seconds before action
+- Execute action at specific time
+
+**Timeout**
+- Turn off after X minutes of no motion
+- Auto-off timer
+
+**Variable Delays**
+- Sunrise + 30 minutes
+- X minutes before sunset
+
+### Multiple Actions
+
+**Sequential**
+- Action 1, wait, Action 2, wait, Action 3
+- Ordered execution
+
+**Parallel**
+- All actions execute simultaneously
+- Faster but no timing control
+
+## Testing Rules
+
+### Test Your Rules
+
+Before relying on automation:
+
+1. **Trigger manually**: Activate the trigger (walk by sensor, press button)
+2. **Verify actions**: Do expected actions occur?
+3. **Check conditions**: Test during different times, conditions
+4. **Edge cases**: What if lights already on? Already off?
+5. **Timeout**: Does auto-off work correctly?
+
+### Debug Mode
+
+If supported, enable debug logging:
+- Shows when rules evaluate
+- What conditions were true/false
+- Which actions executed
+- Helps identify issues
+
+### Common Issues
+
+**Rule doesn't trigger**
+- Check trigger device is working
+- Verify rule is enabled
+- Check conditions aren't preventing execution
+
+**Wrong action occurs**
+- Review action configuration
+- Check for conflicting rules
+- Verify device selections correct
+
+**Actions delayed**
+- Normal processing time: 0.5-2 seconds
+- Network issues cause longer delays
+- Too many rules may slow processing
+
+## Rule Management
+
+### Organizing Rules
+
+**Naming**
+- Descriptive names: "Bathroom Motion - Night Mode"
+- Include trigger and purpose
+- Avoid generic "Rule 1", "Rule 2"
+
+**Grouping**
+- By room: All living room rules together
+- By type: All motion rules, all switch rules
+- By function: All nighttime rules
+
+**Documentation**
+- Add notes/descriptions to rules
+- Document complex logic
+- Note why rule exists
+
+### Enabling/Disabling Rules
+
+Temporarily disable without deleting:
+
+1. Select rule
+2. Toggle **"Enabled"** switch
+3. Disabled rules don't execute
+
+**Use cases**:
+- Seasonal rules (holiday lights)
+- Testing new rules (disable old first)
+- Troubleshooting (isolate issues)
+
+### Editing Rules
+
+Modify existing rules:
+
+1. Select rule in Studio
+2. Click **"Edit"** or double-click
+3. Modify triggers, conditions, actions
+4. Save changes
+5. Test modified rule
+
+### Deleting Rules
+
+Remove rules you no longer need:
+
+1. Select rule
+2. Right-click → **"Delete"** or press Delete key
+3. Confirm deletion
+
+Deleted rules are gone permanently.
+
+## Best Practices
+
+### Rule Design
+
+1. **Keep it simple**: Simple rules are reliable
+2. **One purpose**: Each rule does one thing well
+3. **Test thoroughly**: Verify all conditions and edge cases
+4. **Use scenes**: Rules trigger scenes, scenes define states
+5. **Document**: Note why rule exists, what it does
+
+### Performance
+
+1. **Minimize rules**: Fewer rules = faster, more reliable
+2. **Efficient conditions**: Simple conditions evaluate faster
+3. **Avoid conflicts**: Rules shouldn't fight each other
+4. **Timeouts**: Reasonable timeouts avoid unnecessary processing
+
+### Reliability
+
+1. **Graceful degradation**: Manual control always possible
+2. **Fall backs**: What if sensor fails?
+3. **Override ability**: Way to temporarily disable automation
+4. **Monitor**: Check rules still work as expected
+
+## Troubleshooting Rules
+
+### Rule Doesn't Execute
+
+**Problem**: Rule never triggers
+
+**Solutions**:
+- Check rule is enabled
+- Verify trigger device is working (battery, connection)
+- Test trigger manually
+- Check conditions aren't always false
+- Review rule logic for errors
+
+### Wrong Behavior
+
+**Problem**: Rule does something unexpected
+
+**Solutions**:
+- Review action configuration
+- Check for conflicting rules
+- Verify device selections
+- Test conditions one at a time
+- Simplify rule and rebuild
+
+### Intermittent Execution
+
+**Problem**: Rule works sometimes, not always
+
+**Solutions**:
+- Check condition variability (light level, time)
+- Verify network stability
+- Monitor bridge connection
+- Check sensor battery levels
+- Review logs if available
+
+### Rules Conflict
+
+**Problem**: Multiple rules interfere with each other
+
+**Solutions**:
+- Disable one rule at a time to isolate
+- Ensure rules don't have overlapping actions
+- Use priorities if supported
+- Simplify and consolidate rules
+- Consider using scenes triggered by rules
+
+## Next Steps
+
+Master the rules engine? Explore advanced topics:
+
+1. **[Motion Sensors](/docs/features/motion-sensors)** - Sensor-based automation in detail
+2. **[Switches](/docs/features/switches)** - Physical button automation
+3. **[Shortcuts Integration](/docs/integration/shortcuts-app)** - Even more powerful automation
+4. **[Automation Examples](/docs/integration/automation-examples)** - Real-world rule scenarios
+5. **[Organization](/docs/advanced/organization)** - Organize complex rule sets
+
+---
+
+Questions? Check the [FAQ](/docs/support/faq) or [troubleshooting guide](/docs/support/troubleshooting).
+

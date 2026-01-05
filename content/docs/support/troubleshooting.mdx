@@ -1,0 +1,554 @@
+---
+title: Troubleshooting
+description: Solutions to common issues and problems with We Love Lights
+---
+
+# Troubleshooting
+
+This guide covers common issues with We Love Lights and their solutions. If you can't find your issue here, check the [FAQ](/docs/support/faq) or [report an issue](/docs/support/reporting-issues) for help.
+
+## Bridge Connection Issues
+
+### Bridge Not Found
+
+**Problem**: We Love Lights can't find your bridge during setup.
+
+**Solutions**:
+
+1. **Verify Network**:
+   - Ensure Mac and bridge on same WiFi network
+   - Check bridge has solid blue light (Philips Hue)
+   - Verify bridge connected via Ethernet cable
+   - Try pinging bridge IP address from Terminal
+
+2. **Check Bridge**:
+   - Power cycle bridge (unplug, wait 10 seconds, replug)
+   - Wait 1-2 minutes for full boot
+   - Verify bridge working in Hue mobile app
+
+3. **Try Manual Discovery**:
+   - Find bridge IP address (router admin panel or discovery.meethue.com)
+   - Add bridge manually in Studio with IP address
+   - See [Bridge Discovery guide](/docs/setup/bridge-discovery)
+
+4. **Network Issues**:
+   - Temporarily disable VPN
+   - Check firewall isn't blocking discovery
+   - Verify no network isolation enabled (guest network)
+   - Try from different Mac if available
+
+### Bridge Showing Offline
+
+**Problem**: Previously connected bridge now shows offline.
+
+**Solutions**:
+
+1. **Check Basics**:
+   - Verify bridge has power
+   - Check Ethernet cable connected
+   - Look for solid blue light (Hue)
+
+2. **Network Changed**:
+   - Bridge may have new IP address
+   - Set static IP in router
+   - Reconnect with new IP if needed
+
+3. **Restart Components**:
+   - Restart bridge (power cycle)
+   - Restart router
+   - Restart We Love Lights
+   - Restart Mac (if needed)
+
+4. **Re-authenticate**:
+   - Remove and re-add bridge
+   - Press button during authentication
+   - Complete setup again
+
+### Authentication Failed
+
+**Problem**: Can't authenticate with bridge.
+
+**Solutions**:
+
+1. **Button Press**:
+   - Press button FIRMLY on top of bridge
+   - Hold for 1-2 seconds
+   - Bridge should respond with light
+   - Try again within 30-second window
+
+2. **Timing**:
+   - Click authenticate in We Love Lights FIRST
+   - Then immediately press bridge button
+   - Don't wait too long between steps
+
+3. **Bridge Ready**:
+   - Ensure bridge fully booted (wait 2 minutes after power on)
+   - Blue light should be solid, not blinking
+   - If blinking, bridge still starting up
+
+4. **Bridge Full**:
+   - Check bridge isn't at user limit (rare)
+   - Remove old apps/users from Hue app settings
+   - Try again
+
+### Remote Access Not Working
+
+**Problem**: Can't connect to bridge remotely.
+
+**Solutions**:
+
+1. **Verify Setup**:
+   - Bridge must be registered to Hue account
+   - We Love Lights must be authenticated with account
+   - See [Remote Access guide](/docs/setup/remote-access)
+
+2. **Check Requirements**:
+   - Philips Hue Bridge v2 (square) only
+   - Internet connection at home
+   - Internet connection at current location
+   - deCONZ bridges don't support remote
+
+3. **Test Connection**:
+   - Verify bridge online (check Hue mobile app)
+   - Check home internet working
+   - Confirm bridge has internet (Ethernet cable)
+
+4. **Re-authenticate**:
+   - Sign out of Hue account in We Love Lights
+   - Sign in again
+   - Verify authorization
+
+## Device Issues
+
+### Device Not Responding
+
+**Problem**: Can't control a specific light or device.
+
+**Solutions**:
+
+1. **Check Device Power**:
+   - Verify light has power (switch on)
+   - Try device in different fixture (if possible)
+   - Check circuit breaker hasn't tripped
+
+2. **Check Distance**:
+   - Device may be too far from bridge
+   - Maximum range: ~30-50 feet depending on obstacles
+   - Add Zigbee repeater (smart plug) between
+
+3. **Device State**:
+   - Light shows "unreachable" in app
+   - Power cycle the light (off/on at switch)
+   - Wait 30 seconds for reconnection
+
+4. **Bridge Communication**:
+   - Refresh devices in We Love Lights
+   - Check in Hue mobile app
+   - Re-pair device if persistent
+
+### Lights Not Turning On
+
+**Problem**: Command sent but lights don't respond.
+
+**Solutions**:
+
+1. **Verify Power**:
+   - Physical switch is ON
+   - Light has electricity
+   - Bulb properly seated in socket
+
+2. **Check Reachability**:
+   - Device shows as reachable in app?
+   - If not, see "Device Not Responding" above
+
+3. **Test Individual**:
+   - Try turning on single light
+   - If individual works, group or scene issue
+   - If individual fails, device issue
+
+4. **Bridge Connection**:
+   - Verify bridge online
+   - Check network stability
+   - Restart bridge if needed
+
+### Colors Don't Look Right
+
+**Problem**: Colors appear different than expected.
+
+**Solutions**:
+
+1. **Understand Gamut**:
+   - Different bulb models have different color capabilities
+   - Some colors impossible for certain bulbs
+   - Use CIE picker to see what's possible
+
+2. **Check Bulb Type**:
+   - Verify bulb supports color (not just white ambiance)
+   - Check model specifications
+   - Some whites-only bulbs can't do colors
+
+3. **Environmental Factors**:
+   - Room color affects perceived light color
+   - White walls reflect colors differently than colored walls
+   - Lampshades filter and change colors
+
+4. **Try Different Picker**:
+   - Switch between color pickers
+   - RGB for exact values
+   - CIE for accurate capabilities
+   - See [Lights documentation](/docs/features/lights)
+
+### Smart Plug Not Working
+
+**Problem**: Can't control smart plug.
+
+**Solutions**:
+
+1. **Check Basics**:
+   - Plug firmly in outlet
+   - Outlet has power (test with other device)
+   - Device plugged into smart plug
+
+2. **Device Requirements**:
+   - Connected device switch in ON position
+   - Device compatible with power cycling
+   - Device within plug's power rating
+
+3. **Network Issues**:
+   - Plug reachable in app?
+   - Within range of bridge?
+   - Add repeater if needed
+
+4. **Reset and Repair**:
+   - Reset smart plug (check manual)
+   - Re-pair with bridge
+   - Test after pairing
+
+## Sensor Issues
+
+### Motion Sensor Not Triggering
+
+**Problem**: Walking past sensor doesn't activate lights.
+
+**Solutions**:
+
+1. **Check Battery**:
+   - Low battery primary cause
+   - Replace with fresh batteries
+   - Verify correct polarity
+
+2. **Check Range**:
+   - Sensor effective within ~5 meters
+   - Line of sight important
+   - Large objects block detection
+
+3. **Verify Rules**:
+   - Rules properly configured?
+   - Time-based conditions met?
+   - Light level threshold appropriate?
+   - See [Motion Sensors](/docs/features/motion-sensors)
+
+4. **Test Sensor**:
+   - Check sensor status in app
+   - Last motion detected timestamp
+   - Verify sensor reachable
+
+### False Motion Triggers
+
+**Problem**: Lights turning on without motion.
+
+**Solutions**:
+
+1. **Check Placement**:
+   - Sensor pointing at window? (sunlight triggers)
+   - Near heat source? (vents, radiators)
+   - Pets triggering sensor?
+
+2. **Adjust Sensitivity**:
+   - Reduce sensitivity if available
+   - Some sensors have adjustable settings
+   - Check sensor configuration
+
+3. **Secure Mounting**:
+   - Loose sensor vibrates and triggers
+   - Ensure firmly mounted
+   - Check mounting surface stable
+
+4. **Environmental**:
+   - Moving curtains near sensor
+   - Air conditioning blowing objects
+   - Shadows from outside
+
+### Switch Not Working
+
+**Problem**: Physical switch button does nothing.
+
+**Solutions**:
+
+1. **Battery**:
+   - Check and replace battery
+   - Clean battery contacts
+   - Verify correct battery type
+
+2. **Range**:
+   - Switch within range of bridge?
+   - Test closer to bridge
+   - Add repeater if needed
+
+3. **Configuration**:
+   - Buttons properly configured?
+   - Actions assigned to buttons?
+   - See [Switches documentation](/docs/features/switches)
+
+4. **Pairing**:
+   - Switch paired with bridge?
+   - Check in Hue app
+   - Re-pair if needed
+
+5. **Physical**:
+   - Press button firmly
+   - Some switches need harder press
+   - Check for physical damage
+
+## Performance Issues
+
+### Slow Response Times
+
+**Problem**: Long delay between command and light response.
+
+**Solutions**:
+
+1. **Network Quality**:
+   - Check WiFi signal strength
+   - Reduce distance to router
+   - Minimize interference (microwaves, other WiFi)
+
+2. **Bridge Performance**:
+   - Too many devices on bridge?
+   - Approaching 50-light limit?
+   - Consider second bridge
+
+3. **Command Frequency**:
+   - Don't send too many commands at once
+   - Allow commands to complete
+   - Batch changes when possible
+
+4. **Remote vs Local**:
+   - Remote always slower than local
+   - Use local when home
+   - Verify not accidentally using remote
+
+5. **App Performance**:
+   - Restart We Love Lights
+   - Check Mac performance (CPU, memory)
+   - Close unnecessary apps
+
+### App Feels Sluggish
+
+**Problem**: We Love Lights interface is slow.
+
+**Solutions**:
+
+1. **Too Many Items**:
+   - Hide unused devices
+   - Limit visible items
+   - Clean up old scenes/groups
+
+2. **Mac Performance**:
+   - Check Activity Monitor
+   - Close other apps
+   - Restart Mac if needed
+   - Check available RAM
+
+3. **Network Issues**:
+   - Slow network affects bridge communication
+   - Improve WiFi if possible
+   - Check no network congestion
+
+4. **Studio vs Menu Bar**:
+   - Close Studio when not needed
+   - Menu bar lighter weight
+   - Studio more resource intensive
+
+### Automation Delays
+
+**Problem**: Rules or Shortcuts execute slowly.
+
+**Solutions**:
+
+1. **Simplify Rules**:
+   - Complex rules take longer
+   - Reduce number of conditions
+   - Simplify logic
+
+2. **Network Path**:
+   - Ensure good connection to bridge
+   - Minimize network hops
+   - Check no VPN interference
+
+3. **Timeout Values**:
+   - Some delay is normal (1-2 seconds)
+   - Motion sensor processing time
+   - Zigbee mesh communication
+
+4. **Multiple Bridges**:
+   - Coordinating bridges takes time
+   - Sequential execution adds delay
+   - Expected with complex multi-bridge rules
+
+## macOS Integration Issues
+
+### Menu Bar Icon Missing
+
+**Problem**: Can't find We Love Lights in menu bar.
+
+**Solutions**:
+
+1. **Check Running**:
+   - App actually running?
+   - Check Dock or Activity Monitor
+   - Launch from Applications
+
+2. **Menu Bar Full**:
+   - macOS hides icons if menu bar full
+   - Quit other menu bar apps
+   - Hold ⌘ and drag icons to reorganize
+
+3. **Display Issues**:
+   - Check if app crashed
+   - Restart We Love Lights
+   - Restart Mac if persistent
+
+4. **Preferences**:
+   - Check app preferences
+   - Ensure menu bar icon enabled
+   - Verify no "hide icon" setting active
+
+### Global Hotkeys Not Working
+
+**Problem**: Keyboard shortcuts don't respond.
+
+**Solutions**:
+
+1. **Accessibility Permissions**:
+   - System Settings → Privacy & Security → Accessibility
+   - Ensure We Love Lights enabled
+   - May need to remove and re-add
+
+2. **Shortcut Conflicts**:
+   - Check for conflicts with other apps
+   - Try different key combination
+   - Avoid system shortcuts
+
+3. **App Running**:
+   - We Love Lights must be running
+   - Can be in background
+   - Check Activity Monitor
+
+4. **Hotkey Enabled**:
+   - Verify hotkey enabled in preferences
+   - Check not accidentally disabled
+   - Re-create if needed
+
+### Shortcuts Automation Not Triggering
+
+**Problem**: macOS Shortcuts automation doesn't run.
+
+**Solutions**:
+
+1. **Check Permissions**:
+   - System Settings → Privacy & Security → Automation
+   - Shortcuts must have permissions
+   - We Love Lights must be authorized
+
+2. **Verify Trigger**:
+   - Trigger conditions correct?
+   - Time accurate?
+   - Location services enabled (if location-based)?
+
+3. **Test Manually**:
+   - Run shortcut manually first
+   - If works manually but not auto, trigger issue
+   - If fails manually, shortcut issue
+
+4. **Notifications**:
+   - Check if notification asking for approval
+   - Disable "Ask Before Running" in automation
+   - Enable "Notify When Run" to verify execution
+
+## Data and Sync Issues
+
+### Changes Don't Sync
+
+**Problem**: Changes made don't appear on other devices/apps.
+
+**Solutions**:
+
+1. **Refresh**:
+   - Click refresh in We Love Lights
+   - Wait 10-30 seconds
+   - Check in other app
+
+2. **Bridge Storage**:
+   - Changes stored on bridge
+   - Verify bridge connection stable
+   - Check changes saved (not just previewed)
+
+3. **App Compatibility**:
+   - Ensure using compatible features
+   - Some advanced features may not sync everywhere
+   - Official Hue app may not show all We Love Lights features
+
+### Lost Configuration
+
+**Problem**: Scenes, groups, or rules disappeared.
+
+**Solutions**:
+
+1. **Check Bridge**:
+   - Verify connected to correct bridge
+   - Multiple bridges? Check bridge selector
+
+2. **Hidden Items**:
+   - Check Settings → Hidden Items
+   - Items may be hidden, not deleted
+   - Unhide to restore
+
+3. **Bridge Reset**:
+   - Did bridge reset?
+   - Power loss or factory reset?
+   - May need to reconfigure
+
+4. **App Update**:
+   - Recent app update?
+   - Check release notes
+   - Report if bug
+
+## Getting More Help
+
+If these solutions don't resolve your issue:
+
+1. **Check Documentation**:
+   - Search documentation for specific feature
+   - Review relevant guides
+   - Check [FAQ](/docs/support/faq)
+
+2. **Gather Information**:
+   - Note exact error messages
+   - Document steps to reproduce
+   - Check app version and macOS version
+
+3. **Report Issue**:
+   - Use in-app bug reporter
+   - Include logs and details
+   - See [Reporting Issues](/docs/support/reporting-issues)
+
+4. **Try Demo Mode**:
+   - Test if issue is app or hardware
+   - [Demo Mode](/docs/advanced/demo-mode) useful for isolation
+   - Compare behavior
+
+---
+
+Still need help? [Report an issue](/docs/support/reporting-issues) or check the [FAQ](/docs/support/faq).
+

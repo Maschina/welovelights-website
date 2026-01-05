@@ -1,0 +1,452 @@
+---
+title: Status Sensors
+description: Monitor environmental conditions with temperature and status sensors
+---
+
+# Status Sensors
+
+Status sensors provide environmental monitoring capabilities, allowing you to track temperature, light levels, and other conditions in your smart home. We Love Lights displays this information and can use it for automation decisions.
+
+## What Are Status Sensors?
+
+### Status Sensor Overview
+
+Status sensors are monitoring devices that measure environmental conditions:
+- **Read-only**: They monitor but don't control
+- **Wireless**: Zigbee communication
+- **Battery powered**: No wiring required
+- **Multi-sensor**: Many combine multiple measurements
+- **Automation input**: Use readings for conditional rules
+
+### Common Status Sensors
+
+Most status information comes from multi-function devices:
+
+**Philips Hue Motion Sensor**
+- Primary: Motion detection
+- Also includes:
+  - **Temperature sensor**: Ambient temperature (°C/°F)
+  - **Light level sensor**: Ambient lux measurement
+
+**Third-Party Sensors**
+- Dedicated temperature sensors
+- Humidity sensors (if Zigbee compatible)
+- Contact sensors (open/close detection)
+- Environmental monitors
+
+## Viewing Status Information
+
+### In Menu Bar
+
+Quick status view:
+
+1. Click **We Love Lights icon**
+2. Find **Sensors** section
+3. See current readings:
+   - Temperature
+   - Light level (lux)
+   - Other sensor data
+
+### In Studio
+
+Detailed sensor information:
+
+1. Open **Studio** window
+2. Go to **Sensors** section
+3. Select sensor device
+4. View comprehensive data:
+   - **Current readings**: All measurements
+   - **Timestamp**: When last updated
+   - **History**: Recent trends (if supported)
+   - **Battery level**: Sensor power status
+   - **Model info**: Device details
+
+## Temperature Sensors
+
+### Temperature Monitoring
+
+Track room temperatures:
+
+**Temperature Range**
+- Typically: -10°C to 50°C (14°F to 122°F)
+- Accuracy: ±1-2°C typical
+- Update frequency: Every few minutes
+
+**Display Units**
+- Celsius (°C) or Fahrenheit (°F)
+- Set preference in app settings
+- Converts automatically
+
+### Using Temperature Data
+
+**Monitoring**
+- Check room temperatures at a glance
+- Compare temperatures across rooms
+- Track seasonal changes
+- Identify heating/cooling issues
+
+**Comfort Verification**
+- Ensure rooms are comfortable temperature
+- Detect overheating or overcooling
+- Monitor nursery or bedroom temps
+
+**Energy Management**
+- Correlate with heating/cooling usage
+- Identify temperature inefficiencies
+- Optimize climate control
+
+### Temperature in Automation
+
+Use temperature readings for conditional automation:
+
+**Example Rules**
+
+**Summer Cooling**
+- **If** temperature > 26°C (79°F)
+- **And** motion detected
+- **Then** turn on fan (via smart plug)
+
+**Winter Comfort**
+- **If** temperature < 18°C (64°F)
+- **And** time is morning
+- **Then** activate "Warm Lighting" scene
+
+**Notification**
+- **If** temperature exceeds threshold
+- **Then** send notification (via Shortcuts)
+
+Note: Advanced automation may require Shortcuts app or third-party integration.
+
+## Light Level Sensors
+
+### Ambient Light Monitoring
+
+Measure room brightness:
+
+**Lux Measurement**
+- **Lux**: Standard unit of illumination
+- Range: 0 (darkness) to 10,000+ (bright sunlight)
+- Real-time monitoring
+
+**Typical Lux Values**
+- **0-5 lux**: Darkness, night
+- **10-50 lux**: Dim lighting, twilight
+- **50-200 lux**: Indoor ambient lighting
+- **200-500 lux**: Office/work lighting
+- **500+ lux**: Bright indoor or outdoor
+
+### Using Light Level Data
+
+**Monitoring**
+- Track natural light throughout day
+- Identify well-lit vs dark areas
+- Understand room lighting needs
+
+**Optimization**
+- Adjust artificial lighting based on natural light
+- Reduce energy waste
+- Maintain comfortable light levels
+
+### Light Level in Automation
+
+Primary use: Conditional motion sensor triggers
+
+**Motion Sensor Rules**
+- **If** motion detected
+- **And** light level < 50 lux (dark)
+- **Then** turn on lights
+
+**Benefits**
+- Don't turn on lights during daytime
+- Save energy when natural light sufficient
+- Adaptive to seasons (daylight changes)
+
+See [Motion Sensors](/docs/features/motion-sensors) for detailed setup.
+
+## Other Status Information
+
+### Battery Status
+
+For battery-powered sensors:
+
+**Monitoring**
+- Current battery percentage
+- Battery health status
+- Low battery warnings
+- Estimated remaining life
+
+**When to Replace**
+- Below 20%: Start planning replacement
+- Below 10%: Replace soon
+- Critical: Sensor may stop working
+
+### Device Reachability
+
+Connection status monitoring:
+
+**Reachable**
+- Device is online and communicating
+- Regular updates being received
+- Green status indicator
+
+**Unreachable**
+- Device not responding
+- May be out of range
+- Possible power or battery issue
+- Red or gray status indicator
+
+### Last Seen Timestamp
+
+When device last communicated:
+
+**Recent (< 5 minutes)**
+- Device functioning normally
+- Current data is fresh
+
+**Older**
+- May indicate connectivity issue
+- Check device status
+- Verify battery level
+
+## Sensor Placement
+
+### Optimal Positioning
+
+**Temperature Sensors**
+- **Height**: Breathing level (4-5 feet / 1.2-1.5m)
+- **Location**: Away from direct heat/cold sources
+- **Avoid**: Near windows, doors, vents, appliances
+- **Best**: Central room location, representative of room
+
+**Light Level Sensors**
+- **Purpose-based**: Position based on what you're monitoring
+- **For motion rules**: Near area where lights are needed
+- **For monitoring**: Representative location
+
+**General**
+- Secure mounting (sensors can drift if loose)
+- Clear line of sight for wireless communication
+- Within range of bridge or Zigbee repeaters
+
+### Multiple Sensors
+
+**Large Homes**
+- One sensor per major room
+- Additional sensors for large spaces
+- Basement and upper floor coverage
+
+**Specific Monitoring**
+- Nursery: Temperature monitoring
+- Home office: Comfort optimization
+- Basement: Humidity if supported
+
+## Data Logging and History
+
+### Current vs Historical Data
+
+**Current Readings**
+- Live, real-time measurements
+- Updated every few minutes
+- Displayed in We Love Lights
+
+**Historical Data**
+- Some bridges support limited history
+- Third-party tools for long-term logging
+- Export to other systems if needed
+
+### Using Historical Data
+
+If available:
+- Track temperature trends
+- Identify patterns
+- Optimize heating/cooling schedules
+- Troubleshoot comfort issues
+
+Note: We Love Lights primarily shows current readings. For extensive historical data, consider dedicated home automation platforms.
+
+## Automation with Status Sensors
+
+### Conditional Rules
+
+Use sensor data in automation conditions:
+
+**Time + Temperature**
+- **If** evening AND cold
+- **Then** activate warm, bright lighting
+
+**Motion + Light Level**
+- **If** motion AND dark
+- **Then** turn on lights
+
+**Multi-Condition**
+- **If** motion AND night time AND cold
+- **Then** activate night mode lighting + turn on heater
+
+### Advanced Integration
+
+**Shortcuts App**
+- Read sensor values
+- Create conditional automations
+- Combine with other data
+
+**Third-Party Integration**
+- HomeKit bridge for sensor data
+- Home Assistant integration
+- IFTTT triggers
+
+See [Shortcuts Integration](/docs/integration/shortcuts-app) for examples.
+
+## Sensor Accuracy
+
+### Understanding Limitations
+
+**Temperature Accuracy**
+- ±1-2°C typical error margin
+- Affected by sensor location
+- Not laboratory-grade precision
+- Sufficient for home automation
+
+**Light Level Accuracy**
+- Approximate lux readings
+- Relative accuracy more important
+- Good for automation thresholds
+- Not calibrated light meter
+
+**What This Means**
+- Sensors are reliable for automation
+- Don't rely on them for critical applications
+- Trends more important than absolute values
+
+### Improving Accuracy
+
+**Temperature**
+- Place away from heat sources
+- Allow air circulation around sensor
+- Don't expose to direct sunlight
+- Give sensor time to stabilize (30+ minutes)
+
+**Light Level**
+- Clean sensor lens regularly
+- Avoid obstructing sensor
+- Mount securely (stable readings)
+
+## Troubleshooting Status Sensors
+
+### Inaccurate Readings
+
+**Problem**: Temperature or light level seems wrong
+
+**Solutions**:
+- Check sensor placement (near heat/cold source?)
+- Clean sensor lens
+- Wait for stabilization after moving
+- Compare with other thermometer/light meter
+- Verify sensor is functioning (check battery)
+
+### No Data Updates
+
+**Problem**: Readings don't update
+
+**Solutions**:
+- Check battery level (replace if low)
+- Verify sensor is reachable
+- Check bridge connection
+- Power cycle sensor (remove/reinsert battery)
+- Re-pair with bridge if persistent
+
+### Sensor Shows Offline
+
+**Problem**: Sensor appears unreachable
+
+**Solutions**:
+- Check battery
+- Verify sensor is in range
+- Check for interference
+- Other Zigbee devices nearby for mesh?
+- Reset and re-pair sensor
+
+### Battery Drains Quickly
+
+**Problem**: Frequent battery replacement needed
+
+**Solutions**:
+- Use quality batteries (not cheap brands)
+- Check for firmware updates
+- Reduce reporting frequency if possible
+- Verify sensor isn't constantly retriggering
+- Replace sensor if defective
+
+## Best Practices
+
+### Monitoring Strategy
+
+1. **Strategic placement**: Representative locations
+2. **Regular checks**: Monitor battery levels
+3. **Trend awareness**: Watch for unusual changes
+4. **Maintenance**: Clean sensors periodically
+5. **Documentation**: Note sensor locations
+
+### Automation Tips
+
+1. **Use thresholds**: Not exact values
+2. **Add hysteresis**: Avoid rapid toggling
+3. **Combine conditions**: More reliable triggers
+4. **Test thoroughly**: Verify behavior in all conditions
+5. **Have fallbacks**: Manual control always available
+
+### Maintenance
+
+1. **Battery schedule**: Replace before critical
+2. **Quarterly check**: Test all sensors
+3. **Firmware updates**: Keep current
+4. **Recalibrate**: If readings drift significantly
+5. **Document**: Note installation dates and battery changes
+
+## Sensor Use Cases
+
+### Comfort Monitoring
+
+**Temperature-Based**
+- Monitor nursery overnight
+- Ensure bedroom comfort for sleep
+- Track office workspace temperature
+- Basement temperature monitoring
+
+### Energy Optimization
+
+**Lighting Efficiency**
+- Only use artificial light when actually dark
+- Adapt to seasonal daylight changes
+- Reduce unnecessary lighting costs
+
+**Climate Control**
+- Correlate temperature with HVAC usage
+- Identify rooms that need attention
+- Optimize heating/cooling schedules
+
+### Smart Automation
+
+**Adaptive Lighting**
+- Brighter when dark outside
+- Dimmer when natural light available
+- Automatic seasonal adjustment
+
+**Context-Aware Control**
+- Different scenes based on temperature
+- Adjust lighting intensity by ambient light
+- Multi-factor automation decisions
+
+## Next Steps
+
+Explore related sensor and automation features:
+
+1. **[Motion Sensors](/docs/features/motion-sensors)** - Active motion detection and automation
+2. **[Rules Engine](/docs/advanced/rules-engine)** - Advanced automation with conditions
+3. **[Shortcuts Integration](/docs/integration/shortcuts-app)** - Use sensor data in automations
+4. **[Automation Examples](/docs/integration/automation-examples)** - Real-world scenarios
+5. **[Supported Devices](/docs/reference/supported-devices)** - Compatible sensor models
+
+---
+
+Need help? Check the [FAQ](/docs/support/faq) or [troubleshooting guide](/docs/support/troubleshooting).
+

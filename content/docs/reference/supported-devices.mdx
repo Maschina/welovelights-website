@@ -1,0 +1,427 @@
+---
+title: Supported Devices
+description: Complete list of compatible bridges, lights, sensors, switches, and accessories
+---
+
+# Supported Devices
+
+We Love Lights works with Philips Hue and Zigbee-compatible devices connected through supported bridges. This guide lists compatible hardware.
+
+## Supported Bridges
+
+### Philips Hue Bridge
+
+**Hue Bridge v1** (Round)
+- Model: BSB001
+- Status: Supported
+- Limitations: No remote access, older API
+- Still functional for local control
+
+**Hue Bridge v2** (Square)
+- Model: BSB002
+- Status: Fully Supported ✅
+- Features: Local + remote access, latest API
+- Recommended for all features
+
+**Requirements**:
+- Ethernet connection to router
+- WiFi network for Mac connectivity
+- Power supply included with bridge
+
+### Phoscon deCONZ
+
+**ConBee II USB Stick**
+- Status: Supported ✅
+- Wider Zigbee device compatibility
+- Requires deCONZ gateway software
+- Local access only (no remote)
+
+**RaspBee Module**
+- Raspberry Pi addon module
+- Status: Supported ✅
+- Requires deCONZ software
+- Advanced user setup
+
+**ConBee III**
+- Newer model USB stick
+- Status: Should work (Zigbee 3.0 compatible)
+- Check with deCONZ compatibility
+
+## Lights and Bulbs
+
+### Philips Hue Color Bulbs
+
+**Full color RGB + white ambiance**
+
+**E26/E27 (Standard Socket)**
+- Hue White and Color Ambiance (A19/A60)
+- Hue White and Color Ambiance (A21/A67)
+- Status: Fully Supported ✅
+- Features: 16 million colors, white ambiance, dimming
+
+**E12/E14 (Candle/Small Socket)**
+- Hue White and Color Ambiance Candle
+- Status: Fully Supported ✅
+- Features: Full color, dimming, smaller form factor
+
+**GU10 (Spotlight)**
+- Hue White and Color Ambiance GU10
+- Status: Fully Supported ✅
+- Features: Full color, spotlight beam angle
+
+**BR30 (Flood/Recessed)**
+- Hue White and Color Ambiance BR30
+- Status: Fully Supported ✅
+- Features: Full color, wide beam angle
+
+### Philips Hue White Ambiance Bulbs
+
+**Adjustable white temperature, no colors**
+
+**E26/E27**
+- Hue White Ambiance (A19/A60)
+- Status: Fully Supported ✅
+- Features: 2200K-6500K temperature, dimming
+
+**E12/E14**
+- Hue White Ambiance Candle
+- Status: Fully Supported ✅
+
+**GU10**
+- Hue White Ambiance GU10
+- Status: Fully Supported ✅
+
+**Other Form Factors**
+- BR30, PAR38, various specialty bulbs
+- Status: Fully Supported ✅
+
+### Philips Hue White Bulbs
+
+**Dimmable white, single color temperature**
+
+**Various Form Factors**
+- Hue White (A19, A21, BR30, etc.)
+- Status: Fully Supported ✅
+- Features: On/off, dimming only
+- No color or temperature adjustment
+
+### Light Strips and Fixtures
+
+**Hue Lightstrip Plus**
+- Status: Fully Supported ✅
+- Features: Full color, cuttable, extendable
+- Versions: V2, V3, V4 all supported
+
+**Hue Play Light Bar**
+- Status: Fully Supported ✅
+- Features: Full color, compact, mountable
+- Good for accent and bias lighting
+
+**Hue Go**
+- Portable color light
+- Status: Fully Supported ✅
+- Features: Battery powered option, full color
+
+**Hue Iris / Bloom / Wellness / Signe**
+- Specialty table and floor lamps
+- Status: Fully Supported ✅
+- Features: Full color where applicable
+
+**Hue Outdoor Lights**
+- Lily, Calla, Impress, Econic outdoor lights
+- Status: Fully Supported ✅
+- Features: Weather-resistant, full color
+
+## Sensors
+
+### Motion Sensors
+
+**Philips Hue Motion Sensor**
+- Model: Multiple generations
+- Status: Fully Supported ✅
+- Features:
+  - Motion detection (160° field of view)
+  - Light level sensor (lux)
+  - Temperature sensor
+  - Battery powered (2x AAA)
+- Configuration: Time-based and generic rules
+
+**Third-Party Zigbee Motion Sensors**
+- Various brands (IKEA, Aqara, etc.)
+- Status: Depends on bridge compatibility
+- Features: Vary by model
+- Check deCONZ or Hue compatibility lists
+
+### Contact Sensors
+
+**Door/Window Sensors**
+- Various Zigbee contact sensors
+- Status: If supported by bridge
+- Features: Open/close detection
+- Use for automation triggers
+
+## Switches and Remotes
+
+### Philips Hue Switches
+
+**Hue Dimmer Switch**
+- Models: RWL020, RWL021, RWL022
+- Status: Fully Supported ✅
+- Features:
+  - 4 buttons (On, Dim Up, Dim Down, Off)
+  - Wall mountable or portable
+  - Battery powered (CR2450)
+  - Auto-configuration available
+
+**Hue Tap Switch**
+- Kinetic powered (no battery)
+- Status: Fully Supported ✅
+- Features:
+  - 4 buttons
+  - No battery required
+  - Requires firm press
+
+**Hue Smart Button**
+- Single button control
+- Status: Fully Supported ✅
+- Features:
+  - 1 button, multiple press types
+  - Compact design
+  - Battery powered (CR2032)
+
+**Hue Wall Switch Module**
+- In-wall switch replacement
+- Status: Fully Supported ✅
+- Features: Wired, replaces existing switch
+
+### Third-Party Switches
+
+**IKEA Trådfri Switches**
+- Various models (remote, dimmer, button)
+- Status: Compatible if paired with bridge
+- Features: Vary by model
+
+**Friends of Hue Switches**
+- Licensed third-party switches
+- Status: Generally supported
+- Examples: Busch-Jaeger, Niko, Jung
+
+**Other Zigbee Switches**
+- Compatibility depends on bridge
+- deCONZ may support more models
+- Test before purchasing
+
+## Smart Plugs
+
+### Philips Hue Smart Plug
+
+**Hue Smart Plug**
+- Regional variants (US, EU, UK, etc.)
+- Status: Fully Supported ✅
+- Features:
+  - On/off control
+  - Zigbee repeater (extends mesh)
+  - Compact design
+  - Maximum load varies by region (typically 10A)
+
+### Third-Party Smart Plugs
+
+**IKEA Trådfri Outlet**
+- Status: Compatible with most bridges
+- Features: On/off control, repeater
+
+**Innr Smart Plug**
+- Status: Compatible
+- Features: On/off, energy monitoring (if supported by bridge)
+
+**Other Zigbee Smart Plugs**
+- Various brands
+- Status: Check bridge compatibility
+- Look for Zigbee 3.0 certification
+
+## Specialized Devices
+
+### Entertainment/Sync Devices
+
+**Hue Play HDMI Sync Box**
+- Status: Not directly controlled
+- Requires Hue Bridge and app
+- We Love Lights controls connected lights
+
+**Hue Sync Gradient Lightstrip**
+- Status: Fully Supported ✅ (as a light)
+- Sync features via Hue Sync app
+- Standard light control in We Love Lights
+
+### Other Accessories
+
+**Hue Smart Ceiling/Wall Fixtures**
+- Various integrated fixtures
+- Status: Fully Supported ✅
+- Control like any other light
+
+**Third-Party Zigbee Devices**
+- Blinds, locks, thermostats
+- Status: Depends on bridge
+- May appear but with limited control
+- We Love Lights optimized for lighting
+
+## Device Limits
+
+### Bridge Capacity
+
+**Philips Hue Bridge**
+- Maximum ~50 lights
+- Maximum ~12 accessories (sensors, switches, plugs)
+- Total ~62 Zigbee devices
+- Theoretical Zigbee limit, practical may be lower
+
+**deCONZ Bridge**
+- Higher theoretical limits
+- Depends on hardware (ConBee vs RaspBee)
+- Can support 100+ devices with proper setup
+
+### Recommendations
+
+**Single Bridge**:
+- Up to 40 lights: Excellent performance
+- 40-50 lights: Good, approaching limit
+- 50+ lights: Consider second bridge
+
+**Multiple Bridges**:
+- Use when exceeding single bridge capacity
+- Better coverage for large homes
+- See [Multi-Bridge Setup](/docs/advanced/multi-bridge)
+
+## Compatibility Notes
+
+### Bluetooth-Only Devices
+
+**Not Supported**: ❌
+- Bluetooth-only Hue bulbs (no bridge)
+- Must use bridge for We Love Lights
+- Bridge required for all functionality
+
+### Zigbee 3.0
+
+**Recommended**: ✅
+- Zigbee 3.0 devices most compatible
+- Backward compatible with Zigbee LL (Light Link)
+- Better interoperability
+
+### Brand Mixing
+
+**Generally Works**:
+- Mix Philips Hue with third-party Zigbee
+- All must connect through same bridge
+- Some features may be brand-specific
+
+**Best Practice**:
+- Stick to reputable brands
+- Check compatibility lists before purchasing
+- Test return policy for new devices
+
+## Testing Compatibility
+
+### Before Purchase
+
+1. **Check Bridge Compatibility**:
+   - Philips Hue: Check official compatibility list
+   - deCONZ: Check Phoscon compatibility database
+
+2. **Look for Zigbee Certification**:
+   - Zigbee 3.0 preferred
+   - "Works with Philips Hue" badge
+   - "Friends of Hue" certification
+
+3. **Read Reviews**:
+   - Other users' experiences
+   - Compatibility reports
+   - Any known issues
+
+### After Purchase
+
+1. **Pair with Bridge**:
+   - Follow device instructions
+   - Use official Hue app or Phoscon for pairing
+   - May require reset if previously paired
+
+2. **Test in We Love Lights**:
+   - Should appear automatically after pairing
+   - Test all functions (on/off, dim, color, etc.)
+   - Check sensor/switch configuration
+
+3. **Report Issues**:
+   - If device doesn't work as expected
+   - May be bridge limitation vs app limitation
+   - [Report issue](/docs/support/reporting-issues) with device model info
+
+## Future Device Support
+
+### New Releases
+
+We Love Lights works through the bridge API, so:
+- New Philips Hue devices: Supported when released
+- New Zigbee devices: Supported if bridge supports them
+- App updates: May add device-specific features
+
+### Discontinuation
+
+Older devices may:
+- Continue to work indefinitely (Zigbee standard)
+- Lose some features if manufacturer stops support
+- Still function for basic operations
+
+## Getting Device Information
+
+### Finding Your Device Models
+
+**Philips Hue App**:
+- Device settings show model number
+- Check firmware version
+- View device capabilities
+
+**We Love Lights Studio**:
+- Select device → Device Info
+- Model number and type displayed
+- Firmware version shown
+
+**Physical Labels**:
+- Some devices have model stickers
+- Packaging includes model info
+- Manuals list specifications
+
+## Recommended Devices
+
+### For Beginners
+
+**Starter Set**:
+- Philips Hue Bridge v2
+- 2-3 Hue White & Color bulbs
+- 1 Hue Dimmer Switch
+- 1 Hue Motion Sensor
+
+**Why**:
+- Official devices, guaranteed compatibility
+- All features supported
+- Good foundation to build on
+
+### For Advanced Users
+
+**Consider**:
+- deCONZ bridge for broader compatibility
+- Mix of Philips Hue and third-party devices
+- Multiple bridges for large installations
+- Specialty Zigbee devices (blinds, sensors, etc.)
+
+## Next Steps
+
+- **[Getting Started](/docs/getting-started)** - Set up your devices
+- **[Bridge Discovery](/docs/setup/bridge-discovery)** - Connect your bridge
+- **[Device Control](/docs/basics/device-control)** - Learn to control devices
+- **[Multi-Bridge Setup](/docs/advanced/multi-bridge)** - Multiple bridges
+
+---
+
+Questions about compatibility? Check the [FAQ](/docs/support/faq) or [report an issue](/docs/support/reporting-issues).
+

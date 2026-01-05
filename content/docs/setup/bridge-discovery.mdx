@@ -1,0 +1,261 @@
+---
+title: Bridge Discovery
+description: Learn how to find and connect your Philips Hue or deCONZ bridge to We Love Lights
+---
+
+# Bridge Discovery
+
+Connecting your bridge is the first and most important step to using We Love Lights. This guide covers both automatic and manual discovery methods for Philips Hue and Phoscon deCONZ bridges.
+
+## Supported Bridge Types
+
+We Love Lights works with:
+
+### Philips Hue Bridge
+- The official Philips Hue Bridge (round or square models)
+- Uses Hue API V1 for maximum compatibility
+- Supports both local and remote connections
+- Most common and widely used bridge
+
+### Phoscon deCONZ Bridge
+- ConBee USB stick with deCONZ software
+- RaspBee Raspberry Pi module
+- Compatible with wider range of Zigbee devices
+- Local connections only
+
+Note: **Bluetooth-only** Philips Hue devices (without a bridge) are **not supported** by We Love Lights.
+
+## Automatic Bridge Discovery
+
+The easiest way to connect your bridge is through automatic discovery.
+
+### Steps for Automatic Discovery
+
+1. **Ensure Same Network**
+   - Your Mac and bridge must be on the same WiFi/Ethernet network
+   - Check your Mac's WiFi connection
+   - Verify your bridge has a solid blue light (Hue) or is accessible via web interface (deCONZ)
+
+2. **Start Discovery**
+   - Click the **We Love Lights icon** in your menu bar
+   - If no bridges are configured, you'll see **"Add Bridge"** or **"Find Bridge"**
+   - Click to start automatic discovery
+
+3. **Wait for Detection**
+   - We Love Lights will scan your network
+   - This typically takes 5-10 seconds
+   - Found bridges will appear in a list
+
+4. **Select Your Bridge**
+   - If multiple bridges are found, select the one you want to connect
+   - The bridge name and IP address will be displayed
+
+### What If Automatic Discovery Fails?
+
+If We Love Lights can't find your bridge automatically:
+- Verify network connectivity (same network for both devices)
+- Check that your bridge is powered on and functioning
+- Try manual discovery (see below)
+- Consult the [troubleshooting guide](/docs/support/troubleshooting#bridge-not-found)
+
+## Manual Bridge Addition
+
+If automatic discovery doesn't work, you can add your bridge manually using its IP address.
+
+### Finding Your Bridge IP Address
+
+#### For Philips Hue Bridge
+
+**Method 1: Router Admin Panel**
+1. Log into your router's admin panel
+2. Look for connected devices list
+3. Find a device named "Philips-hue" or similar
+4. Note the IP address
+
+**Method 2: discovery.meethue.com**
+1. Visit [https://discovery.meethue.com](https://discovery.meethue.com) in your browser
+2. Philips provides a discovery service that finds bridges on your network
+3. The IP address will be displayed
+
+**Method 3: Philips Hue App**
+1. Open the official Philips Hue mobile app
+2. Go to **Settings** → **Hue Bridges**
+3. Tap your bridge name
+4. Look for "IP Address" in the bridge information
+
+#### For deCONZ Bridge
+
+**deCONZ Phoscon App**
+1. Open the Phoscon web interface (usually `http://[raspberry-pi-ip]:80`)
+2. The IP address is in your browser's address bar
+3. Default port is typically 80
+
+### Adding Bridge Manually
+
+1. **Open Bridge Settings**
+   - Open We Love Lights Studio window
+   - Go to bridge management or settings
+   - Look for **"Add Bridge Manually"** option
+
+2. **Enter Bridge Details**
+   - **IP Address**: Enter the bridge's IP address (e.g., `192.168.1.100`)
+   - **Bridge Type**: Select Philips Hue or deCONZ
+   - **Port**: Usually auto-filled (80 for Hue, check deCONZ settings)
+
+3. **Save and Connect**
+   - Click **Save** or **Connect**
+   - Proceed to authentication (next step)
+
+## Bridge Authentication
+
+Once your bridge is discovered (automatically or manually), you must authenticate We Love Lights.
+
+### Authentication Process
+
+#### For Philips Hue Bridge
+
+1. **Authentication Prompt**
+   - We Love Lights will show a message: "Press the button on your bridge"
+   - You typically have **30 seconds** to complete this step
+
+2. **Press the Bridge Button**
+   - Go to your physical Philips Hue Bridge
+   - Press the **round button on top** of the bridge
+   - The button should be in the center of the bridge
+
+3. **Automatic Connection**
+   - Return to your Mac
+   - We Love Lights will automatically detect the button press
+   - Authentication completes within 1-2 seconds
+
+4. **Success**
+   - You'll see a confirmation message
+   - Your bridge is now connected
+   - Device discovery begins automatically
+
+#### For deCONZ Bridge
+
+1. **Unlock Gateway**
+   - Open the Phoscon web interface
+   - Go to **Settings** → **Gateway**
+   - Click **"Unlock Gateway"** (valid for 60 seconds)
+
+2. **Connect in We Love Lights**
+   - Return to We Love Lights
+   - Click **Connect** or **Authenticate**
+   - The app will create an API key while the gateway is unlocked
+
+3. **Success**
+   - Connection established
+   - Devices are loaded from deCONZ
+
+### Security Note
+
+Authentication creates a unique API key that We Love Lights stores securely in your Mac's Keychain. This key allows the app to communicate with your bridge without requiring repeated authentication.
+
+## Connection Verification
+
+After authentication, verify your connection:
+
+### Check Connected Status
+
+- **Menu Bar**: The We Love Lights icon should show your bridge as connected
+- **Studio Window**: Bridge status indicator shows green or "Connected"
+- **Device List**: You should see your rooms, lights, and devices
+
+### Device Discovery
+
+We Love Lights will automatically:
+- Load all rooms and zones from your bridge
+- Discover all lights, including color, white ambiance, and dimmable types
+- Find smart plugs, motion sensors, switches
+- Import existing scenes
+
+This process is automatic and takes 5-15 seconds depending on setup size.
+
+## Managing Multiple Bridges
+
+We Love Lights supports connecting to multiple bridges simultaneously.
+
+### Adding a Second (or Third) Bridge
+
+1. **Open Studio Window**
+2. Go to **Bridge Settings** or use the bridge selector
+3. Click **"Add Bridge"**
+4. Follow the same discovery and authentication steps
+5. Switch between bridges using the bridge selector
+
+See the [Multi-Bridge Setup guide](/docs/advanced/multi-bridge) for advanced multi-bridge workflows.
+
+## Bridge Connection Status
+
+### Status Indicators
+
+- **Connected**: Green indicator, all features available
+- **Connecting**: Yellow/orange, attempting to establish connection
+- **Disconnected**: Red indicator, no connection to bridge
+- **Remote**: Blue indicator (if using remote access)
+
+### Connection Heartbeat
+
+We Love Lights maintains a regular "heartbeat" connection to your bridge:
+- Checks connection status every few seconds
+- Automatically detects and reports connection loss
+- Attempts auto-reconnection when connection is restored
+
+## Troubleshooting
+
+### Bridge Not Found
+
+**Problem**: Automatic discovery doesn't find any bridges
+
+**Solutions**:
+- Verify Mac and bridge are on same network
+- Check bridge is powered on (solid blue light for Hue)
+- Try manual discovery with IP address
+- Temporarily disable VPN if active
+- Check firewall settings aren't blocking discovery
+
+### Authentication Fails
+
+**Problem**: Button press doesn't authenticate
+
+**Solutions**:
+- Ensure you press button within 30-second window
+- Press button firmly until it lights up
+- Try authentication process again
+- Restart bridge if problem persists
+
+### Bridge Shows Offline
+
+**Problem**: Bridge was connected but now shows offline
+
+**Solutions**:
+- Check network connectivity
+- Verify bridge hasn't changed IP address (set static IP in router)
+- Restart We Love Lights
+- See [troubleshooting guide](/docs/support/troubleshooting)
+
+### Can't Connect to deCONZ
+
+**Problem**: deCONZ bridge won't connect
+
+**Solutions**:
+- Verify deCONZ gateway is running
+- Check Phoscon web interface is accessible
+- Ensure gateway was unlocked before connecting
+- Check port number is correct (default: 80)
+
+## Next Steps
+
+Bridge connected successfully? Great! Here's what to do next:
+
+1. **[Basic Controls](/docs/basics/menu-bar)** - Start controlling your lights
+2. **[Studio Window](/docs/basics/studio-window)** - Explore advanced features
+3. **[Remote Access](/docs/setup/remote-access)** - Set up control from anywhere
+4. **[Device Control](/docs/basics/device-control)** - Learn device management
+
+---
+
+Need help? Check the [troubleshooting guide](/docs/support/troubleshooting) or [FAQ](/docs/support/faq).
+

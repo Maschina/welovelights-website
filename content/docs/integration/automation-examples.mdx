@@ -1,0 +1,586 @@
+---
+title: Automation Examples
+description: Real-world automation scenarios and implementation guides
+---
+
+# Automation Examples
+
+This guide provides practical, real-world automation examples you can implement with We Love Lights. Each example includes the scenario, implementation steps, and customization tips.
+
+## Morning Routines
+
+### Gradual Wake-Up Lighting
+
+**Scenario**: Gentle lighting progression to wake naturally.
+
+**Implementation**: macOS Shortcuts
+
+**Setup**:
+1. Create three scenes:
+   - "Wake Start": 5% warm white
+   - "Wake Mid": 30% neutral white
+   - "Wake Full": 80% cool white
+
+2. Create Shortcut "Wake Up":
+   - **7:00 AM**: Activate "Wake Start"
+   - **Wait 5 minutes**
+   - **7:05 AM**: Activate "Wake Mid"
+   - **Wait 10 minutes**
+   - **7:15 AM**: Activate "Wake Full"
+
+3. Set automation trigger for 7:00 AM weekdays
+
+**Customization**:
+- Adjust timing for your schedule
+- Change color temperatures to preference
+- Add coffee maker (smart plug) at final step
+
+### Weekend vs Weekday Mornings
+
+**Scenario**: Different routines for workdays and weekends.
+
+**Implementation**: Shortcuts with conditionals
+
+**Setup**:
+1. Create Shortcut "Morning Routine":
+   ```
+   Get Day of Week
+   If day is Monday-Friday
+       Activate Scene "Work Morning" (bright, energizing)
+       Wait 30 minutes
+       Activate Scene "Focus Mode"
+   Otherwise (Weekend)
+       Activate Scene "Relaxed Morning" (warm, gentle)
+   End If
+   ```
+
+2. Trigger at same time every day
+3. Logic handles the difference
+
+**Benefits**:
+- Single shortcut to maintain
+- Appropriate lighting for context
+- Can add more weekend-specific actions
+
+## Evening and Bedtime
+
+### Sunset-Triggered Evening Mode
+
+**Scenario**: Automatically shift to evening lighting at sunset.
+
+**Implementation**: Shortcuts + Time trigger
+
+**Setup**:
+1. Create scene "Evening Ambiance" (warm, medium brightness)
+
+2. Create automation:
+   - **Trigger**: Sunset time (or fixed time like 6 PM)
+   - **Action**: Activate "Evening Ambiance"
+
+3. macOS Shortcuts can use sunset time if configured with location
+
+**Alternative**: Fixed time trigger (6-7 PM) if sunset automation unavailable
+
+### Progressive Bedtime Dimming
+
+**Scenario**: Gradually dim lights leading to bedtime.
+
+**Implementation**: Multiple Shortcuts or single complex one
+
+**Setup**:
+1. Create scenes:
+   - "Evening" (60% warm)
+   - "Pre-Bed" (30% warm)
+   - "Bedtime" (10% very warm/amber)
+
+2. Set automations:
+   - **9:00 PM**: "Evening"
+   - **10:00 PM**: "Pre-Bed"
+   - **10:30 PM**: "Bedtime"
+
+**Advanced**: Single shortcut with delays (may be interrupted if Mac sleeps)
+
+### Goodnight Routine
+
+**Scenario**: One command to prepare house for sleep.
+
+**Implementation**: Scene + Shortcut + Voice command
+
+**Setup**:
+1. Create Shortcut "Good Night":
+   - Turn off all lights except bedroom
+   - Activate "Bedroom Nightlight" (2% warm)
+   - Turn on bedroom fan (smart plug)
+   - Turn off entertainment devices (smart plugs)
+
+2. Add Siri phrase: "Good Night"
+
+3. Trigger:
+   - Voice: "Hey Siri, good night"
+   - Physical: Bedside switch long-press
+   - Manual: Click shortcut
+
+**Result**: Complete house shutdown with one command
+
+## Motion-Based Automation
+
+### Smart Hallway Lighting
+
+**Scenario**: Lights turn on when entering dark hallway.
+
+**Implementation**: Motion sensor rules (native to bridge)
+
+**Setup**:
+1. Place motion sensor in hallway
+
+2. Configure time-based rules:
+
+   **Daytime (6 AM - 10 PM)**:
+   - Trigger: Motion
+   - Condition: Light level < 50 lux
+   - Action: Turn on 60% neutral
+   - Timeout: 2 minutes
+
+   **Nighttime (10 PM - 6 AM)**:
+   - Trigger: Motion
+   - Condition: Always
+   - Action: Turn on 5% warm amber
+   - Timeout: 3 minutes
+
+**Customization**:
+- Adjust lux thresholds for your hallway
+- Change nighttime brightness to preference
+- Longer timeout if needed
+
+### Bathroom Night Mode
+
+**Scenario**: Bathroom light adapts to time of day automatically.
+
+**Implementation**: Motion sensor with time-based rules
+
+**Setup**:
+1. Motion sensor in bathroom
+
+2. Rules:
+
+   **Day (6 AM - 9 PM)**:
+   - Motion: Turn on 80% cool white
+   - Condition: Light < 100 lux
+   - Timeout: 5 minutes
+
+   **Night (9 PM - 6 AM)**:
+   - Motion: Turn on 10% red or warm amber
+   - Condition: Always
+   - Timeout: 3 minutes
+
+**Why it works**:
+- Day: Bright task lighting when needed
+- Night: Minimal disruption, preserves night vision
+- No manual switching required
+
+### Multi-Room Path Lighting
+
+**Scenario**: Light path from bedroom to bathroom at night.
+
+**Implementation**: Multiple sensors + complex rules
+
+**Setup**:
+1. Sensors: Bedroom doorway, hallway, bathroom
+
+2. Rule logic:
+   - **Any sensor** triggers in night mode (11 PM - 6 AM)
+   - Turn on: Bedroom doorway light (5%)
+   - Turn on: Hallway lights (5%)
+   - Turn on: Bathroom light (10%)
+   - Timeout: 5 minutes after last motion
+
+3. Configure each sensor to activate same scene
+
+**Result**: Safe path without blinding brightness
+
+## Work and Focus
+
+### Focus Mode Integration
+
+**Scenario**: Lighting changes with macOS Focus modes.
+
+**Implementation**: Shortcuts + Focus automation
+
+**Setup**:
+1. Create scenes:
+   - "Deep Focus" (bright cool white, desk only)
+   - "Normal Work" (bright neutral, full office)
+   - "Break Time" (medium warm)
+
+2. Create automations:
+
+   **When "Work" Focus activates**:
+   - Activate "Normal Work"
+   - Turn off non-office lights
+
+   **When "Do Not Disturb" activates**:
+   - Activate "Deep Focus"
+   - Minimize all distractions
+
+   **When Focus deactivates**:
+   - Activate "Normal" lighting
+
+**Benefits**:
+- Automatic environment matching
+- Visual focus cue
+- Supports concentration
+
+### Meeting Dimmer
+
+**Scenario**: Dim lights during video calls.
+
+**Implementation**: Calendar-based Shortcut
+
+**Setup**:
+1. Create Shortcut "Meeting Mode":
+   ```
+   Get Current Brightness
+   Store to "Original Brightness"
+   Set Brightness to 40%
+   Show Notification "Meeting mode active"
+   ```
+
+2. Create Shortcut "Meeting End":
+   ```
+   Set Brightness to "Original Brightness"
+   ```
+
+3. **Manual trigger**: Run when meeting starts/ends
+
+**Automatic** (advanced):
+- Calendar automation when event contains "Meeting"
+- Requires Shortcuts automation setup
+- May need manual trigger for reliability
+
+### Pomodoro Work Sessions
+
+**Scenario**: 25-minute work, 5-minute break lighting cycles.
+
+**Implementation**: Timer-based Shortcut
+
+**Setup**:
+1. Create scenes:
+   - "Focus Work" (bright cool)
+   - "Short Break" (medium warm)
+
+2. Create Shortcut "Pomodoro":
+   ```
+   Repeat 4 times:
+       Activate "Focus Work"
+       Wait 25 minutes
+       Show notification "Break time!"
+       Activate "Short Break"
+       Wait 5 minutes
+       Show notification "Work time!"
+   End Repeat
+   Activate "Long Break"
+   ```
+
+3. Trigger manually when starting work session
+
+**Note**: Shortcut must remain active (Mac doesn't sleep) for full duration
+
+## Arrival and Departure
+
+### Welcome Home Lighting
+
+**Scenario**: Lights turn on when arriving home.
+
+**Implementation**: Location-based Shortcut
+
+**Setup**:
+1. Create Shortcut "Arrive Home":
+   ```
+   Get Current Time
+   If time is after sunset OR before sunrise
+       If time is before 11 PM
+           Activate "Welcome Home Evening"
+       Otherwise
+           Activate "Welcome Home Night" (dim)
+       End If
+   Otherwise
+       Do nothing (daytime, enough light)
+   End If
+   ```
+
+2. Automation trigger: Arrive at Home location
+
+3. Ensure location services enabled
+
+**Customization**:
+- Adjust time thresholds
+- Different scenes for different times
+- Turn on specific path lights
+
+### Leaving Home Security
+
+**Scenario**: Ensure lights off when leaving, except security lights.
+
+**Implementation**: Location + Scene
+
+**Setup**:
+1. Create scene "Away Mode":
+   - All interior lights off
+   - Exterior entry light on (30%)
+   - Or random simulation lights
+
+2. Create Shortcut "Leave Home":
+   - Activate "Away Mode"
+   - Turn off all smart plugs (optional)
+   - Show notification "Secured"
+
+3. Trigger: Leave Home location
+
+**Security Addition**:
+- Random light simulation via complex Shortcut
+- Timed exterior lights (on at sunset, off at sunrise)
+
+## Seasonal and Special Occasions
+
+### Holiday Lighting Automation
+
+**Scenario**: Automatic holiday light control.
+
+**Implementation**: Smart plug + time schedule
+
+**Setup**:
+1. Plug holiday lights into smart plug
+
+2. Create Shortcut "Holiday Lights On":
+   - Turn on holiday lights plug
+   - Optionally activate themed scene
+
+3. Create Shortcut "Holiday Lights Off":
+   - Turn off holiday lights plug
+
+4. Schedule:
+   - **On**: Sunset (or 5 PM)
+   - **Off**: 11 PM or midnight
+
+5. Manual control also available
+
+**Benefits**:
+- No forgetting to turn on/off
+- Energy savings
+- Consistent schedule
+
+### Season-Based Temperature Shifts
+
+**Scenario**: Warmer lights in winter, cooler in summer.
+
+**Implementation**: Manual seasonal scene switching
+
+**Setup**:
+1. Create seasonal scene variations:
+   - "Living Room - Summer" (cooler tones)
+   - "Living Room - Winter" (warmer tones)
+
+2. Update shortcuts seasonally:
+   - Spring/Summer: Use cooler versions
+   - Fall/Winter: Use warmer versions
+
+**Automatic** (advanced):
+- Date-based conditionals in Shortcuts
+- Switch scenes based on month
+- Complex but possible
+
+### Party Mode
+
+**Scenario**: Transform home for entertaining.
+
+**Implementation**: Scene + optional color loop
+
+**Setup**:
+1. Create "Party" scene:
+   - Bright, colorful lights
+   - Or color loop effect
+   - Accent areas highlighted
+
+2. Create Shortcut "Party Mode":
+   - Activate "Party" scene (main bridge)
+   - Activate "Party Outdoor" (if second bridge)
+   - Turn on accent lighting (smart plugs)
+
+3. Voice command: "Hey Siri, party mode"
+
+**End party**:
+- "Hey Siri, normal mode" or similar
+- Restores regular lighting
+
+## Energy Saving
+
+### Occupancy-Based Room Shutdown
+
+**Scenario**: Turn off rooms when unoccupied.
+
+**Implementation**: Motion sensors with reasonable timeouts
+
+**Setup**:
+1. Motion sensors in each room
+
+2. Configure rules:
+   - Motion detected: Turn on lights
+   - No motion for 10-30 minutes: Turn off lights
+
+3. Adjust timeouts per room:
+   - High traffic (hallway): 2-3 minutes
+   - Active use (office): 10-15 minutes
+   - Relaxation (bedroom): 30+ minutes
+
+**Result**: Lights only on when needed
+
+### Daylight Harvesting
+
+**Scenario**: Don't turn on lights when natural light sufficient.
+
+**Implementation**: Motion sensors with light-level conditions
+
+**Setup**:
+1. Motion sensors with light sensors
+
+2. Rules:
+   - Trigger: Motion detected
+   - Condition: Light level < threshold (e.g., 50 lux)
+   - Action: Turn on lights
+
+**Result**:
+- Lights only on when actually dark
+- Energy savings during daytime
+- Automatic adaptation to weather
+
+### Night Mode Power Saving
+
+**Scenario**: Minimize power usage late at night.
+
+**Implementation**: Time-based scene + smart plugs
+
+**Setup**:
+1. Create "Night Minimum" scene:
+   - Only essential lights (nightlights)
+   - Very low brightness
+
+2. Create Shortcut "Night Mode":
+   - 11 PM: Activate "Night Minimum"
+   - Turn off all non-essential smart plugs
+   - Turn off decorative lights
+
+3. Reverse in morning
+
+**Savings**: Most lights off 8+ hours per night
+
+## Advanced Scenarios
+
+### Adaptive Circadian Lighting
+
+**Scenario**: Color temperature follows natural circadian rhythm.
+
+**Implementation**: Time-based scenes throughout day
+
+**Setup**:
+1. Create scenes for each phase:
+   - 6 AM: Warm white (2700K) - Gentle wake
+   - 9 AM: Neutral white (4000K) - Alert morning
+   - 12 PM: Cool white (5500K) - Peak alertness
+   - 3 PM: Neutral white (4000K) - Afternoon
+   - 6 PM: Warm white (3000K) - Evening wind-down
+   - 9 PM: Very warm (2200K) - Pre-sleep
+
+2. Schedule each scene transition
+
+3. Override with manual control when needed
+
+**Benefits**:
+- Supports natural sleep-wake cycle
+- Improves sleep quality
+- Better daytime alertness
+
+### Weather-Responsive Lighting
+
+**Scenario**: Adjust lighting based on weather conditions.
+
+**Implementation**: Shortcuts with weather API
+
+**Setup** (requires Weather app integration):
+1. Create Shortcut:
+   ```
+   Get Current Weather
+   If condition is "Cloudy" or "Rainy"
+       Activate "Bright Compensating" scene
+   Otherwise if condition is "Clear" or "Sunny"
+       Activate "Normal Balanced" scene
+   End If
+   ```
+
+2. Trigger: Morning (or throughout day)
+
+**Why**: Compensate for lack of natural light on dark days
+
+### Multi-Home Management
+
+**Scenario**: Control vacation home from primary residence.
+
+**Implementation**: Remote access + Shortcuts
+
+**Setup**:
+1. Configure remote access on vacation home bridge
+
+2. Create location-based Shortcuts:
+
+   **At Primary Home**:
+   - Control via local network
+
+   **At Vacation Home**:
+   - Control via remote connection
+
+   **Away from Both**:
+   - Control both remotely
+   - Ensure both appear occupied
+
+**Use Case**: Simulate occupancy in both locations while traveling
+
+## Troubleshooting Automation
+
+### Automation Doesn't Run
+
+**Check**:
+- Shortcut/rule is enabled
+- Triggers are correct (time, location)
+- Bridge is connected
+- We Love Lights is running
+- Conditions are met
+
+### Inconsistent Execution
+
+**Solutions**:
+- Simplify complex automations
+- Check network stability
+- Verify condition logic
+- Test components individually
+
+### Wrong Time Execution
+
+**Check**:
+- System time correct
+- Time zone correct
+- Shortcut time set properly
+- Rule time matches intention
+
+## Next Steps
+
+Ready to implement? Start here:
+
+1. **[Shortcuts Integration](/docs/integration/shortcuts-app)** - Learn Shortcuts in detail
+2. **[Motion Sensors](/docs/features/motion-sensors)** - Configure sensor automation
+3. **[Rules Engine](/docs/advanced/rules-engine)** - Advanced rule creation
+4. **[Scenes](/docs/features/scenes)** - Create scenes for automation to use
+5. **[Switches](/docs/features/switches)** - Physical automation triggers
+
+---
+
+Questions? Visit the [FAQ](/docs/support/faq) or [troubleshooting guide](/docs/support/troubleshooting).
+

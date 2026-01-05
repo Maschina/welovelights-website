@@ -1,0 +1,539 @@
+---
+title: Shortcuts App Integration
+description: Automate We Love Lights with macOS Shortcuts and Siri
+---
+
+# Shortcuts App Integration
+
+We Love Lights integrates with macOS Shortcuts (formerly Automator actions) using App Intents, allowing you to create powerful automations, voice commands with Siri, and complex workflows that combine lighting control with other apps and services.
+
+## What is Shortcuts Integration?
+
+### Overview
+
+Shortcuts is Apple's automation framework:
+- **Pre-installed**: Available on all modern Macs
+- **Visual programming**: No code required
+- **Cross-platform**: Works on Mac, iPhone, iPad
+- **Siri integration**: Voice-activated shortcuts
+- **Automation triggers**: Time, location, app-based
+
+**We Love Lights + Shortcuts** = Powerful lighting automation beyond what the bridge alone can do.
+
+### What You Can Do
+
+**Time-Based Automation**:
+- Turn on lights at specific times
+- Scene changes throughout the day
+- Wake-up lighting routines
+- Bedtime automation
+
+**Location-Based**:
+- Activate scenes when arriving home
+- Turn off lights when leaving
+- Different lighting based on location
+
+**App Integration**:
+- Dim lights when video call starts
+- Brighten when opening work apps
+- Turn on focus lighting with Focus modes
+- Integration with Calendar, Reminders, etc.
+
+**Voice Control**:
+- "Hey Siri, activate movie mode"
+- "Hey Siri, turn off all lights"
+- "Hey Siri, set bedroom to 50%"
+- Custom voice commands
+
+## Available We Love Lights Actions
+
+### Scene Control
+
+**Activate Scene**
+- Trigger any scene from Shortcuts
+- Select bridge and scene
+- Instant activation
+
+**Parameters**:
+- Bridge: Which bridge to use
+- Scene: Which scene to activate
+
+**Use Cases**:
+- Time-based scene changes
+- Voice-activated scenes
+- App-triggered atmospheres
+
+### Light Control
+
+**Turn Lights On/Off**
+- Control specific lights or groups
+- Simple binary control
+
+**Parameters**:
+- Bridge: Which bridge
+- Light/Group: Which device(s)
+- State: On or Off
+
+**Set Brightness**
+- Adjust brightness to specific level
+- Precise control
+
+**Parameters**:
+- Bridge: Which bridge
+- Light/Group: Which device(s)
+- Brightness: 0-100%
+
+**Set Color**
+- Change light color
+- Temperature or full color
+
+**Parameters**:
+- Bridge: Which bridge
+- Light/Group: Which device(s)
+- Color: Color value or temperature
+
+### Room/Group Control
+
+**Control Room**
+- Turn room on/off
+- Set room brightness
+- Apply room scene
+
+**Parameters**:
+- Bridge: Which bridge
+- Room: Which room/zone
+- Action: On, Off, Brightness, Scene
+
+### Query Information
+
+**Get Light State**
+- Check if light is on/off
+- Get current brightness
+- Get current color
+
+**Returns**:
+- State information
+- Use in conditional logic
+
+**Get Scene List**
+- Retrieve available scenes
+- Use in dynamic shortcuts
+
+**Returns**:
+- List of scenes
+
+## Creating Your First Shortcut
+
+### Simple Example: Good Morning
+
+Create a morning routine that turns on lights:
+
+1. **Open Shortcuts app** on Mac
+2. Click **"+"** to create new shortcut
+3. Search for **"We Love Lights"** actions
+4. Add **"Activate Scene"** action
+5. Configure:
+   - Select your bridge
+   - Choose "Morning" or "Bright" scene
+6. Name shortcut: **"Good Morning Lights"**
+7. Click **Done**
+
+**Test**:
+- Click shortcut to run
+- Lights should activate chosen scene
+
+### Adding Time Trigger
+
+Make it run automatically:
+
+1. **Edit the shortcut** (if not already open)
+2. Click **info icon** (ⓘ) or **Details**
+3. Enable **"Run Automatically"** or **"Automation"**
+4. Click **"Add Automation"**
+5. Choose **"Time of Day"**
+6. Set time (e.g., 7:00 AM)
+7. Set days (e.g., weekdays only)
+8. Enable **"Run Immediately"** or disable notification
+9. Save automation
+
+Now lights activate automatically every weekday at 7 AM!
+
+## Advanced Shortcut Examples
+
+### Multi-Scene Morning Routine
+
+Gradual wake-up with multiple stages:
+
+**Shortcut Steps**:
+1. **Activate Scene**: "Nightlight" (5% warm)
+2. **Wait**: 2 minutes
+3. **Activate Scene**: "Morning Low" (30% neutral)
+4. **Wait**: 5 minutes
+5. **Activate Scene**: "Morning Bright" (80% cool)
+
+**Result**: Gentle 7-minute wake-up sequence
+
+### Work Focus Mode Integration
+
+Automatically adjust lighting when entering Focus:
+
+**Automation Trigger**: When "Work" Focus turns on
+
+**Shortcut Steps**:
+1. **Activate Scene**: "Office - Focus Mode"
+2. **Turn Off**: Kitchen lights
+3. **Turn Off**: Living room lights
+4. **Show Notification**: "Work mode activated"
+
+**When Focus ends**:
+1. **Activate Scene**: "Office - Normal"
+2. **Turn On**: Living room to 60%
+
+### Location-Based Arrival
+
+Turn on lights when arriving home:
+
+**Automation Trigger**: Arrive at Home
+
+**Conditions**: If after sunset OR before sunrise
+
+**Shortcut Steps**:
+1. **Get Current Time**
+2. **If** time is between 6 PM and 11 PM:
+   - **Activate Scene**: "Evening Welcome"
+3. **Otherwise** (late night):
+   - **Activate Scene**: "Night Entry"
+4. **Wait**: 15 minutes
+5. **Activate Scene**: "Evening Normal"
+
+### Leaving Home Routine
+
+Ensure everything is off:
+
+**Automation Trigger**: Leave Home location
+
+**Shortcut Steps**:
+1. **Turn Off**: All lights on Bridge 1
+2. **Turn Off**: All lights on Bridge 2 (if multiple bridges)
+3. **Turn On**: Entry hall light to 30% (security)
+4. **Show Notification**: "Lights secured"
+
+### Calendar Integration
+
+Dim lights during calendar events:
+
+**Automation Trigger**: When calendar event starts
+
+**Conditions**: Event contains "Meeting" or "Call"
+
+**Shortcut Steps**:
+1. **Get Current Brightness**: Office lights
+2. **Set to Variable**: "Original Brightness"
+3. **Set Brightness**: Office lights to 40%
+4. **Wait Until**: Calendar event ends
+5. **Set Brightness**: Office lights to "Original Brightness"
+
+### Siri Voice Commands
+
+Create custom voice shortcuts:
+
+**"Movie Time"**:
+1. Activate Scene: "Living Room - Movie"
+2. Turn Off: Kitchen lights
+3. Turn Off: Hallway lights
+4. Say: "Movie mode activated"
+
+**Invoke**: "Hey Siri, movie time"
+
+**"Good Night"**:
+1. Turn Off: All lights except bedroom
+2. Activate Scene: "Bedroom - Nightlight"
+3. Turn On: Bedroom fan (smart plug)
+4. Say: "Good night"
+
+**Invoke**: "Hey Siri, good night"
+
+## Shortcuts with Multiple Bridges
+
+### Coordinating Across Bridges
+
+Scenes can't span bridges, but Shortcuts can:
+
+**"All Off" Shortcut**:
+1. **Turn Off**: All lights on "Main House" bridge
+2. **Turn Off**: All lights on "Guest House" bridge
+3. **Turn Off**: All lights on "Garage" bridge
+
+**"Party Mode" Shortcut**:
+1. **Activate Scene**: "Party" on Main House bridge
+2. **Activate Scene**: "Party" on Guest House bridge
+3. **Activate Scene**: "Outdoor Party" on Garage bridge
+
+### Sequential Bridge Control
+
+Control bridges in sequence:
+
+**"Goodnight Sequence"**:
+1. **Activate Scene**: "Off" on Main Floor bridge
+2. **Wait**: 5 seconds
+3. **Activate Scene**: "Off" on Ground Floor bridge
+4. **Wait**: 5 seconds
+5. **Activate Scene**: "Nightlight" on Bedroom bridge
+
+## Conditional Logic
+
+### Time-Based Conditions
+
+Different actions based on time:
+
+```
+Get Current Time
+If time is between 6 AM and 9 AM
+    Activate Scene "Morning"
+Otherwise if time is between 9 AM and 6 PM
+    Activate Scene "Daytime"
+Otherwise if time is between 6 PM and 11 PM
+    Activate Scene "Evening"
+Otherwise
+    Activate Scene "Night"
+End If
+```
+
+### State-Based Conditions
+
+Check light state before acting:
+
+```
+Get Light State: Living Room
+If Living Room is On
+    Set Brightness: Living Room to 100%
+Otherwise
+    Turn On: Living Room to 60%
+End If
+```
+
+### Complex Conditions
+
+Multiple conditions combined:
+
+```
+Get Current Time
+Get Day of Week
+
+If (time is after 6 PM) AND (day is weekday)
+    Activate Scene "Evening Workday"
+Otherwise if (time is after 6 PM) AND (day is weekend)
+    Activate Scene "Evening Relaxation"
+Otherwise
+    Activate Scene "Daytime"
+End If
+```
+
+## Integration with Other Apps
+
+### Focus Modes
+
+**Work Focus**:
+- **On activation**: Bright focus lighting
+- **On deactivation**: Normal lighting
+
+**Sleep Focus**:
+- **On activation**: All off except nightlight
+- **On deactivation**: Morning routine
+
+**Do Not Disturb**:
+- **On activation**: Dim all lights
+
+### Calendar
+
+**Meeting starts**: Dim office lights
+**Meeting ends**: Restore brightness
+**All-day event "Vacation"**: Run "Away Mode" shortcut
+
+### Home Assistant (via Shortcuts)
+
+Bridge to Home Assistant:
+- Trigger Home Assistant automation from Shortcuts
+- Use Home Assistant conditions with We Love Lights
+- Complex cross-platform automation
+
+### Weather
+
+**If** weather forecast is "Sunny":
+- Use cooler color temperatures (counterbalance warmth)
+
+**If** weather is "Cloudy":
+- Use warmer, brighter lighting (compensate)
+
+## Tips for Effective Shortcuts
+
+### Best Practices
+
+**Start Simple**:
+- Begin with basic shortcuts
+- Add complexity gradually
+- Test each addition
+
+**Name Clearly**:
+- Descriptive shortcut names
+- "Morning Routine" not "Shortcut 1"
+- Include trigger context in name
+
+**Test Thoroughly**:
+- Test all conditions
+- Try edge cases
+- Verify on different days/times
+- Check error handling
+
+**Use Comments**:
+- Add comments to explain logic
+- Note why something is done
+- Document complex conditions
+
+**Version Control**:
+- Duplicate before major changes
+- Name versions: "Good Morning v1", "Good Morning v2"
+- Keep working backup
+
+### Performance Tips
+
+**Minimize Actions**:
+- Fewer actions = faster execution
+- Combine where possible
+
+**Avoid Long Waits**:
+- Long delays can cause timeouts
+- Consider separate shortcuts for delayed actions
+
+**Handle Errors**:
+- Add error checking
+- Provide fallbacks
+- User notifications for failures
+
+### Maintenance
+
+**Regular Review**:
+- Test shortcuts monthly
+- Update when life changes (seasons, routines)
+- Remove unused shortcuts
+
+**Update After Changes**:
+- When you change scenes, update shortcuts using them
+- When bridges change, verify bridge selections
+- When moving/renaming devices, check shortcuts
+
+## Troubleshooting Shortcuts
+
+### Shortcut Doesn't Run
+
+**Problem**: Shortcut fails to execute
+
+**Solutions**:
+- Check We Love Lights is running
+- Verify bridge connection
+- Test shortcut manually first
+- Check automation permissions in System Settings
+- Review error messages
+
+### Automation Doesn't Trigger
+
+**Problem**: Time/location trigger doesn't work
+
+**Solutions**:
+- Check automation is enabled
+- Verify trigger conditions correct
+- Check System Settings → Privacy → Automation
+- Ensure "Run Immediately" enabled (no notification)
+- Test by manually running shortcut
+
+### Siri Doesn't Recognize
+
+**Problem**: "Hey Siri" doesn't trigger shortcut
+
+**Solutions**:
+- Check shortcut has Siri phrase assigned
+- Try rewording phrase
+- Check Siri is enabled
+- Verify microphone permissions
+- Try re-recording phrase
+
+### Wrong Action Occurs
+
+**Problem**: Shortcut does unexpected thing
+
+**Solutions**:
+- Review shortcut logic carefully
+- Check conditional branches
+- Verify bridge and scene selections
+- Test step-by-step
+- Check for variable errors
+
+### Shortcut Works Sometimes
+
+**Problem**: Inconsistent execution
+
+**Solutions**:
+- Check conditions (time, state, etc.)
+- Verify network/bridge stability
+- Check if certain conditions prevent execution
+- Review logs if available
+- Simplify and rebuild
+
+## Advanced Topics
+
+### Variables and Logic
+
+**Store values**:
+```
+Set Variable "OriginalBrightness" to Current Brightness
+Change lights
+Later: Restore to "OriginalBrightness"
+```
+
+**Calculations**:
+```
+Get Current Brightness
+Calculate: Current Brightness + 20
+Set New Brightness
+```
+
+### Repeat Loops
+
+**Gradually brighten**:
+```
+Repeat 10 times
+    Get Current Brightness
+    Add 10%
+    Set New Brightness
+    Wait 30 seconds
+End Repeat
+```
+
+### Input Parameters
+
+**Create shortcuts that ask for input**:
+```
+Ask: "Which scene?"
+Activate Scene: [User Input]
+```
+
+**Number input**:
+```
+Ask: "What brightness?" (Expect Number)
+Set Brightness to Input
+```
+
+## Next Steps
+
+Master Shortcuts integration? Explore more:
+
+1. **[Automation Examples](/docs/integration/automation-examples)** - Real-world scenarios
+2. **[Scenes](/docs/features/scenes)** - Create scenes to use in Shortcuts
+3. **[Rules Engine](/docs/advanced/rules-engine)** - Native automation
+4. **[Keyboard Shortcuts](/docs/advanced/keyboard-shortcuts)** - Another control method
+5. **[Multi-Bridge](/docs/advanced/multi-bridge)** - Coordinate multiple bridges
+
+---
+
+Questions? Visit the [FAQ](/docs/support/faq) or [troubleshooting guide](/docs/support/troubleshooting).
+

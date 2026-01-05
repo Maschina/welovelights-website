@@ -1,0 +1,502 @@
+---
+title: Motion Sensors
+description: Set up and configure motion sensors for automated lighting control
+---
+
+# Motion Sensors
+
+Motion sensors add intelligence to your smart home by automatically controlling lights based on movement. We Love Lights provides comprehensive configuration options for Philips Hue motion sensors and compatible Zigbee sensors.
+
+## What Are Motion Sensors?
+
+### Motion Sensor Basics
+
+Motion sensors detect movement and can trigger actions:
+- **Motion Detection**: Infrared sensors detect body heat and movement
+- **Light Level**: Measure ambient light (some models)
+- **Temperature**: Monitor room temperature (some models)
+- **Battery Powered**: Wireless, place anywhere
+- **Automation**: Trigger lights without manual control
+
+### Why Use Motion Sensors?
+
+**Convenience**
+- Hands-free lighting
+- Lights turn on automatically when entering
+- No need to find switches in dark
+
+**Energy Savings**
+- Lights turn off when no motion detected
+- No forgetting to turn off lights
+- Timeout-based automation
+
+**Security**
+- Deter intruders with automatic lighting
+- Illuminate paths automatically
+- Welcome lighting when arriving home
+
+## Supported Sensors
+
+### Philips Hue Motion Sensor
+
+The most common sensor:
+- **Motion detection**: 160° field of view
+- **Light sensor**: Measures ambient lux
+- **Temperature sensor**: Monitor room temperature
+- **Battery**: 2x AAA batteries, ~2 years life
+- **Range**: Up to 5m (16ft) detection distance
+
+### Third-Party Zigbee Sensors
+
+Compatible sensors may include:
+- IKEA Trådfri motion sensors
+- Other Zigbee-compatible PIR sensors
+- Feature set varies by model
+
+Check [supported devices](/docs/reference/supported-devices) for compatibility.
+
+## Viewing Sensor Status
+
+### In Menu Bar
+
+Quick sensor status view:
+
+1. Click **We Love Lights icon**
+2. Look for **Sensors** section
+3. See current status:
+   - Motion: Detected / Clear
+   - Light level: Lux value
+   - Temperature: Current temp
+   - Battery: Percentage remaining
+
+### In Studio
+
+Detailed sensor information:
+
+1. Open **Studio** window
+2. Go to **Sensors** section in sidebar
+3. Select your sensor
+4. View comprehensive details:
+   - **Current motion state**
+   - **Last motion detected** timestamp
+   - **Light level** (lux)
+   - **Temperature**
+   - **Battery level** and status
+   - **Model and firmware** info
+   - **Configuration status**
+
+## Motion Detection
+
+### How Motion Detection Works
+
+1. **Sensor active**: Constantly monitoring
+2. **Movement detected**: Sensor triggers
+3. **Rules evaluate**: Configured rules check conditions
+4. **Actions execute**: Lights turn on based on rules
+5. **Timeout period**: Motion clear for X seconds
+6. **Lights turn off**: After timeout expires
+
+### Detection Range
+
+Position sensors for optimal detection:
+- **Distance**: Most effective within 5 meters (16 feet)
+- **Angle**: 160° field of view
+- **Height**: Mount 1-2 meters (3-6 feet) high
+- **Line of sight**: Best with clear view of movement area
+
+### Sensitivity
+
+Some sensors allow adjusting sensitivity:
+- **High**: Detects small movements, more triggers
+- **Medium**: Balanced detection (default)
+- **Low**: Only larger movements trigger
+
+Adjust based on false positives or missed detections.
+
+## Configuring Motion Rules
+
+We Love Lights offers multiple ways to configure motion sensor automation.
+
+### Rule Types
+
+#### Time-Based Patterns
+- Different actions based on time of day
+- Example: Bright in morning, dim at night
+- Multiple time periods in one rule
+
+#### Generic Patterns
+- Custom condition-based rules
+- Advanced logic and conditions
+- Maximum flexibility
+
+### Configuration Wizard
+
+The easiest way to set up motion rules:
+
+1. **Select sensor** in Studio
+2. Click **"Configure Rules"** or **"Setup Wizard"**
+3. **Choose pattern type**:
+   - Simple on/off
+   - Time-based lighting
+   - Light-level conditional
+4. **Follow wizard steps**:
+   - Select which lights to control
+   - Set brightness and color
+   - Configure time periods
+   - Set timeout duration
+5. **Test and save**
+
+## Time-Based Motion Rules
+
+Control lights differently based on time of day.
+
+### Creating Time-Based Rule
+
+1. **Select sensor** in Studio
+2. Go to **Rules** section
+3. Choose **"Time-Based Pattern"**
+4. **Configure time periods**:
+
+**Example: Bathroom Motion Rule**
+
+**Daytime (6:00 AM - 10:00 PM)**
+- Turn on: Bright white, 80%
+- Light level condition: Only if dark (below 50 lux)
+- Timeout: 3 minutes
+
+**Nighttime (10:00 PM - 6:00 AM)**
+- Turn on: Warm white, 10%
+- Light level condition: Always trigger
+- Timeout: 2 minutes
+
+### Time Period Configuration
+
+For each period, set:
+- **Start time**: When period begins
+- **End time**: When period ends
+- **Lights to control**: Which lights activate
+- **Brightness**: Light intensity (%)
+- **Color/Temperature**: Light color settings
+- **Conditions**: When rule activates
+- **Timeout**: How long until lights turn off
+
+### Multiple Time Periods
+
+Create as many periods as needed:
+- **Morning** (6:00-9:00): Energizing bright white
+- **Day** (9:00-17:00): Natural white, only if dark
+- **Evening** (17:00-22:00): Warm, medium brightness
+- **Night** (22:00-6:00): Very dim, warm/red tones
+
+## Light Level Conditions
+
+Use ambient light sensor to trigger only when needed.
+
+### Lux Threshold
+
+Set minimum darkness level to trigger:
+- **Always**: Trigger regardless of light level
+- **Dark (< 50 lux)**: Only in dark conditions
+- **Very Dark (< 10 lux)**: Only at night or very dark
+- **Custom**: Set specific lux threshold
+
+### Why Use Light Level?
+
+- **Save energy**: Don't turn on lights during daylight
+- **Natural light preference**: Use sunlight when available
+- **Seasonal adaptation**: Works year-round despite changing daylight
+
+### Example Use Cases
+
+**Hallway**
+- Threshold: < 30 lux
+- Reason: Only need lights when dark, plenty of natural light during day
+
+**Bathroom (no windows)**
+- Threshold: Always
+- Reason: Always dark, always need lights
+
+**Garage**
+- Threshold: < 50 lux
+- Reason: Some natural light, but supplement when dim
+
+## Timeout Settings
+
+Control how long lights stay on after motion stops.
+
+### Timeout Duration
+
+Configure how many minutes without motion before turning off:
+- **Short (1-2 min)**: High-traffic areas, quick visits
+- **Medium (3-5 min)**: Standard rooms, general use
+- **Long (10-30 min)**: Rooms with subtle movement
+- **Very Long (30+ min)**: Areas where you stay still
+
+### Timeout Best Practices
+
+**Short Timeouts**
+- Hallways and corridors
+- Bathrooms (quick visits)
+- Closets
+- Stairways
+
+**Medium Timeouts**
+- Kitchens
+- Bathrooms (with consideration for showers)
+- Home offices
+- Living rooms
+
+**Long Timeouts**
+- Bedrooms
+- Media rooms (minimal movement while watching)
+- Reading areas
+- Workshops
+
+### Retrigger Behavior
+
+Motion detected during timeout:
+- **Extends timeout**: Resets countdown
+- **Lights stay on**: As long as motion continues
+- **Smooth experience**: No flickering
+
+## Generic Motion Rules
+
+Create custom rules with advanced conditions.
+
+### Generic Rule Structure
+
+1. **Trigger**: Motion detected
+2. **Conditions**: When to activate
+   - Time of day
+   - Light level
+   - Day of week
+   - Other sensor states
+3. **Actions**: What to do
+   - Turn on specific lights
+   - Set brightness/color
+   - Activate scene
+4. **Turn Off**: What happens when motion stops
+   - Turn off lights
+   - Return to previous state
+   - Activate different scene
+
+### Advanced Conditions
+
+Combine multiple conditions:
+- **Time AND light level**: Motion during evening AND dark
+- **Day of week**: Different on weekends
+- **Multiple sensors**: Require multiple triggers
+- **Other device states**: Only if other lights are off
+
+### Example Generic Rules
+
+**"Welcome Home"**
+- Trigger: Front door motion
+- Condition: Between 5 PM and midnight
+- Action: Turn on entryway, hallway, and living room to 60%
+- Timeout: 15 minutes
+
+**"Security Lighting"**
+- Trigger: Outdoor motion
+- Condition: Between 10 PM and 6 AM
+- Action: Full brightness outdoor lights + flash indoor lights
+- Timeout: 10 minutes
+
+**"Pet-Friendly Night Light"**
+- Trigger: Hallway motion
+- Condition: 11 PM to 6 AM AND light level < 5 lux
+- Action: 2% red light (won't disturb sleep)
+- Timeout: 1 minute
+
+## Multiple Sensors
+
+Use multiple sensors for comprehensive coverage.
+
+### Placement Strategy
+
+**Coverage Areas**
+- One sensor per room (standard)
+- Multiple sensors for large rooms
+- Hallway: One sensor per section
+- Stairways: Top and bottom sensors
+
+**Coordination**
+- Sensors can trigger same lights
+- Overlapping coverage ensures no dark spots
+- Each sensor can have different rules
+
+### Cross-Room Rules
+
+Create rules that span multiple areas:
+
+1. Sensor in **Room A** triggers lights in **Room B**
+2. Useful for:
+   - Illuminate next room when approaching
+   - Create lighting paths
+   - Anticipatory lighting
+
+**Example**: Garage sensor turns on kitchen lights when arriving home
+
+## Testing Motion Rules
+
+### Test Your Configuration
+
+Before relying on rules, test them:
+
+1. **Save rules** in We Love Lights
+2. **Trigger sensor** by walking in detection zone
+3. **Observe behavior**:
+   - Do lights turn on?
+   - Correct brightness and color?
+   - Appropriate for time of day?
+4. **Wait for timeout**:
+   - Do lights turn off after specified time?
+5. **Adjust as needed**
+
+### Common Adjustments
+
+After testing, you might:
+- **Increase timeout**: Lights turning off too soon
+- **Adjust brightness**: Too bright or too dim
+- **Change light level threshold**: Triggering when not needed
+- **Modify time periods**: Transitions at wrong times
+
+## Battery Management
+
+### Checking Battery Level
+
+View battery status:
+- **Menu bar**: Battery percentage shown with sensor
+- **Studio**: Detailed battery info in sensor details
+
+### Low Battery Alerts
+
+When battery is low:
+- We Love Lights may show notification
+- Sensor continues working but should replace soon
+- Typically have weeks of notice before complete failure
+
+### Replacing Batteries
+
+1. Remove sensor from mount
+2. Open battery compartment
+3. Replace with **2x AAA batteries** (for Hue sensors)
+4. Close compartment
+5. Sensor automatically reconnects
+6. Battery level updates in app
+
+### Battery Life Tips
+
+Extend battery life:
+- **Reduce rules**: Fewer rules = less processing
+- **Longer timeouts**: Reduces activation frequency in high-traffic areas
+- **Quality batteries**: Use good alkaline or lithium batteries
+- **Firmware updates**: Keep sensor firmware current
+
+## Sensor Placement Tips
+
+### Optimal Positioning
+
+**Height**
+- **1-2 meters (3-6 feet)**: Best detection height
+- Not too high (misses floor-level movement)
+- Not too low (limited range)
+
+**Direction**
+- Point toward main movement area
+- Avoid pointing directly at windows (sun triggers false positives)
+- Cover doorway entrance points
+
+**Location**
+- Corner placement gives widest coverage
+- Near doorways for entry detection
+- Clear line of sight to movement area
+
+### Avoid These Locations
+
+- **Directly above door**: May miss motion below
+- **Behind objects**: Blocked view reduces detection
+- **Near heat sources**: May cause false triggers
+- **Window-facing**: Sunlight can cause issues
+- **Too high**: Reduces detection range
+
+## Troubleshooting Motion Sensors
+
+### Sensor Not Detecting Motion
+
+**Problem**: Walking in area doesn't trigger sensor
+
+**Solutions**:
+- Check battery level (replace if low)
+- Verify sensor is in range of bridge
+- Ensure clear line of sight to movement area
+- Check sensitivity settings
+- Try repositioning sensor
+
+### False Triggers
+
+**Problem**: Lights turning on without motion
+
+**Solutions**:
+- Move sensor away from windows (sunlight triggers)
+- Avoid heat sources (heating vents, radiators)
+- Reduce sensitivity if available
+- Check for pets triggering sensor
+- Ensure sensor is mounted securely (vibration can trigger)
+
+### Lights Don't Turn On
+
+**Problem**: Motion detected but lights don't activate
+
+**Solutions**:
+- Check rules are properly configured
+- Verify light level condition isn't preventing activation
+- Ensure time-based conditions match current time
+- Check lights are reachable and powered on
+- Review rules logic in configuration
+
+### Lights Don't Turn Off
+
+**Problem**: Lights stay on after timeout
+
+**Solutions**:
+- Check timeout is configured (not set to "never")
+- Verify continued motion isn't retriggering
+- Review rule's "turn off" action
+- Check for other rules keeping lights on
+- Restart sensor (remove and reinsert battery)
+
+### Lights Turn Off Too Soon
+
+**Problem**: Timeout too short for activity
+
+**Solutions**:
+- Increase timeout duration
+- Position sensor to better detect subtle movement
+- Check sensor's detection range
+- Consider placing additional sensor
+
+### Delayed Response
+
+**Problem**: Lights take time to turn on
+
+**Solutions**:
+- Normal delay is 1-2 seconds (sensor processing)
+- Check network/bridge connection quality
+- Reduce number of simultaneous rules
+- Verify bridge isn't overloaded
+
+## Next Steps
+
+Master motion sensors? Explore related topics:
+
+1. **[Switches](/docs/features/switches)** - Physical buttons for manual control
+2. **[Rules Engine](/docs/advanced/rules-engine)** - Advanced automation
+3. **[Scenes](/docs/features/scenes)** - Trigger scenes with motion
+4. **[Automation Examples](/docs/integration/automation-examples)** - Real-world scenarios
+5. **[Shortcuts Integration](/docs/integration/shortcuts-app)** - Complex automations
+
+---
+
+Need help? Check the [FAQ](/docs/support/faq) or [troubleshooting guide](/docs/support/troubleshooting).
+

@@ -1,0 +1,399 @@
+---
+title: FAQ
+description: Frequently asked questions about We Love Lights
+---
+
+# Frequently Asked Questions
+
+Find answers to common questions about We Love Lights. If your question isn't answered here, check the [troubleshooting guide](/docs/support/troubleshooting) or [report an issue](/docs/support/reporting-issues).
+
+## General Questions
+
+### What is We Love Lights?
+
+We Love Lights is a premium macOS application for controlling Philips Hue and Zigbee smart lighting. It provides both a convenient menu bar app for quick access and a powerful Studio window for advanced management and automation.
+
+### What makes We Love Lights different from the Hue app?
+
+**Native macOS Experience**: Built specifically for Mac with SwiftUI, following Apple's design guidelines.
+
+**Dual Interface**: Choose between menu bar for quick control or Studio for advanced features.
+
+**Advanced Features**:
+- Multi-bridge support
+- Powerful rules engine
+- Extensive customization
+- Keyboard shortcuts
+- macOS Shortcuts integration
+
+**Professional Tools**: Drag-and-drop organization, advanced color pickers, comprehensive automation.
+
+### Do I need a Philips Hue Bridge?
+
+**Yes**, you need a compatible bridge:
+- **Philips Hue Bridge** (most common)
+- **Phoscon deCONZ Bridge** (e.g., ConBee USB stick)
+
+We Love Lights doesn't work with Bluetooth-only Hue devices. You must have a bridge.
+
+### Can I use it with my iPhone/iPad?
+
+No, We Love Lights is Mac-only. However, you can use:
+- Official Philips Hue mobile app on iPhone/iPad
+- Both apps work with the same bridge
+- Changes sync between apps
+
+### Is there a free trial?
+
+Check the Mac App Store listing. Many apps offer a trial period or money-back guarantee through Apple's policies. Features are not limited in a trial if available.
+
+## Compatibility Questions
+
+### What macOS version do I need?
+
+**macOS 12.0 (Monterey) or later** is required.
+
+Compatible with:
+- macOS 12 Monterey
+- macOS 13 Ventura
+- macOS 14 Sonoma
+- macOS 15 Sequoia
+- Future versions (generally)
+
+### Does it work on Apple Silicon (M1/M2/M3/M4)?
+
+**Yes**, We Love Lights is a Universal Binary that runs natively on both:
+- Apple Silicon (M1, M2, M3, M4)
+- Intel Macs
+
+### What devices are supported?
+
+**Bridges**:
+- Philips Hue Bridge (v1 and v2)
+- Phoscon deCONZ (ConBee, RaspBee)
+
+**Devices**:
+- Philips Hue lights (all types)
+- Philips Hue sensors and switches
+- Philips Hue smart plugs
+- Third-party Zigbee compatible devices
+
+See [Supported Devices](/docs/reference/supported-devices) for comprehensive list.
+
+### Can I connect multiple bridges?
+
+**Yes!** We Love Lights supports multiple bridges simultaneously. Control multiple Philips Hue bridges, deCONZ bridges, or a combination. See [Multi-Bridge Setup](/docs/advanced/multi-bridge).
+
+### Does it work with Zigbee devices from other brands?
+
+**Yes**, if they're connected to your bridge. We Love Lights controls devices through the bridge, so any Zigbee device your bridge supports will work. Compatibility depends on your bridge (deCONZ supports wider range).
+
+## Feature Questions
+
+### Can I control lights remotely?
+
+**Yes**, with Philips Hue Bridge v2 (square model):
+- Configure remote access in We Love Lights
+- Requires Hue account registration
+- Control from anywhere with internet
+- See [Remote Access](/docs/setup/remote-access)
+
+**Note**: deCONZ bridges don't support remote access through We Love Lights.
+
+### Can I use voice control?
+
+**Yes**, through macOS Shortcuts and Siri:
+- Create shortcuts for scenes and actions
+- Assign Siri voice phrases
+- "Hey Siri, activate movie mode"
+- See [Shortcuts Integration](/docs/integration/shortcuts-app)
+
+### Does it work with HomeKit?
+
+We Love Lights controls bridges directly, not through HomeKit. However:
+- Your Hue Bridge may support HomeKit separately
+- Changes in We Love Lights sync with bridge
+- HomeKit and We Love Lights can coexist
+
+### Can I create time-based automation?
+
+**Yes**, multiple ways:
+- Motion sensor time-based rules (built-in)
+- macOS Shortcuts with time triggers
+- Complex conditional automation
+- See [Automation Examples](/docs/integration/automation-examples)
+
+### Can lights gradually brighten as an alarm?
+
+**Yes**, using macOS Shortcuts:
+- Create multi-step shortcut
+- Gradually increase brightness over time
+- Schedule for wake-up time
+- See [Automation Examples](/docs/integration/automation-examples#gradual-wake-up-lighting)
+
+### Does it support IFTTT or other platforms?
+
+Not directly, but you can:
+- Use macOS Shortcuts as intermediary
+- Shortcuts can trigger We Love Lights
+- Other platforms can trigger Shortcuts
+- Complex but possible
+
+## Setup and Configuration
+
+### How do I get started?
+
+1. **Purchase and install** from Mac App Store
+2. **Connect your bridge** - automatic discovery
+3. **Authenticate** - press button on bridge
+4. **Start controlling** - menu bar or Studio
+
+See [Getting Started Guide](/docs/getting-started).
+
+### Do I need to configure anything in the Hue app first?
+
+**No**, but recommended:
+- Set up rooms and zones in Hue app first
+- We Love Lights imports automatically
+- Or create everything in We Love Lights
+- Both approaches work
+
+### Can I import my existing Hue setup?
+
+**Yes**, automatically:
+- Devices automatically discovered
+- Rooms and zones imported
+- Existing scenes sync
+- No manual recreation needed
+
+### How do I add a new light?
+
+1. **Add to bridge** first (use Hue app or We Love Lights Studio)
+2. **We Love Lights automatically detects** new devices
+3. **Organize and name** in We Love Lights
+
+## Usage Questions
+
+### How do I switch between menu bar and Studio?
+
+**Open Studio**:
+- Click menu bar icon → "Open Studio"
+- Or click We Love Lights in Dock
+
+**Use Menu Bar**:
+- Always accessible
+- Click icon for dropdown
+- Quick control without Studio
+
+### Can I control lights without opening the app?
+
+**Yes**, multiple ways:
+- Menu bar dropdown (quick access)
+- Global keyboard shortcuts
+- Siri voice commands (via Shortcuts)
+- macOS Shortcuts automation
+
+### How do I organize many lights?
+
+- **Rooms and zones**: Group by location
+- **Custom groups**: Functional grouping
+- **Favorites**: Mark frequently used
+- **Hide unused**: Clean interface
+- See [Organization Guide](/docs/advanced/organization)
+
+### Can I copy colors between lights?
+
+**Yes**:
+- **⌘ + C**: Copy color from light
+- **⌘ + V**: Paste to other light(s)
+- Works for brightness and color
+- See [Lights documentation](/docs/features/lights)
+
+## Technical Questions
+
+### Does We Love Lights need internet?
+
+**Local Control**: No internet required for basic control
+- Bridge and Mac on same network
+- All control is local
+
+**Remote Access**: Internet required
+- For controlling when away from home
+- Optional feature
+
+**App Updates**: Internet for downloading updates
+
+### Does it work offline?
+
+**Yes**, for local control:
+- No internet needed for same-network use
+- All features work offline (except remote)
+- Bridge must be on local network
+
+### How much network bandwidth does it use?
+
+**Very little**:
+- Commands are small data packets
+- Typical usage: < 1 MB/hour
+- No streaming or heavy data
+- No bandwidth concerns
+
+### Will it slow down my network?
+
+**No**:
+- Minimal network traffic
+- Zigbee mesh separate from WiFi
+- Bridge traffic negligible
+- No performance impact
+
+### Can I use it on multiple Macs?
+
+**Yes**:
+- Install on any Mac you own
+- Connect each Mac to bridge
+- Same license, multiple devices
+- Check App Store terms for family sharing
+
+## Licensing and Purchase
+
+### How is We Love Lights licensed?
+
+Purchase through Mac App Store with standard App Store licensing. Check current pricing and terms on the App Store listing.
+
+### Is there a subscription?
+
+Check the current App Store listing for pricing model. No information about subscriptions in the PRD provided.
+
+### Can family members use it?
+
+Family Sharing depends on how the app is configured in the App Store. Check the app's store listing for family sharing availability.
+
+### What's included in the purchase?
+
+- Full app with all features
+- All future updates
+- All current features (menu bar + Studio)
+- Support for unlimited bridges and devices
+
+## Troubleshooting
+
+### My bridge isn't found, what do I do?
+
+See detailed solutions in [Troubleshooting: Bridge Not Found](/docs/support/troubleshooting#bridge-not-found).
+
+Quick checks:
+- Same network?
+- Bridge powered and connected?
+- Try manual IP address entry
+
+### Lights don't respond to commands
+
+See [Troubleshooting: Device Not Responding](/docs/support/troubleshooting#device-not-responding).
+
+Quick checks:
+- Physical switch on?
+- Device reachable?
+- Bridge connected?
+
+### App is slow or unresponsive
+
+See [Troubleshooting: Performance Issues](/docs/support/troubleshooting#performance-issues).
+
+Quick checks:
+- Too many items visible? Hide unused
+- Network issues?
+- Mac performance okay?
+
+### Motion sensor doesn't trigger
+
+See [Troubleshooting: Motion Sensor](/docs/support/troubleshooting#motion-sensor-not-triggering).
+
+Quick checks:
+- Battery level?
+- Rules configured?
+- Within range?
+
+## Privacy and Security
+
+### What data does We Love Lights collect?
+
+The app operates locally with your bridge. Check the app's privacy policy in the App Store or within the app for specific details about data collection and privacy practices.
+
+### Is my data secure?
+
+- Bridge credentials stored in macOS Keychain (encrypted)
+- Local network communication when at home
+- Remote access uses Philips' secure cloud
+- No unnecessary data transmission
+
+### Does it share data with third parties?
+
+Check the app's privacy policy for specific details. Generally, local control apps don't need to share data except:
+- Remote access uses Philips cloud (required for feature)
+- Crash reports (optional, helps improve app)
+- Analytics (if opted in)
+
+## Support
+
+### How do I report a bug?
+
+Use the built-in bug reporter:
+1. Go to Studio → Help → Report Bug
+2. Include description and steps to reproduce
+3. Attach logs automatically
+4. See [Reporting Issues](/docs/support/reporting-issues)
+
+### How do I request a feature?
+
+Through the bug reporter or designated feature request channel:
+- Describe desired feature
+- Explain use case
+- Check if already supported
+
+### Is there email/chat support?
+
+Check the app's support information:
+- Look in Studio → Help
+- Check developer website
+- Mac App Store listing may have links
+
+### Can I get help with automation setup?
+
+**Documentation**:
+- Comprehensive guides available
+- [Automation Examples](/docs/integration/automation-examples)
+- Step-by-step tutorials
+
+**Support**:
+- Report issues for help
+- Check FAQ and troubleshooting
+- Community forums if available
+
+## Future and Updates
+
+### Will new features be added?
+
+We Love Lights is actively developed with regular updates. New features, improvements, and bug fixes are released periodically through the Mac App Store.
+
+### How do I update the app?
+
+Updates delivered through Mac App Store:
+1. App Store app → Updates
+2. Or enable automatic updates
+3. Restart We Love Lights after update
+
+### Will it support new devices?
+
+When new Zigbee devices are released and supported by Philips Hue or deCONZ bridges, We Love Lights should work with them (devices are controlled through the bridge).
+
+## Still Have Questions?
+
+- **[Getting Started](/docs/getting-started)** - Setup guide
+- **[Troubleshooting](/docs/support/troubleshooting)** - Problem solutions
+- **[Report Issue](/docs/support/reporting-issues)** - Get personalized help
+- **Documentation** - Comprehensive guides for all features
+
+---
+
+Can't find your answer? [Report an issue](/docs/support/reporting-issues) and we'll help!
+

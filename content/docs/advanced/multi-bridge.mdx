@@ -1,0 +1,451 @@
+---
+title: Multi-Bridge Setup
+description: Connect and manage multiple Philips Hue or deCONZ bridges simultaneously
+---
+
+# Multi-Bridge Setup
+
+We Love Lights supports controlling multiple bridges simultaneously, allowing you to manage larger smart home installations or combine different bridge types. This guide covers setting up, managing, and working with multiple bridges.
+
+## Why Multiple Bridges?
+
+### Common Scenarios
+
+**Large Homes**
+- Single bridge limit: ~50 lights + ~12 accessories
+- Exceed device limits with second bridge
+- Better coverage for large spaces
+
+**Multiple Locations**
+- Home + office setup
+- Main house + guest house
+- Different buildings on property
+
+**Mixed Bridge Types**
+- Philips Hue Bridge for primary lights
+- deCONZ bridge for wider Zigbee compatibility
+- Combine ecosystems
+
+**Network Segmentation**
+- Separate networks for different areas
+- Guest house on different WiFi
+- Isolated smart home networks
+
+## Bridge Limitations
+
+### Single Bridge Limits
+
+**Philips Hue Bridge**
+- Maximum ~50 lights (bulbs, strips, etc.)
+- Maximum ~12 accessories (switches, sensors, plugs)
+- Maximum 200 scenes total
+- These are Zigbee mesh limitations
+
+**deCONZ Bridge**
+- Higher theoretical limits
+- Dependent on hardware and configuration
+- Can support more devices generally
+
+### When You Need Another Bridge
+
+Signs you need a second bridge:
+- Approaching device limits (40+ lights)
+- Can't add new devices (bridge full)
+- Coverage issues (very large home)
+- Want to separate systems (home/office)
+
+## Adding Additional Bridges
+
+### Adding a Second Bridge
+
+1. **Physical Setup**
+   - Connect new bridge to power
+   - Connect to network (Ethernet)
+   - Wait for bridge to fully boot (blue light for Hue)
+
+2. **In We Love Lights Studio**
+   - Click **bridge selector** (top of window)
+   - Choose **"Add Bridge"** or **"+"**
+   - Follow discovery process
+
+3. **Discovery and Authentication**
+   - Automatic discovery (if on same network)
+   - Or manual entry with IP address
+   - Press button on bridge when prompted
+   - Complete authentication
+
+4. **Verification**
+   - Bridge appears in bridge selector
+   - Devices load automatically
+   - Both bridges now accessible
+
+See [Bridge Discovery](/docs/setup/bridge-discovery) for detailed steps.
+
+### Adding Third, Fourth Bridges...
+
+The process is identical for any number of bridges:
+- No practical limit in We Love Lights
+- Each bridge operates independently
+- Switch between them using bridge selector
+
+## Managing Multiple Bridges
+
+### Bridge Selector
+
+The bridge selector shows all connected bridges:
+
+**Location**: Top of Studio window and in menu bar preferences
+
+**Information Displayed**:
+- Bridge name/identifier
+- Connection status (connected, remote, offline)
+- Number of devices
+- Bridge type (Hue, deCONZ)
+
+### Switching Between Bridges
+
+**In Studio**:
+1. Click **bridge selector dropdown**
+2. Select desired bridge
+3. Interface immediately switches
+4. Sidebar shows that bridge's devices
+
+**In Menu Bar**:
+- May show all bridges' devices mixed
+- Or filter by selected bridge
+- Configure in preferences
+
+### Viewing All Bridges
+
+Some views allow seeing multiple bridges:
+
+**Bridge Overview**
+- List all connected bridges
+- Status of each
+- Quick access to each bridge
+- Summary statistics
+
+**All Devices**
+- Combined view of all bridges
+- Helpful for finding specific device
+- Filter by bridge if needed
+
+## Organization Strategies
+
+### Naming Bridges
+
+Give each bridge a meaningful name:
+
+1. **Select bridge** in settings
+2. **Edit name** field
+3. Enter descriptive name
+4. Save
+
+**Good naming examples**:
+- "Main House"
+- "Guest House"
+- "First Floor" / "Second Floor"
+- "Home" / "Office"
+- "Indoor" / "Outdoor"
+
+### Device Organization Across Bridges
+
+**By Location**
+- Bridge 1: Ground floor rooms
+- Bridge 2: Upper floor rooms
+- Clear physical separation
+
+**By Function**
+- Bridge 1: Main living areas
+- Bridge 2: Outdoor and garage
+- Functional grouping
+
+**By Coverage**
+- Bridge 1: East side of house
+- Bridge 2: West side of house
+- Based on Zigbee mesh requirements
+
+### Cross-Bridge Workflows
+
+Since bridges are independent, plan workflows carefully:
+
+**Scenes**
+- Create similar scenes on each bridge
+- Use same naming convention
+- Activate multiple scenes for whole-home control
+
+**Automation**
+- Shortcuts app can control multiple bridges
+- Create macro shortcuts for cross-bridge scenes
+- Sequential activation possible
+
+## Remote Access with Multiple Bridges
+
+### Remote Configuration
+
+Each bridge has independent remote access:
+
+**Setting Up**:
+1. Configure remote access per bridge
+2. Each Hue Bridge needs Hue account registration
+3. All bridges show remote status independently
+
+**Using Remotely**:
+- All bridges accessible remotely if configured
+- Switch between them as usual
+- Same connection indicators per bridge
+
+See [Remote Access](/docs/setup/remote-access) for configuration.
+
+### Remote Performance
+
+With multiple bridges:
+- Each bridge connects independently
+- No performance penalty for multiple
+- All bridges can be remote simultaneously
+
+## Best Practices
+
+### Network Configuration
+
+**Same Network (Preferred)**
+- Place all bridges on same network if possible
+- Easier discovery and management
+- Simpler remote access setup
+
+**Different Networks**
+- Manual IP address configuration required
+- Ensure Mac can reach all networks
+- May need VPN or routing configuration
+
+**Static IP Addresses**
+- Assign static IPs to all bridges
+- Prevents connection loss after router restart
+- Configure in router DHCP settings
+
+### Bridge Placement
+
+**Physical Positioning**
+- Central to the devices they control
+- Good Zigbee mesh coverage
+- Wired Ethernet preferred (more stable)
+
+**Zigbee Coverage**
+- Bridges should not overlap coverage too much
+- Each manages its own Zigbee mesh
+- Maintain ~50+ feet separation if possible
+
+**Accessibility**
+- Easy physical access to button (for re-pairing)
+- Near router or switch
+- Protected from accidental unplugging
+
+### Device Assignment
+
+**Planning Device Distribution**:
+
+1. **Map your home**
+   - Identify all lights and devices
+   - Note locations
+
+2. **Assign to bridges**
+   - Group by proximity
+   - Keep rooms together when possible
+   - Balance device count
+
+3. **Configure devices**
+   - Pair each device to appropriate bridge
+   - Name clearly with location
+   - Organize into rooms
+
+**Migration**:
+- Can't move devices between bridges easily
+- Must un-pair and re-pair to new bridge
+- Plan initial distribution carefully
+
+## Coordinated Control
+
+### Controlling Multiple Bridges
+
+**Scenes Across Bridges**:
+Can't create single scene spanning bridges, but:
+1. Create same-named scene on each bridge
+2. Use Shortcuts to activate both
+3. Macro creates coordinated effect
+
+**Example Shortcut**: "Good Night"
+- Activate "Good Night" scene on Bridge 1
+- Activate "Good Night" scene on Bridge 2
+- Both execute, all lights turn off
+
+### Automation Across Bridges
+
+**Motion Sensor on Bridge 1 → Lights on Bridge 2**:
+Not directly possible through bridge rules.
+
+**Workarounds**:
+- Use Shortcuts app
+- Third-party automation (Home Assistant, etc.)
+- Complex but achievable
+
+**Simple Coordination**:
+- Matched scenes on all bridges
+- Time-based Shortcuts triggering all bridges
+- Manual control of each bridge
+
+## Troubleshooting Multiple Bridges
+
+### Can't See Second Bridge
+
+**Problem**: Added bridge doesn't appear
+
+**Solutions**:
+- Verify bridge is on same network
+- Check bridge has power and connected
+- Try manual discovery with IP
+- Restart We Love Lights
+- Check bridge button was pressed for auth
+
+### Wrong Bridge Selected
+
+**Problem**: Looking at wrong bridge's devices
+
+**Solutions**:
+- Check bridge selector (top of Studio)
+- Click selector and choose correct bridge
+- Verify bridge name to avoid confusion
+
+### Bridges Have Same Name
+
+**Problem**: Can't tell bridges apart
+
+**Solutions**:
+- Rename bridges with unique names
+- Use location or floor-based naming
+- Check IP address to identify if needed
+
+### One Bridge Offline
+
+**Problem**: One bridge shows offline
+
+**Solutions**:
+- Check that bridge's network connection
+- Verify power to that bridge
+- Other bridge working confirms We Love Lights OK
+- See single-bridge troubleshooting
+
+### Slow Performance with Multiple Bridges
+
+**Problem**: App feels slower with multiple bridges
+
+**Solutions**:
+- Expected slight overhead per bridge
+- Check network connectivity to all bridges
+- Consider hiding unused bridges if many
+- Verify each bridge responding normally
+
+### Lost Track of Which Device Is Where
+
+**Problem**: Don't remember which bridge has which devices
+
+**Solutions**:
+- Check bridge selector (shows device count)
+- Switch to each bridge and view devices
+- Use naming conventions (prefix with bridge/location)
+- Create documentation of device assignments
+
+## Advanced Multi-Bridge Scenarios
+
+### Home and Office
+
+**Separate Locations**:
+- Bridge 1: Home network
+- Bridge 2: Office network
+- Control both from Mac
+
+**Benefits**:
+- Manage both locations from one app
+- Consistent interface
+- Remote access to both
+
+**Considerations**:
+- Must have network access to both
+- VPN may be needed for security
+- Each location independent
+
+### Main House and Guest House
+
+**Different Buildings**:
+- Bridge 1: Main residence
+- Bridge 2: Guest house (separate network or far away)
+
+**Setup**:
+- Each bridge on appropriate network
+- Names clearly differentiate
+- Scenes coordinate when guests present
+
+### Indoor and Outdoor
+
+**Segmented by Environment**:
+- Bridge 1: Indoor lights
+- Bridge 2: Outdoor lights, garage
+
+**Benefits**:
+- Separate management
+- Outdoor devices don't count against indoor limit
+- Different automation rules
+
+### Multi-Floor Large Homes
+
+**Vertical Coverage**:
+- Bridge 1: Basement and ground floor
+- Bridge 2: Upper floors and attic
+
+**Setup**:
+- Bridges centrally located per floor
+- Clear device organization
+- Floor-named bridges
+
+## Limits and Scaling
+
+### Practical Limits
+
+**We Love Lights**:
+- No hard limit on bridge count
+- Performance depends on network and Mac
+- Most users: 2-3 bridges maximum
+
+**Home Scaling**:
+- 2 bridges: ~100 lights, 24 accessories
+- 3 bridges: ~150 lights, 36 accessories
+- Beyond this, consider professional systems
+
+### When to Consider Alternatives
+
+If you need:
+- 200+ lights
+- Complex cross-bridge automation
+- Professional integration
+- Commercial installation
+
+Consider:
+- Professional smart home systems
+- Home automation hubs (Home Assistant)
+- Commercial lighting control
+
+We Love Lights excellent for residential multi-bridge setups.
+
+## Next Steps
+
+Master multi-bridge setup? Explore advanced features:
+
+1. **[Remote Access](/docs/setup/remote-access)** - Access multiple bridges remotely
+2. **[Organization](/docs/advanced/organization)** - Organize large device collections
+3. **[Shortcuts Integration](/docs/integration/shortcuts-app)** - Coordinate multiple bridges
+4. **[Rules Engine](/docs/advanced/rules-engine)** - Advanced automation
+5. **[Automation Examples](/docs/integration/automation-examples)** - Multi-bridge scenarios
+
+---
+
+Questions? Visit the [FAQ](/docs/support/faq) or [troubleshooting guide](/docs/support/troubleshooting).
+

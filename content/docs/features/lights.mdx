@@ -1,0 +1,545 @@
+---
+title: Light Control
+description: Master advanced light control with multiple color pickers, brightness management, and color features
+---
+
+# Light Control
+
+We Love Lights provides sophisticated control over your Philips Hue and Zigbee lights with multiple color selection methods, precise brightness control, and advanced features for the perfect lighting experience.
+
+## Light Types
+
+Understanding your light types helps you know what controls are available.
+
+### Color Lights (RGB/RGBW)
+- **Full color spectrum**: Access millions of colors
+- **White ambiance**: Full range of white temperatures
+- **Brightness control**: 0-100% dimming
+- **Most flexible**: All control options available
+
+**Examples**: Hue Color bulbs, Lightstrip Plus, Hue Go
+
+### Color Temperature Lights (White Ambiance)
+- **Adjustable white**: Warm to cool white spectrum
+- **Temperature range**: Typically 2000K-6500K
+- **Brightness control**: Full dimming capability
+- **No colors**: Only whites available
+
+**Examples**: Hue White Ambiance, Hue Lightstrip (white only)
+
+### Dimmable White Lights
+- **Single white color**: Fixed color temperature
+- **Brightness only**: No color or temperature adjustment
+- **Most affordable**: Basic smart lighting
+
+**Examples**: Hue White bulbs, many third-party Zigbee bulbs
+
+### On/Off Only Lights
+- **Binary control**: Either on or off
+- **No dimming**: Full brightness when on
+- **Rare in Hue**: More common with older Zigbee devices
+
+## Brightness Control
+
+### Basic Brightness Adjustment
+
+#### Using Sliders
+
+**Menu Bar:**
+1. Click We Love Lights icon
+2. Find your light
+3. Drag the **brightness slider** (0-100%)
+4. Light adjusts in real-time
+
+**Studio:**
+1. Select light from sidebar
+2. Use large **brightness slider** in main area
+3. See exact percentage displayed
+4. Fine-tune with arrow keys if supported
+
+#### Quick Brightness Levels
+
+Common brightness settings:
+- **1-5%**: Night light, minimal visibility
+- **10-20%**: Ambient lighting, evening relaxation
+- **30-50%**: Normal lighting, comfortable levels
+- **60-80%**: Task lighting, work environments
+- **90-100%**: Maximum brightness, detailed work
+
+### Advanced Brightness Features
+
+#### Precise Control
+
+Get exact brightness values:
+1. Click on **percentage number** (if clickable)
+2. Type exact value (e.g., "73")
+3. Press Enter to apply
+
+Or use increment buttons:
+- **+/- buttons**: Adjust by 10% increments
+- **Fine adjustment**: Hold Shift for 1% increments
+- **Keyboard arrows**: Up/down for fine control
+
+#### Brightness Matching
+
+Copy brightness from one light to another:
+1. Select source light
+2. **Copy** brightness (⌘+C or right-click menu)
+3. Select target light(s)
+4. **Paste** brightness (⌘+V or right-click menu)
+
+## Color Temperature Control
+
+For white ambiance and color lights.
+
+### Temperature Picker
+
+The temperature picker shows a gradient from warm to cool:
+
+**Warm White (2000K-3000K)**
+- Orange/yellow tones
+- Cozy, relaxing atmosphere
+- Evening, bedroom, living areas
+- Resembles candlelight or sunset
+
+**Neutral White (3500K-4500K)**
+- Balanced white tone
+- Natural, comfortable lighting
+- General use, any time of day
+- Similar to daytime indoor lighting
+
+**Cool White (5000K-6500K)**
+- Blue-white, crisp tone
+- Energizing, focus-enhancing
+- Work areas, kitchens, bathrooms
+- Resembles daylight or overcast sky
+
+### Using Temperature Picker
+
+1. Select a light in Studio or menu bar
+2. Choose **Temperature** tab in color picker
+3. **Drag slider** from warm (left) to cool (right)
+4. Or **click** directly on desired temperature
+5. Light changes immediately
+
+### Temperature Values
+
+- **Kelvin (K)**: Standard temperature measurement
+- **Mireds**: Alternative measurement used by some bridges
+- Both show same color, different numbers
+- We Love Lights displays both if supported
+
+### Temperature Shortcuts
+
+Quick temperature presets:
+- **Relax**: ~2200K warm amber
+- **Concentrate**: ~4300K cool white
+- **Energize**: ~6500K daylight
+- **Read**: ~2700K soft white
+
+## Color Selection Methods
+
+We Love Lights offers four different color pickers for maximum flexibility.
+
+### 1. Hue/Saturation Picker
+
+The classic color wheel interface.
+
+#### How It Works
+
+- **Color Wheel**: Choose hue (actual color)
+- **Center to Edge**: Adjust saturation (color intensity)
+  - **Center**: White (no saturation)
+  - **Edge**: Pure, vivid color (full saturation)
+- **Brightness**: Separate slider controls lightness
+
+#### Best For
+
+- Casual color selection
+- Exploring color options
+- Visual color browsing
+- Quick color changes
+
+#### Using Hue/Saturation
+
+1. Click anywhere on the **color wheel**
+2. Drag to different hues (around the wheel)
+3. Drag toward/away from center for saturation
+4. Adjust brightness separately if needed
+
+### 2. RGB Picker
+
+Direct red, green, blue value control.
+
+#### RGB Components
+
+- **Red**: 0-255
+- **Green**: 0-255
+- **Blue**: 0-255
+
+Mix values to create any color:
+- **Red (255,0,0)**: Pure red
+- **Green (0,255,0)**: Pure green
+- **Blue (0,0,255)**: Pure blue
+- **White (255,255,255)**: Full brightness white
+- **Yellow (255,255,0)**: Red + green
+
+#### Hex Color Codes
+
+Enter colors as hex codes:
+1. Click **hex input field**
+2. Enter code: `#RRGGBB` (e.g., `#FF5733`)
+3. Press Enter to apply
+
+#### Best For
+
+- Matching brand colors
+- Precise color specifications
+- Design work integration
+- Color code references
+- Web/app color matching
+
+#### Using RGB Picker
+
+1. Select **RGB** tab in color picker
+2. **Adjust sliders** for red, green, blue
+3. Or **type values** directly
+4. Or **paste hex code**
+5. Light updates in real-time
+
+### 3. CIE 1931 Color Space Picker
+
+Professional color space for accurate lighting control.
+
+#### What Is CIE 1931?
+
+- **Industry standard**: Used by lighting professionals
+- **Color gamut**: Shows achievable colors for your light
+- **X/Y coordinates**: Precise color specification
+- **Most accurate**: Represents actual light output
+
+#### Understanding the Gamut
+
+The gamut triangle shows:
+- **Inside triangle**: Colors your light can produce
+- **Outside triangle**: Colors impossible for this light
+- **Corners**: Primary colors (red, green, blue) at maximum
+- **Center**: White point
+
+#### Best For
+
+- Professional lighting design
+- Exact color matching
+- Understanding light capabilities
+- Technical color work
+- Scene recreation
+
+#### Using CIE Picker
+
+1. Select **CIE** or **Advanced** tab
+2. **Click** anywhere in color space
+3. Selector snaps to achievable colors
+4. See **X/Y coordinates** displayed
+5. Copy coordinates for precise replication
+
+### 4. Color Presets
+
+Quick access to common colors.
+
+#### Preset Categories
+
+- **Basic Colors**: Red, blue, green, yellow, etc.
+- **Pastels**: Soft, light colors
+- **Vibrant**: Bold, saturated colors
+- **Nature**: Earth tones, sky, ocean
+- **Seasonal**: Holiday colors, themes
+
+#### Using Presets
+
+1. Look for **Presets** or **Swatches** section
+2. Click any preset to apply immediately
+3. No adjustment needed
+4. Great for quick changes
+
+## Color Features
+
+### Recent Colors
+
+We Love Lights remembers your recently used colors.
+
+#### Accessing Recent Colors
+
+1. Open color picker for any light
+2. Look for **Recent** or **History** section
+3. Click any recent color to reapply
+4. Saves last 10-20 colors
+
+#### Recent Colors Benefits
+
+- **Quick reselection**: Return to previous color instantly
+- **Color consistency**: Use same color across multiple lights
+- **No memorization**: Don't need to remember values
+
+### Copying and Pasting Colors
+
+Transfer colors between lights effortlessly.
+
+#### Copy/Paste Steps
+
+**Method 1: Keyboard Shortcuts**
+1. Select source light (with desired color)
+2. Press **⌘+C** to copy color and brightness
+3. Select target light(s)
+4. Press **⌘+V** to paste
+
+**Method 2: Context Menu**
+1. Right-click source light
+2. Choose **"Copy Color"**
+3. Right-click target light(s)
+4. Choose **"Paste Color"**
+
+**Method 3: Studio Controls**
+1. Select source light
+2. Click **"Copy"** button in color section
+3. Select target lights
+4. Click **"Paste"** button
+
+#### What Gets Copied
+
+Depending on settings, copy/paste may include:
+- **Color**: Hue and saturation
+- **Brightness**: Light intensity
+- **Temperature**: White temperature (for white ambiance)
+- **Power state**: On/off status (optional)
+
+### Color Sync
+
+Keep multiple lights synchronized.
+
+#### Manual Sync
+
+1. Set one light to desired color
+2. Copy that color
+3. Select other lights
+4. Paste to synchronize
+
+#### Scene-Based Sync
+
+1. Create scene with all lights set to same color
+2. Activate scene to synchronize
+3. Easier than copy/paste for many lights
+
+### Favorites System
+
+Mark favorite colors for quick access.
+
+#### Creating Color Favorites
+
+1. Set light to desired color
+2. Click **star icon** or **"Favorite This Color"**
+3. Color saved to favorites
+4. Appears in favorites section
+
+#### Using Favorite Colors
+
+1. Open color picker
+2. Go to **Favorites** tab
+3. Click any favorited color
+4. Applies immediately
+
+#### Organizing Favorites
+
+- **Name favorites**: Give colors descriptive names
+- **Remove old favorites**: Keep list manageable
+- **Category favorites**: Organize by room or mood
+
+## Advanced Light Features
+
+### Transition Time
+
+Control how quickly colors and brightness change.
+
+#### Setting Transition Speed
+
+Some interfaces allow setting transition time:
+1. Look for **"Transition"** or **"Speed"** option
+2. Set duration in seconds (0-10+)
+3. Applies to next change
+
+#### Common Transitions
+
+- **Instant (0s)**: Immediate change
+- **Quick (0.4s)**: Fast but smooth
+- **Normal (1s)**: Default smooth transition
+- **Slow (3-5s)**: Gradual fade
+
+### Light Effects
+
+Special effects and animations.
+
+#### Identify/Blink
+
+Flash a light to locate it:
+1. Select light
+2. Choose **"Identify"** or **"Blink"**
+3. Light flashes briefly
+4. Useful for finding specific bulbs
+
+#### Color Loop
+
+Cycle through colors automatically:
+1. Select light(s)
+2. Choose **"Color Loop"** effect
+3. Light cycles through spectrum
+4. Stop to return to normal
+
+#### Alert Effects
+
+Available through some interfaces:
+- **Single Flash**: One quick flash
+- **Multiple Flashes**: Series of flashes
+- **Breathe**: Slow pulsing effect
+
+### Power-On Behavior
+
+Configure what happens when power is restored.
+
+#### Default Behavior Options
+
+- **Last State**: Return to settings before power loss
+- **On**: Always turn on at specific brightness/color
+- **Off**: Remain off until manually turned on
+- **Custom**: Specific brightness/color when powered on
+
+Configuration depends on bridge and light model.
+
+## Light Organization
+
+### Naming Lights
+
+Give lights meaningful names for easy identification.
+
+#### Best Practices
+
+- **Location-based**: "Kitchen Counter Left"
+- **Function-based**: "Reading Lamp"
+- **Combined**: "Bedroom - Nightstand Right"
+- **Avoid generic**: Not "Color Bulb 1", "Light 12"
+
+#### Renaming Lights
+
+1. Select light in Studio
+2. Click **name field**
+3. Type new name
+4. Press Enter to save
+
+### Light Information
+
+View detailed light information in Studio.
+
+#### Available Information
+
+- **Model**: Manufacturer and model number
+- **Type**: Color, white ambiance, dimmable, etc.
+- **Firmware**: Current firmware version
+- **Capabilities**: What the light supports
+- **ID**: Unique identifier
+- **Reachable**: Current connection status
+- **Last Seen**: When last communication occurred
+
+#### Viewing Light Info
+
+1. Select light in Studio
+2. Look for **"Info"** or **"Details"** section
+3. Expand to see all information
+
+## Tips for Perfect Lighting
+
+### Color Selection Tips
+
+1. **Start with temperature**: Try whites before full color
+2. **Use CIE for accuracy**: Most precise color representation
+3. **Consider bulb limits**: Not all colors possible on all bulbs
+4. **Test in environment**: Colors look different in different rooms
+5. **Save as scenes**: Don't repeatedly adjust manually
+
+### Brightness Tips
+
+1. **Lower than you think**: 50% often looks like 100%
+2. **Time of day matters**: Adjust for natural light levels
+3. **Task-specific**: Reading needs more than relaxing
+4. **Multiple levels**: Don't just use on/off
+5. **Gradual changes**: Slow transitions are less jarring
+
+### Performance Tips
+
+1. **Batch changes**: Adjust multiple lights at once
+2. **Use groups**: Faster than individual control
+3. **Scenes over manual**: Pre-configure common settings
+4. **Transition time**: Shorter = slightly more responsive
+5. **Local connection**: Faster than remote
+
+### Creative Lighting Ideas
+
+1. **Accent colors**: Use color lights for ambient accents
+2. **Temperature by time**: Warm evening, cool daytime
+3. **Match content**: Sync with movies, music, games
+4. **Seasonal themes**: Change colors by season or holiday
+5. **Activity-based**: Different settings for different activities
+
+## Troubleshooting
+
+### Color Doesn't Look Right
+
+**Problem**: Color appears different than expected
+
+**Solutions**:
+- Different bulb models have different gamuts
+- Use CIE picker to see light's capabilities
+- Check bulb actually supports color (not just white)
+- Try different color picker method
+- Consider room lighting and wall colors
+
+### Brightness Won't Go Low Enough
+
+**Problem**: Light too bright even at 1%
+
+**Solutions**:
+- This is a bulb limitation (different minimum per model)
+- Use scenes with multiple lights for lower ambient
+- Cover lamp partially if needed
+- Consider using fewer lights
+
+### Changes Are Slow
+
+**Problem**: Color/brightness changes take too long
+
+**Solutions**:
+- Check network connection quality
+- Reduce number of lights changed simultaneously
+- Use local connection instead of remote
+- Check bridge isn't overloaded with commands
+
+### Can't Select Specific Color
+
+**Problem**: Can't get exact color desired
+
+**Solutions**:
+- Color may be outside bulb's gamut (use CIE picker to see limits)
+- Try different color picker (RGB for exact values)
+- Some colors impossible for any light (very pure colors)
+- Check bulb supports full color (not just white ambiance)
+
+## Next Steps
+
+Master light control? Explore these advanced topics:
+
+1. **[Scenes](/docs/features/scenes)** - Save your perfect lighting setups
+2. **[Groups & Zones](/docs/basics/groups-zones)** - Control multiple lights together
+3. **[Automation Examples](/docs/integration/automation-examples)** - Automate your lighting
+4. **[Organization](/docs/advanced/organization)** - Organize lights efficiently
+
+---
+
+Need help? Check the [FAQ](/docs/support/faq) or [troubleshooting guide](/docs/support/troubleshooting).
+

@@ -1,0 +1,262 @@
+---
+title: Remote Access
+description: Control your Philips Hue lights from anywhere using remote bridge connections
+---
+
+# Remote Access
+
+Remote Access allows you to control your Philips Hue lights and devices even when you're away from home. Whether you're at work, traveling, or just on a different network, you can manage your smart home through We Love Lights.
+
+## Overview
+
+Remote access uses Philips Hue's cloud service to securely connect to your bridge over the internet. When you're away from your home network, We Love Lights automatically switches to remote mode.
+
+### Requirements
+
+- **Philips Hue Bridge** (v2, the square model, with remote access capability)
+- **Philips Hue Account** (free to create)
+- **Internet connection** at home and where you're accessing from
+- **Bridge connected to internet** via Ethernet cable
+- **We Love Lights** configured with your Hue account
+
+Note: Remote access is **only available for Philips Hue Bridges**. Phoscon deCONZ bridges do not support remote access through We Love Lights.
+
+## Setting Up Remote Access
+
+### Step 1: Create Philips Hue Account
+
+If you don't already have a Philips Hue account:
+
+1. Open the **Philips Hue mobile app** on your phone
+2. Go to **Settings** → **Hue Account**
+3. Tap **"Create Account"** or **"Sign up"**
+4. Follow the prompts to create your account with an email and password
+5. Verify your email address
+
+Alternatively, create an account at [account.meethue.com](https://account.meethue.com)
+
+### Step 2: Register Bridge to Hue Account
+
+Your bridge must be registered to your Hue account for remote access:
+
+1. In the **Philips Hue mobile app**, go to **Settings**
+2. Tap **Hue Bridges**
+3. Select your bridge
+4. If not already logged in, tap **"Sign in"** or **"Connect to Hue account"**
+5. Sign in with your Hue account credentials
+6. The bridge is now registered to your account
+
+### Step 3: Enable Remote Access in We Love Lights
+
+Now configure We Love Lights to use remote access:
+
+1. **Open Studio Window** in We Love Lights
+2. Go to **Bridge Settings** or **Preferences**
+3. Select your bridge from the list
+4. Look for **"Remote Access"** or **"Enable Remote"** option
+5. Click **"Sign in to Hue Account"** or **"Authenticate"**
+
+### Step 4: Authenticate with Philips Hue
+
+1. A **web browser window** will open
+2. Sign in with your **Philips Hue account** credentials
+3. Authorize We Love Lights to access your bridge remotely
+4. You may see a confirmation page - close the browser when prompted
+5. Return to We Love Lights
+
+### Step 5: Verify Remote Connection
+
+1. In We Love Lights, the bridge status should show **"Remote Enabled"** or similar
+2. The bridge should show as **connected** (blue indicator for remote)
+3. You can now use remote access when away from home
+
+## How Remote Access Works
+
+### Automatic Switching
+
+We Love Lights intelligently handles local vs. remote connections:
+
+#### When at Home (Local Network)
+- Uses **direct local connection** to your bridge
+- **Fastest response time** (milliseconds)
+- **No internet required** after initial setup
+- Status indicator: Green (local connection)
+
+#### When Away from Home (Different Network)
+- Automatically switches to **remote connection**
+- Uses Philips Hue cloud service
+- Slightly **slower response** (depends on internet speed)
+- Status indicator: Blue (remote connection)
+
+### Seamless Transitions
+
+- We Love Lights detects when you leave or return to your home network
+- Connection automatically switches without user intervention
+- No manual toggle required
+
+## Using Remote Access
+
+Once set up, using remote access is transparent:
+
+1. **Leave Home**: Take your Mac to a different location
+2. **Open We Love Lights**: Launch or wake the app
+3. **Check Status**: Bridge indicator should show blue (remote)
+4. **Control Lights**: Use exactly the same as when at home
+   - Adjust brightness and colors
+   - Turn lights on/off
+   - Activate scenes
+   - View device status
+
+All controls work the same way, though response times may be slightly longer depending on internet connection quality.
+
+## Limitations of Remote Access
+
+While remote access is powerful, there are some limitations:
+
+### Features Not Available Remotely
+
+Certain advanced features may have limitations over remote connections:
+- **Bridge discovery**: Must be on local network
+- **Initial authentication**: Requires pressing physical button (local network)
+- **Very rapid commands**: May have slight delay compared to local
+
+### Performance Considerations
+
+- **Response Time**: Typically 500ms-2s vs. instant on local network
+- **Internet Dependency**: Both your home and current location need good internet
+- **Bandwidth**: Not significant, but commands require active internet
+
+### Security Considerations
+
+Remote access is secure and uses:
+- **OAuth authentication** with Philips Hue account
+- **Encrypted connections** between app and cloud service
+- **No open ports** on your home network required
+- **Revokable access** (can disable anytime)
+
+## Managing Remote Access
+
+### Checking Remote Status
+
+To verify remote access is working:
+
+1. **Open Studio Window**
+2. Look at **bridge status indicator**
+   - **Blue**: Currently using remote connection
+   - **Green**: Currently using local connection
+   - **Remote Enabled**: Feature is active (even if currently local)
+
+3. Test by disconnecting from your home WiFi and using cellular/different network
+
+### Disabling Remote Access
+
+To disable remote access:
+
+1. Open **Studio Window**
+2. Go to **Bridge Settings**
+3. Select your bridge
+4. Find **"Remote Access"** section
+5. Click **"Disable Remote"** or **"Sign Out"**
+6. Confirm the action
+
+You can re-enable it anytime by signing in again.
+
+### Revoking Access from Hue Account
+
+To completely revoke We Love Lights remote access:
+
+1. Visit [account.meethue.com](https://account.meethue.com)
+2. Sign in to your Philips Hue account
+3. Go to **Connected Apps** or **Applications**
+4. Find **We Love Lights** in the list
+5. Click **"Revoke Access"** or **"Remove"**
+
+This will immediately prevent remote connections. You'll need to re-authenticate to use remote access again.
+
+## Troubleshooting Remote Access
+
+### Can't Sign In to Hue Account
+
+**Problem**: Browser window doesn't open or sign-in fails
+
+**Solutions**:
+- Check default browser is set in macOS settings
+- Try signing in at [account.meethue.com](https://account.meethue.com) first to verify credentials
+- Temporarily disable browser extensions that might block OAuth
+- Ensure We Love Lights has permission to open URLs
+
+### Bridge Not Registered to Account
+
+**Problem**: Error message about bridge not registered
+
+**Solutions**:
+- Ensure bridge is registered in Philips Hue mobile app
+- Verify you're using the same Hue account in both apps
+- Try registering bridge again in Hue mobile app
+- Check bridge firmware is up to date
+
+### Remote Connection Fails
+
+**Problem**: Can't connect remotely when away from home
+
+**Solutions**:
+- Verify bridge is online (check with Hue mobile app)
+- Ensure bridge has internet connection (Ethernet cable)
+- Check your current location has internet access
+- Try restarting We Love Lights
+- Verify remote access is enabled in We Love Lights settings
+
+### Slow Remote Response
+
+**Problem**: Commands are very slow when using remote access
+
+**Solutions**:
+- Check internet speed at both locations (home and current)
+- Verify bridge has stable internet connection
+- Try sending one command at a time (don't batch too many)
+- Consider using local connection when possible for faster response
+
+### Connection Switches Unexpectedly
+
+**Problem**: Randomly switches between local and remote
+
+**Solutions**:
+- Check WiFi stability (may be disconnecting intermittently)
+- Verify you're actually on your home network
+- Check WiFi network name matches home network
+- Restart router if network seems unstable
+
+## Remote Access Best Practices
+
+### For Best Performance
+
+1. **Stable Home Internet**: Ensure your home internet connection is reliable
+2. **Wired Bridge**: Use Ethernet cable for bridge (more stable than WiFi)
+3. **Updated Firmware**: Keep bridge firmware up to date
+4. **Good WiFi**: When away, use stable WiFi rather than cellular when possible
+
+### For Security
+
+1. **Strong Password**: Use strong Hue account password
+2. **Two-Factor Authentication**: Enable if available on Hue account
+3. **Revoke When Not Needed**: Disable remote access if you don't use it
+4. **Monitor Connected Apps**: Regularly check authorized apps in Hue account
+
+### For Convenience
+
+1. **Test Before Traveling**: Verify remote access works before you really need it
+2. **Keep Mobile App**: Philips Hue mobile app is a good backup
+3. **Stable WiFi**: Save time by connecting to WiFi rather than cellular when away
+
+## Next Steps
+
+Now that you have remote access configured:
+
+1. **[Multi-Bridge Setup](/docs/advanced/multi-bridge)** - Add multiple bridges with remote access
+2. **[Shortcuts Integration](/docs/integration/shortcuts-app)** - Automate with Shortcuts (works remotely!)
+3. **[Automation Examples](/docs/integration/automation-examples)** - Build location-based automations
+
+---
+
+Need help? Check the [troubleshooting guide](/docs/support/troubleshooting) or [FAQ](/docs/support/faq).
+

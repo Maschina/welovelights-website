@@ -1,0 +1,432 @@
+---
+title: Studio Window
+description: Master the Studio window for advanced smart home control and configuration
+---
+
+# Studio Window
+
+The Studio window is We Love Lights' powerful interface for advanced control, configuration, and management of your smart home. While the menu bar handles quick tasks, Studio gives you comprehensive access to every feature.
+
+## Opening Studio Window
+
+There are several ways to open the Studio window:
+
+### From Menu Bar
+1. Click the **We Love Lights icon** in the menu bar
+2. Scroll to the bottom of the menu
+3. Click **"Open Studio"** or **"Studio Window"**
+
+### From Dock
+- Click the **We Love Lights icon** in the Dock
+- If Studio is already open, this brings it to the foreground
+
+### With Keyboard Shortcut
+- Set up a custom keyboard shortcut in preferences
+- Use it to open Studio from anywhere
+
+## Studio Interface Overview
+
+The Studio window is divided into several key areas:
+
+```
+┌─────────────────────────────────────────────────┐
+│  [Bridge Selector]  [Search]        [•••]       │  Header
+├──────────┬──────────────────────────────────────┤
+│          │                                       │
+│          │                                       │
+│ Sidebar  │        Main Content Area             │
+│          │                                       │
+│          │                                       │
+│          │                                       │
+└──────────┴──────────────────────────────────────┘
+```
+
+### Header Area
+
+Located at the top of the window:
+
+- **Bridge Selector**: Switch between connected bridges
+- **Search Bar**: Find devices, rooms, scenes quickly
+- **Actions Menu**: Quick access to common actions
+- **Settings/Preferences**: App configuration
+
+### Sidebar Navigation
+
+The left sidebar organizes your smart home:
+
+- **Rooms & Zones**: All groups organized by type
+- **All Lights**: Complete light list
+- **Scenes**: All available scenes
+- **Sensors**: Motion sensors and status sensors
+- **Switches**: Smart switches and buttons
+- **Plugs**: Smart plug outlets
+- **Settings**: Bridge and app configuration
+
+### Main Content Area
+
+The center/right area displays detailed controls for whatever is selected in the sidebar.
+
+## Navigating Studio
+
+### Selecting Items
+
+Click any item in the sidebar to view its details:
+- **Room/Zone**: Shows all lights in that room with individual controls
+- **Light**: Shows detailed color, brightness, and settings
+- **Scene**: Shows scene details and options to modify
+- **Sensor**: Shows status and configuration options
+- **Switch**: Shows button configuration and rules
+
+### Multi-Selection
+
+Select multiple items for batch operations:
+1. Hold **⌘** (Command) while clicking items
+2. Or click and drag to select multiple items (if supported)
+3. Actions apply to all selected items
+
+### Back Navigation
+
+- Use **back arrow** button to return to previous view
+- Or click the sidebar item again to refresh
+
+## Bridge Management
+
+### Viewing Connected Bridges
+
+The bridge selector (top of window) shows:
+- All connected bridges
+- Current bridge (highlighted)
+- Connection status (green=local, blue=remote, red=offline)
+
+### Switching Bridges
+
+1. Click the **bridge selector dropdown**
+2. Choose a different bridge
+3. Studio immediately switches to that bridge's devices
+
+### Adding Bridges
+
+1. Click bridge selector
+2. Select **"Add Bridge"**
+3. Follow the [bridge discovery process](/docs/setup/bridge-discovery)
+
+### Bridge Settings
+
+1. Select a bridge from the dropdown
+2. Click **gear icon** or **"Bridge Settings"**
+3. Configure:
+   - Bridge name
+   - Connection details
+   - Remote access settings
+   - Auto-reconnect options
+
+## Search Functionality
+
+The search bar helps you find anything quickly.
+
+### Using Search
+
+1. Click the **search field** in the header
+2. Type any part of a name:
+   - Device names
+   - Room names
+   - Scene names
+   - Sensor names
+3. Results appear in real-time
+4. Click a result to navigate to it
+
+### Search Tips
+
+- **Partial Matching**: "liv" finds "Living Room"
+- **Case Insensitive**: No need to match capitalization
+- **Multi-word**: Searches all parts of names
+- **Clear with ESC**: Press Escape to clear search
+
+### Advanced Search Features
+
+- **Filter by Type**: Show only lights, only scenes, etc.
+- **Filter by Status**: Show only on/off devices
+- **Filter by Room**: Search within specific room
+
+## Main Content Area Controls
+
+What you see in the main area depends on what's selected.
+
+### Room/Zone View
+
+When viewing a room or zone:
+
+- **Group Controls**: Overall on/off, brightness for entire room
+- **Individual Lights**: List of all lights in the room
+- **Quick Scenes**: Room-specific scenes
+- **Room Settings**: Rename, hide, or delete room
+
+### Light Detail View
+
+When viewing a single light:
+
+- **Power Toggle**: Turn light on/off
+- **Brightness Slider**: Adjust brightness (0-100%)
+- **Color Pickers**: Multiple color selection methods
+- **Light Info**: Model, type, status
+- **Light Settings**: Rename, assign to rooms, hide
+
+### Scene Detail View
+
+When viewing a scene:
+
+- **Activate Button**: Apply the scene immediately
+- **Scene Preview**: Shows which lights and their colors
+- **Modify Scene**: Change scene settings
+- **Overwrite Scene**: Update with current light states
+
+### Sensor View
+
+When viewing a motion sensor:
+
+- **Current Status**: Motion detected, temperature, light level
+- **Battery Level**: Remaining battery percentage
+- **Configuration**: Sensitivity, timeout settings
+- **Rules**: Automation rules using this sensor
+
+### Switch View
+
+When viewing a smart switch:
+
+- **Button Layout**: Visual representation of buttons
+- **Button Actions**: What each button does
+- **Configuration**: Customize button behaviors
+- **Battery Level**: Remaining battery
+
+## Organizing Your Setup
+
+Studio provides powerful organization tools.
+
+### Drag and Drop Reordering
+
+Rearrange items in the sidebar:
+1. Click and hold an item
+2. Drag it to the desired position
+3. Release to drop
+4. New order is saved automatically
+
+### Hiding Unused Items
+
+Clean up your interface by hiding items:
+1. Right-click (or Control+click) an item
+2. Select **"Hide"** from the context menu
+3. Item disappears from lists
+
+To unhide:
+1. Go to **Settings** → **Hidden Items**
+2. Find the hidden item
+3. Click **"Show"** or **"Unhide"**
+
+### Renaming Devices
+
+Give devices meaningful names:
+1. Select the device
+2. Click the **name field** in the detail view
+3. Type a new name
+4. Press **Enter** or **Return** to save
+
+Changes sync with your bridge and other apps.
+
+### Custom Groups
+
+Create custom zones or groups:
+1. Go to **Rooms** section
+2. Click **"Add Group"** or **+** button
+3. Name your group
+4. Select lights to include
+5. Save the group
+
+## Actions Menu
+
+The actions menu (••• icon) provides quick access to common tasks.
+
+### Common Actions
+
+- **Refresh All**: Reload devices from bridge
+- **All Lights Off**: Emergency all-off
+- **Create Scene**: Save current state as scene
+- **Add Device**: Manually add a device
+- **Settings**: Open preferences
+
+### Batch Actions
+
+With multiple items selected:
+- **Turn On/Off**: Control all selected items
+- **Set Brightness**: Apply same brightness to all
+- **Apply Scene**: Apply scene to selected lights
+- **Hide/Show**: Batch hide or show items
+
+## Working with Multiple Windows
+
+Studio supports multiple windows for advanced workflows.
+
+### Opening Additional Windows
+
+On macOS:
+1. Go to **File** → **New Window** (if supported)
+2. Or open different views side by side
+
+### Use Cases for Multiple Windows
+
+- **Compare rooms**: View two rooms simultaneously
+- **Scene creation**: Reference one room while setting up another
+- **Multi-bridge**: Different window for each bridge
+
+## Customizing Studio Appearance
+
+Personalize Studio to your preferences.
+
+### Window Size
+
+- Resize window by dragging edges or corners
+- Studio remembers your preferred size
+- Collapse sidebar for more space in content area
+
+### Sidebar Width
+
+- Drag the **divider** between sidebar and content
+- Make sidebar narrower for more room in main area
+- Double-click divider to reset to default
+
+### View Options
+
+In preferences or view menu:
+- **Compact Mode**: Smaller item sizes in lists
+- **Show/Hide Sections**: Toggle visibility of entire sections
+- **Grid vs List**: Choose layout style for some views
+
+### Theme
+
+Studio follows your macOS appearance:
+- **Light Mode**: Bright interface
+- **Dark Mode**: Dark interface
+- **Auto**: Follows system settings
+
+## Studio vs Menu Bar: When to Use Each
+
+### Use Studio When You Need To:
+
+- **Set up new devices**: Add and configure devices
+- **Create scenes**: Build custom lighting scenes
+- **Configure automation**: Set up rules for sensors and switches
+- **Organize extensively**: Rename, reorder, hide/show items
+- **Detailed control**: Fine-tune colors and settings
+- **Troubleshoot**: View detailed device information
+- **Manage multiple bridges**: Switch between bridges frequently
+
+### Use Menu Bar When You Want To:
+
+- **Quick control**: Fast on/off and brightness
+- **Activate scenes**: One-click scene recall
+- **Stay focused**: Control without leaving current app
+- **Minimal distraction**: Quick popup vs full window
+
+Most users use menu bar for daily control and Studio for setup and configuration.
+
+## Keyboard Shortcuts in Studio
+
+Boost productivity with keyboard shortcuts:
+
+### Navigation
+- **⌘ + F**: Focus search field
+- **⌘ + 1, 2, 3...**: Jump to sidebar sections
+- **⌘ + [**: Go back
+- **⌘ + ]**: Go forward
+
+### Actions
+- **Space**: Toggle selected device on/off
+- **⌘ + N**: Create new scene/group
+- **⌘ + R**: Refresh from bridge
+- **⌘ + ,**: Open preferences
+
+### Selection
+- **⌘ + Click**: Add to selection
+- **⌘ + A**: Select all in current view
+- **Arrow Keys**: Navigate list
+
+See full list in [Keyboard Shortcuts guide](/docs/advanced/keyboard-shortcuts).
+
+## Tips for Efficient Studio Use
+
+### Power User Tips
+
+1. **Learn keyboard shortcuts**: Dramatically speeds up navigation
+2. **Use search constantly**: Faster than scrolling and clicking
+3. **Organize once, benefit forever**: Spend time organizing initially
+4. **Create scenes for everything**: Faster than manual adjustment
+5. **Hide unused items**: Cleaner interface = faster workflow
+
+### Organization Best Practices
+
+1. **Meaningful names**: Use clear, descriptive names for all devices
+2. **Logical grouping**: Group related lights into zones
+3. **Favorite system**: Mark most-used items as favorites
+4. **Regular cleanup**: Periodically review and hide unused items
+
+### Performance Optimization
+
+1. **Close when not needed**: Menu bar is lighter weight
+2. **Refresh sparingly**: Only refresh when needed
+3. **One bridge at a time**: Don't rapidly switch between bridges
+4. **Stable network**: Ensure good connection to bridge
+
+## Troubleshooting Studio
+
+### Studio Won't Open
+
+**Problem**: Clicking to open Studio does nothing
+
+**Solutions**:
+- Check if Studio is already open (check all Spaces/Desktops)
+- Restart We Love Lights completely
+- Check console for errors
+- Reinstall app if problem persists
+
+### Slow Performance
+
+**Problem**: Studio feels sluggish or unresponsive
+
+**Solutions**:
+- Close and reopen Studio window
+- Reduce number of visible items (hide unused ones)
+- Check network connection to bridge
+- Restart We Love Lights app
+
+### Changes Don't Save
+
+**Problem**: Settings or organization changes disappear
+
+**Solutions**:
+- Ensure changes are explicitly saved (look for save button)
+- Check disk permissions for app
+- Verify bridge connection is stable
+- Try making changes one at a time
+
+### Window Position Lost
+
+**Problem**: Studio opens in wrong position or off-screen
+
+**Solutions**:
+- Reset window position in preferences
+- Use Window menu → "Move to Default Position"
+- Check if external monitor was disconnected
+
+## Next Steps
+
+Now that you understand Studio, explore these advanced features:
+
+1. **[Device Control](/docs/basics/device-control)** - Master detailed device control
+2. **[Lights](/docs/features/lights)** - Advanced color and brightness control
+3. **[Scenes](/docs/features/scenes)** - Create and manage scenes
+4. **[Organization](/docs/advanced/organization)** - Advanced organization techniques
+5. **[Multi-Bridge](/docs/advanced/multi-bridge)** - Manage multiple bridges
+
+---
+
+Need help? Visit the [FAQ](/docs/support/faq) or [troubleshooting guide](/docs/support/troubleshooting).
+

@@ -1,0 +1,559 @@
+---
+title: Smart Switches
+description: Configure physical switches and buttons for controlling your lights
+---
+
+# Smart Switches
+
+Smart switches (also called remotes or dimmers) are physical buttons that control your lights without opening an app. We Love Lights provides powerful configuration options for Philips Hue switches and compatible Zigbee button devices.
+
+## What Are Smart Switches?
+
+### Switch Basics
+
+Smart switches are wireless button devices:
+- **Physical buttons**: Tactile control without phone/computer
+- **Wireless**: Zigbee communication, no wiring needed
+- **Battery powered**: Place anywhere
+- **Programmable**: Customize what each button does
+- **Multi-function**: Single press, long press, different actions
+
+### Why Use Switches?
+
+**Convenience**
+- Physical control without devices
+- Instant access on wall or table
+- Works when phone/computer isn't nearby
+
+**Family-Friendly**
+- Guests can easily control lights
+- No app or tech knowledge required
+- Familiar interface (like traditional switches)
+
+**Reliability**
+- Works even if network issues occur
+- Direct bridge communication
+- No dependency on apps or cloud
+
+**Speed**
+- Instant response (no app launching)
+- Muscle memory location
+- Faster than voice or app control
+
+## Supported Switches
+
+### Philips Hue Dimmer Switch (RWL021/RWL022)
+
+The most popular Hue switch:
+- **4 buttons**: On, Dim Up, Dim Down, Off
+- **Wall mount**: Included magnetic wall plate
+- **Portable**: Remove from wall plate for remote use
+- **Battery**: CR2450 coin cell, ~2 years
+- **Range**: Up to 12m (40ft) from bridge
+
+### Philips Hue Tap Switch
+
+Battery-free switch:
+- **4 buttons**: Kinetic energy powered
+- **No battery**: Press generates power
+- **Wall mount or portable**
+- **Requires firm press**: Harder than battery switches
+
+### Philips Hue Smart Button
+
+Single-button control:
+- **1 button**: Multiple press types
+- **Compact**: Very small, place anywhere
+- **Battery**: CR2032 coin cell
+- **Simple control**: Best for single scene
+
+### Third-Party Switches
+
+Compatible Zigbee switches:
+- IKEA Trådfri remotes and buttons
+- Other Zigbee-compatible button devices
+- Feature set varies by model
+
+Check [supported devices](/docs/reference/supported-devices) for compatibility.
+
+## Viewing Switch Status
+
+### In Menu Bar
+
+Quick switch info:
+
+1. Click **We Love Lights icon**
+2. Find **Switches** section
+3. See basic status:
+   - Switch name
+   - Battery level
+   - Last button press (if available)
+
+### In Studio
+
+Detailed switch information:
+
+1. Open **Studio** window
+2. Go to **Switches** section in sidebar
+3. Select your switch
+4. View details:
+   - **Button layout**: Visual representation
+   - **Battery level**: Percentage and status
+   - **Model info**: Type and firmware
+   - **Configuration**: Current button assignments
+   - **Last activity**: Recent button presses
+
+## Button Actions
+
+Each button can perform different actions based on press type.
+
+### Press Types
+
+Most switches support multiple press types per button:
+
+#### Single Press (Tap)
+- Quick press and release
+- Most common action
+- Example: Turn lights on/off
+
+#### Long Press (Hold)
+- Press and hold for 1-2 seconds
+- Different action than tap
+- Example: Dim up/down gradually
+
+#### Double Press
+- Press twice quickly
+- Some switches support this
+- Example: Activate special scene
+
+#### Release
+- What happens when you stop holding
+- Example: Stop dimming
+
+### Available Actions
+
+Buttons can trigger:
+
+- **Turn On/Off**: Toggle or explicit on/off
+- **Dim Up/Down**: Increase or decrease brightness
+- **Activate Scene**: Apply specific scene
+- **Cycle Scenes**: Rotate through scene list
+- **Set Brightness**: Jump to specific level
+- **Set Color**: Apply specific color
+- **Do Nothing**: Disable button
+
+## Configuring Switches
+
+### Automatic Configuration
+
+For supported switches (RWL021, RWL022), We Love Lights can auto-configure:
+
+1. **Connect switch** to your bridge
+2. **Select switch** in Studio
+3. Click **"Auto-Configure"** or **"Quick Setup"**
+4. Choose configuration preset:
+   - **Standard**: Factory default behavior
+   - **Room Control**: Control specific room
+   - **Scene Cycler**: Cycle through scenes
+   - **Custom**: Build your own
+5. **Test**: Try each button
+6. **Save**
+
+### Manual Configuration
+
+Customize each button precisely:
+
+1. **Select switch** in Studio
+2. Go to **Button Configuration** section
+3. For each button:
+   - Select **press type** (single, long, etc.)
+   - Choose **action** from dropdown
+   - Configure **parameters**:
+     - Which lights/groups
+     - Brightness level
+     - Color settings
+     - Scene to activate
+4. **Save configuration**
+
+### Button-by-Button Setup
+
+#### For Hue Dimmer Switch (RWL021/RWL022)
+
+**On Button (Top)**
+- **Single Press**: Turn on to last brightness or specific scene
+- **Long Press**: Gradually brighten to maximum
+- **Release**: Stop brightening
+
+**Dim Up Button (Second)**
+- **Single Press**: Increase brightness by 20%
+- **Long Press**: Continuously brighten
+- **Release**: Stop brightening
+
+**Dim Down Button (Third)**
+- **Single Press**: Decrease brightness by 20%
+- **Long Press**: Continuously dim
+- **Release**: Stop dimming
+
+**Off Button (Bottom)**
+- **Single Press**: Turn off lights
+- **Long Press**: Gradually dim to off
+- **Release**: Turn off immediately
+
+Customize any button to do anything you want!
+
+## Scene Cycling
+
+Configure switches to cycle through multiple scenes.
+
+### Scene-Cycle Pattern
+
+Perfect for switches with limited buttons:
+
+1. **Select switch** in Studio
+2. Choose **"Scene Cycle"** pattern
+3. **Select scenes** to include in cycle:
+   - Add 2-10 scenes
+   - Order matters (will cycle in order)
+4. **Assign to button**:
+   - Usually "On" button cycles forward
+   - "Off" button turns off
+5. **Configure cycling**:
+   - **Wrap around**: After last scene, return to first
+   - **Reverse option**: Press different button to cycle backward
+
+### Example Scene Cycles
+
+**Living Room Switch**
+- Press 1: "Bright" scene
+- Press 2: "Relax" scene
+- Press 3: "Movie" scene
+- Press 4: "Bright" again (wrapped)
+- Off button: Turn off
+
+**Bedroom Switch**
+- Press 1: "Reading" (bright)
+- Press 2: "Evening" (medium)
+- Press 3: "Nightlight" (very dim)
+- Press 4: Off
+
+**Kitchen Switch**
+- Press 1: "Cooking" (bright task)
+- Press 2: "Dining" (warm medium)
+- Press 3: "Ambient" (dim accent)
+
+## Generic Button Patterns
+
+Create advanced custom button behaviors.
+
+### Custom Pattern Structure
+
+1. **Trigger**: Which button and press type
+2. **Conditions**: When to execute (optional)
+   - Time of day
+   - Current light state
+   - Other device states
+3. **Actions**: What to do
+   - Multiple actions possible
+   - Execute in sequence
+4. **Advanced logic**: If/then conditions
+
+### Advanced Examples
+
+**Context-Aware On Button**
+- If lights are off → Turn on to "Morning" scene (if before noon) or "Evening" scene (if after)
+- If lights are on → Cycle through 3 brightness levels
+
+**Multi-Room Control**
+- Single press → Control current room
+- Long press → Control multiple rooms
+- Double press → All off
+
+**Scene Memory**
+- On button → Recall last used scene
+- Off button → Turn off and remember current scene
+
+## Switch Rules vs Scenes
+
+### When to Use Switch Rules
+
+Best for:
+- Dynamic behavior (changes based on conditions)
+- Complex multi-step actions
+- Controlling multiple rooms differently
+- Time-based behaviors
+
+### When to Use Scenes
+
+Best for:
+- Simple, consistent lighting states
+- Single room control
+- Specific light configurations
+- When you want same result every time
+
+### Combining Both
+
+Most effective: Use scenes triggered by switches:
+1. Create scenes for desired states
+2. Configure switch to activate those scenes
+3. Easy to modify scenes without reconfiguring switch
+
+## Multi-Button Combinations
+
+Some switches support detecting multiple simultaneous presses.
+
+### Combination Patterns
+
+**Two Button Press**
+- Press buttons 1+2 together → Special action
+- Press buttons 3+4 together → Different action
+
+**All Buttons**
+- Press all buttons → Emergency all-off
+- Press all buttons long → Reset configuration
+
+Availability depends on switch model and firmware.
+
+## Switch Placement Tips
+
+### Physical Installation
+
+**Wall Mounting**
+- Use included mount/adhesive
+- Place at comfortable height (standard switch height)
+- Near doorways for easy access
+- Consider 3M Command strips for renter-friendly installation
+
+**Portable Placement**
+- Nightstand: Bedside control
+- Coffee table: Living room convenience
+- Kitchen counter: Cooking task lighting
+- Home office desk: Workspace control
+
+### Strategic Locations
+
+**Essential Locations**
+- **Bedroom entrance**: Lights before entering dark room
+- **Bedside**: Control without getting up
+- **Living room**: Easy access from couch
+- **Kitchen**: Near cooking area
+- **Bathroom**: Near door (backup to motion sensor)
+
+**Multiple Switches**
+- Large rooms: Multiple access points
+- Multi-story: One per floor for main lights
+- Duplicate switches: Same room, different ends
+
+## Battery Management
+
+### Checking Battery Level
+
+Monitor switch batteries:
+
+**Menu Bar**: Battery percentage with switch name
+
+**Studio**: Detailed battery status:
+- Current percentage
+- Estimated remaining life
+- Low battery warnings
+
+### Battery Life
+
+Typical battery life:
+- **Hue Dimmer**: 2+ years (CR2450)
+- **Hue Tap**: No battery (kinetic)
+- **Smart Button**: 1-2 years (CR2032)
+- **Third-party**: Varies by model
+
+### Replacing Batteries
+
+1. **Remove switch** from mount (if wall-mounted)
+2. **Open battery compartment**:
+   - Usually slide or twist to open
+   - Check manual for specific model
+3. **Replace battery**:
+   - Note correct polarity (+/-)
+   - Use fresh, quality batteries
+4. **Close compartment**
+5. **Test**: Press button to verify
+6. **Remount** on wall
+
+Switch reconnects automatically; configuration preserved.
+
+## Testing Switch Configuration
+
+### Test Your Setup
+
+After configuring, test thoroughly:
+
+1. **Press each button**:
+   - Verify expected action occurs
+   - Check all press types (single, long)
+2. **Test edge cases**:
+   - What if lights already on/off?
+   - Behavior at different times of day?
+3. **Test range**:
+   - Works from intended location?
+   - No missed presses?
+4. **Adjust as needed**:
+   - Tweak brightness levels
+   - Change scene selections
+   - Modify timing
+
+### Common Adjustments
+
+After testing:
+- **Brightness too high/low**: Adjust scene brightness
+- **Wrong scene order**: Reorder cycle sequence
+- **Button feels wrong**: Swap button assignments
+- **Need more options**: Add more scenes to cycle
+
+## Troubleshooting Switches
+
+### Button Press Not Working
+
+**Problem**: Pressing button does nothing
+
+**Solutions**:
+- Check battery level (replace if low)
+- Verify switch is in range of bridge
+- Check if button is configured (not set to "do nothing")
+- Try pressing more firmly
+- Verify lights are reachable and powered on
+- Check bridge connection
+
+### Wrong Action Happens
+
+**Problem**: Button does something unexpected
+
+**Solutions**:
+- Review button configuration in Studio
+- Check if multiple rules assigned to button
+- Verify correct press type (single vs long)
+- Reset switch configuration and reconfigure
+- Check for conflicting automation rules
+
+### Delayed Response
+
+**Problem**: Lights respond slowly to button press
+
+**Solutions**:
+- Normal delay: 0.5-1 second (processing time)
+- Check network/bridge connection quality
+- Verify switch battery isn't low
+- Reduce number of lights controlled by button
+- Check bridge isn't overloaded
+
+### Switch Not Detected
+
+**Problem**: Switch doesn't appear in We Love Lights
+
+**Solutions**:
+- Verify switch is connected to bridge (check Hue app)
+- Press reset button on switch (usually inside battery compartment)
+- Re-pair switch with bridge
+- Refresh device list in We Love Lights
+- Restart We Love Lights
+
+### Button Only Works Sometimes
+
+**Problem**: Inconsistent button response
+
+**Solutions**:
+- Check battery level (weak battery causes issues)
+- Verify switch is in range of bridge
+- Check for physical obstructions
+- Ensure switch is mounted securely (loose mount causes poor contact)
+- Replace battery even if level shows okay
+
+### Configuration Lost
+
+**Problem**: Switch reverts to default behavior
+
+**Solutions**:
+- Switch may have been reset accidentally
+- Check if configuration was saved properly
+- Verify bridge firmware is up to date
+- Reconfigure and test immediately
+- Check for bridge resets or power issues
+
+## Advanced Switch Features
+
+### Switch Linking
+
+Some configurations allow linking switches:
+
+**Master/Slave Setup**
+- One switch controls multiple rooms
+- Synchronized switch behavior
+- Useful for multi-room control
+
+**Group Switching**
+- Multiple switches control same lights
+- 3-way switch simulation
+- Different switches, different locations
+
+### Conditional Switching
+
+Switch behavior changes based on conditions:
+
+**Time-Based**
+- Morning: Button activates "Wake Up" scene
+- Evening: Same button activates "Relax" scene
+
+**State-Based**
+- If lights off: Turn on to preset
+- If lights on: Cycle brightness
+- If already bright: Turn off
+
+### Switch Macros
+
+Execute multiple actions from one button:
+
+**Example Macro**
+- Turn on living room lights (60%)
+- Turn on kitchen lights (40%)
+- Turn off bedroom lights
+- Activate "Evening" scene in dining room
+
+All from single button press!
+
+## Best Practices
+
+### Configuration Tips
+
+1. **Keep it simple**: Don't overcomplicate button actions
+2. **Consistent patterns**: Use similar logic across switches
+3. **Test with family**: Ensure others understand buttons
+4. **Label switches**: Use provided stickers or make custom
+5. **Document**: Note configuration for future reference
+
+### Placement Strategy
+
+1. **High traffic**: Switches in frequently used locations
+2. **Redundancy**: Multiple ways to control important lights
+3. **Guest access**: At least one switch in guest areas
+4. **Bedside**: Always have switch within reach of bed
+5. **Entrance**: Control lights before entering dark room
+
+### Maintenance
+
+1. **Monitor battery**: Replace before completely dead
+2. **Clean regularly**: Dust can interfere with presses
+3. **Test periodically**: Ensure configuration still works
+4. **Update firmware**: Keep switch firmware current
+5. **Spare batteries**: Keep replacements on hand
+
+## Next Steps
+
+Master switches? Explore related features:
+
+1. **[Scenes](/docs/features/scenes)** - Create scenes for switches to activate
+2. **[Motion Sensors](/docs/features/motion-sensors)** - Combine with switches for complete automation
+3. **[Rules Engine](/docs/advanced/rules-engine)** - Advanced switch automation
+4. **[Automation Examples](/docs/integration/automation-examples)** - Real-world switch scenarios
+5. **[Keyboard Shortcuts](/docs/advanced/keyboard-shortcuts)** - Computer control alongside physical switches
+
+---
+
+Need help? Visit the [FAQ](/docs/support/faq) or [troubleshooting guide](/docs/support/troubleshooting).
+
