@@ -43,10 +43,10 @@ export default function Hero() {
                         Philips Hue <br />
                         on your Mac.
                     </h1>
-                    <div className="flex flex-col w-[164px] h-[58px] items-start gap-[3.73px] relative">
+                    <div className="flex flex-col items-start gap-[3.73px] relative">
                         <Link href="https://apps.apple.com/app/apple-store/id1479422551?pt=120333038&ct=WeLoveLights.app&mt=8">
                             <Image
-                                className="relative w-[163.05px] h-[41.8px]"
+                                className="relative w-[190px]"
                                 alt="Download on the Mac App Store"
                                 src={downloadOnTheMacAppStoreBadgeUsUkRgbWht092917}
                                 width={163.05}

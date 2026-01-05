@@ -16,7 +16,7 @@ export type ChangelogEntry = {
   };
 };
 
-export interface Changelog1Props {
+export interface ChangelogProps {
   className?: string;
   title?: string;
   description?: string;
@@ -37,7 +37,7 @@ async function getChangelogEntries(): Promise<ChangelogEntry[]> {
 const Changelog = async ({
   entries: propEntries,
   className,
-}: Changelog1Props) => {
+}: ChangelogProps) => {
   const entries = propEntries || await getChangelogEntries();
   return (
     <section className={cn("", className)}>

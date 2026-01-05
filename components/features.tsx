@@ -79,9 +79,9 @@ export default function Hero() {
     ];
 
     return (
-        <section className="features-bg">
+        <section className="bg-tertiary-dark">
             <div className="flex flex-col items-center gap-5 top-[51px]">
-                <header className="flex flex-col items-center gap-5 bg-features-title shadow-[0px_12px_12px_#00000030] border border-amber-100/10 rounded-4xl px-26 py-6 max-w-[1100px] mx-12">
+                <header className="flex flex-col items-center gap-5 bg-tertiary-darker/80 shadow-[0px_12px_12px_#00000030] rounded-4xl px-26 py-6 max-w-[1100px] mx-12">
                     <h2 className="font-bold text-white text-5xl text-center tracking-[-1.00px] leading-13">
                         For Day-to-Day. For Pros.
                     </h2>
@@ -115,7 +115,7 @@ export default function Hero() {
 
                 <Link href="https://apps.apple.com/app/apple-store/id1479422551?pt=120333038&ct=WeLoveLights.app&mt=8" className="mt-12">
                     <Image
-                        className="relative w-[163.05px] h-[41.8px]"
+                        className="w-[220px]"
                         alt="Download on the mac app store"
                         src={downloadOnTheMacAppStoreBadgeUsUkRgbWht092917}
                         width={163.05}
