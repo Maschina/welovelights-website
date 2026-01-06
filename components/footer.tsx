@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import LogoSVG from "@/assets/text-logo-template-dark.svg";
 import Icon from "./icon";
+import { CopyrightFooter } from "./copyright-footer";
 
 interface FooterProps {
   logo?: {
@@ -29,9 +30,7 @@ const Footer = ({
         We Love Lights is a solo-project maintained by <Link href="https://www.linkedin.com/in/profile-robert-hahn/" className="hover:text-primary">Robert Hahn</Link>, made in Germany.
         {/* <Link href="/" className="hover:text-primary">Learn more about the author</Link> */}
       </p> 
-      <p className="text-white/40 text-center text-sm">
-        &copy; 2019-{new Date().getFullYear()} <Link href="https://www.linkedin.com/in/profile-robert-hahn/" className="hover:text-primary">Robert Hahn</Link>. All rights reserved.
-      </p>
+      <CopyrightFooter className="text-white/40" />
     </footer>
   );
 };
