@@ -23,13 +23,13 @@ const Footer = ({
   className,
 }: FooterProps) => {
   return (
-    <footer className={cn("pt-30 pb-16 px-4 w-full flex flex-col items-center justify-center bg-tertiary-darkest", className)}>
-      <Icon src={LogoSVG} className="w-full max-w-3xl px-4 text-white/10" alt="App Logo" />
+    <footer className={cn("pt-20 md:pt-30 pb-16 px-4 w-full flex flex-col items-center justify-center bg-tertiary-darkest", className)}>
+      <Icon src={LogoSVG} className="w-full max-w-3xl px-4 text-white/10 pb-8 sm:pb-0" alt="App Logo" />
       <p className="text-center text-white/40 text-sm">
         We Love Lights is a solo-project maintained by <Link href="https://www.linkedin.com/in/profile-robert-hahn/" className="hover:text-primary">Robert Hahn</Link>, made in Germany.
         {/* <Link href="/" className="hover:text-primary">Learn more about the author</Link> */}
       </p> 
-      <p className="text-white/40 text-sm">
+      <p className="text-white/40 text-center text-sm">
         &copy; 2019-{new Date().getFullYear()} <Link href="https://www.linkedin.com/in/profile-robert-hahn/" className="hover:text-primary">Robert Hahn</Link>. All rights reserved.
       </p>
     </footer>

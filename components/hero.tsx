@@ -26,27 +26,27 @@ export default function Hero() {
 
     return (
         <section className="flex hero-gradient pt-[136px] h-screen items-center">
-            <div className="flex flex-row gap-[38px] w-full items-start justify-end xl:justify-center overflow-hidden">
+            <div className="flex flex-row gap-[38px] w-full items-center justify-center sm:items-start sm:justify-end xl:justify-center overflow-hidden">
                 <Image
                     src={macbookHeroImage}
-                    alt="Macbook hero image"
+                    alt="We Love Lights Screenshot with open menu from the menu bar and open Studio window"
                     width={628}
                     height={508}
                     loading="eager"
-                    className="relative w-[628px] h-[508px]"
+                    className="hidden sm:block relative w-[628px] h-[508px]"
                 />
-                <div className="flex flex-col items-start gap-[40px] pr-3 py-[17px] shrink-0">
+                <div className="flex flex-col items-center sm:items-start gap-[40px] pr-3 py-[17px] shrink-0">
                     <div className="flex w-[219px] h-[45px] items-center justify-between px-0 py-[1.02px] relative">
                         <Image src={textLogoDark} alt="App Logo" width={219} height={45} />
                     </div>
-                    <h1 className="font-bold text-white text-7xl tracking-[-1.60px] leading-[67px]">
+                    <h1 className="font-bold text-white text-center sm:text-left text-6xl sm:text-7xl tracking-[-1.60px] leading-14 sm:leading-18">
                         Philips Hue <br />
                         on your Mac.
                     </h1>
-                    <div className="flex flex-col items-start gap-[3.73px] relative">
+                    <div className="flex flex-col items-center sm:items-start gap-[3.73px] relative">
                         <Link href="https://apps.apple.com/app/apple-store/id1479422551?pt=120333038&ct=WeLoveLights.app&mt=8">
                             <Image
-                                className="relative w-[190px]"
+                                className="relative w-[160px] sm:w-[190px]"
                                 alt="Download on the Mac App Store"
                                 src={downloadOnTheMacAppStoreBadgeUsUkRgbWht092917}
                                 width={163.05}
@@ -57,6 +57,14 @@ export default function Hero() {
                             Version 3.6.5, macOS 13.0+
                         </Link>
                     </div>
+                    <Image
+                        src={macbookHeroImage}
+                        alt="We Love Lights Screenshot with open menu from the menu bar and open Studio window"
+                        width={628}
+                        height={508}
+                        loading="eager"
+                        className="block sm:hidden relative w-[350px]"
+                    />
                 </div>
             </div>
 

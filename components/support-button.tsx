@@ -10,6 +10,7 @@ import { GlobeLock } from "lucide-react";
 
 export default function SupportButton() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isAboveSm, setIsAboveSm] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null!);
 
     useClickOutside(containerRef, () => setIsOpen(false));
@@ -22,13 +23,24 @@ export default function SupportButton() {
         return () => document.removeEventListener('keydown', handleEscape);
     }, []);
 
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsAboveSm(window.innerWidth >= 640); // 640px is the 'sm' breakpoint
+        };
+
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+
+        return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
+
     return (
         <motion.div
             ref={containerRef}
             className={`fixed z-50 bottom-[21px] right-[21px] bg-white backdrop-blur-md shadow-[0px_4px_4px_#00000040] ${isOpen ? '' : 'cursor-pointer'} overflow-hidden`}
             initial={false}
             animate={{
-                width: isOpen ? '14rem' : '120px',
+                width: isOpen ? '14rem' : (isAboveSm ? '120px' : '36px'),
                 height: isOpen ? 'auto' : '36px',
                 borderRadius: '1.5rem',
             }}
@@ -50,7 +62,7 @@ export default function SupportButton() {
                         className="flex flex-row justify-center gap-2 items-center h-9 tracking-tighter text-black"
                     >
                         <HandHeartIcon size={24} weight="fill" />
-                        <span className="font-medium">Support</span>
+                        <span className="font-medium hidden sm:block">Support</span>
                     </motion.div>
                 ) : (
                     <motion.nav
