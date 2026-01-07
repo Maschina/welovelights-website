@@ -36,10 +36,10 @@ export default function Hero() {
                     className="hidden sm:block relative w-[628px] h-[508px]"
                 />
                 <div className="flex flex-col items-center sm:items-start gap-[40px] pr-3 py-[17px] shrink-0">
-                    <div className="flex w-[219px] h-[45px] items-center justify-between px-0 py-[1.02px] relative">
-                        <Image src={textLogoDark} alt="App Logo" width={219} height={45} />
+                    <div className="flex relative">
+                        <Image src={textLogoDark} alt="App Logo" className="w-[280px]" width={219} height={45} />
                     </div>
-                    <h1 className="font-bold text-white text-center sm:text-left text-6xl sm:text-7xl tracking-[-1.60px] leading-14 sm:leading-18">
+                    <h1 className="font-bold text-white text-center sm:text-left text-6xl sm:text-7xl tracking-tight leading-14 sm:leading-18">
                         Philips Hue <br />
                         on your Mac.
                     </h1>

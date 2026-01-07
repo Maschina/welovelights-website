@@ -21,7 +21,6 @@ export default function Layout({
       <HeaderSubpage />
       {children}
       <Footer />
-      <SupportButton />
     </div>
   );
 }

@@ -152,7 +152,7 @@
 :root {
   --color-tertiary-darkest: rgba(10, 18, 45, 1);
   --color-tertiary-darker: rgba(23, 33, 71, 1);
-  --color-tertiary-dark: rgb(54, 65, 110);
+  --color-tertiary-dark: rgb(58, 71, 126);
 }
 
 @layer base {
