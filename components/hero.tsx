@@ -56,6 +56,7 @@ export default function Hero() {
                         <Link href="/changelog" className="flex text-muted text-xs hover:underline">
                             Version 3.6.5, macOS 13.0+
                         </Link>
+                        <Link href="https://testflight.apple.com/join/HAK6qEjT" className="flex text-muted text-xs hover:underline">Interested in Version 3.7 beta?</Link>
                     </div>
                     <Image
                         src={macbookHeroImage}
