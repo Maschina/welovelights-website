@@ -50,7 +50,7 @@ export default function Hero() {
         },
         {
             icon: "Feature_Icon_Native.svg",
-            title: "Blazing Fast\nNative App",
+            title: "Blazing Fast\nmacOS App",
         },
     ];
 
