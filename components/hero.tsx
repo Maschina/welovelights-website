@@ -34,10 +34,11 @@ export default function Hero() {
                     height={508}
                     loading="eager"
                     className="hidden sm:block relative w-[628px] h-[508px]"
+                    priority
                 />
                 <div className="flex flex-col items-center sm:items-start gap-[40px] pr-3 py-[17px] shrink-0">
                     <div className="flex relative">
-                        <Image src={textLogoDark} alt="App Logo" className="w-[280px]" width={219} height={45} />
+                        <Image src={textLogoDark} alt="App Logo" className="w-[280px]" width={219} height={45} loading="eager" priority />
                     </div>
                     <h1 className="font-bold text-white text-center sm:text-left text-6xl sm:text-7xl tracking-tight leading-14 sm:leading-18">
                         Philips Hue <br />

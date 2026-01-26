@@ -3,6 +3,7 @@ import { RootProvider as FumadocsRootProvider } from 'fumadocs-ui/provider/next'
 import type { ReactNode } from "react";
 import SupportButton from "@/components/support-button";
 import type { Metadata } from "next";
+import { OrganizationSchema } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "We Love Lights - Philips Hue Control for Mac | Smart Home Lighting App",
@@ -75,6 +76,29 @@ export const metadata: Metadata = {
     canonical: "https://welovelights.app",
     languages: { "en-US": "https://welovelights.app" },
   },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://welovelights.app",
+    siteName: "We Love Lights",
+    title: "We Love Lights - Philips Hue Control for Mac | Smart Home Lighting App",
+    description: "The easiest yet most powerful way to control your Philips Hue lights and Zigbee devices on macOS. Menu bar app & Studio window with multi-bridge support.",
+    images: [
+      {
+        url: "https://welovelights.app/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "We Love Lights - Philips Hue Control for Mac",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "We Love Lights - Philips Hue Control for Mac",
+    description: "The easiest yet most powerful way to control your Philips Hue lights and Zigbee devices on macOS.",
+    images: ["https://welovelights.app/opengraph-image.png"],
+    creator: "@we_love_lights", // Add your Twitter handle
+  },
 };
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -93,6 +117,9 @@ export default function Layout({ children }: { children: ReactNode }) {
 
         {/* iOS/macOS Favicons */}
         <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-icon.png" />
+
+        {/* Structured Data */}
+        <OrganizationSchema />
       </head>
       <body className="min-h-screen">
         <FumadocsRootProvider>

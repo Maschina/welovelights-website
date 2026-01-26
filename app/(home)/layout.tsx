@@ -1,6 +1,5 @@
-import type { Metadata, Viewport } from "next";
+import type { Viewport } from "next";
 import "../globals.css";
-import SupportButton from "@/components/support-button";
 
 export const viewport: Viewport = {
   themeColor: "#000000",
