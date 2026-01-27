@@ -6,8 +6,8 @@ import type { Metadata } from "next";
 import { OrganizationSchema } from "@/components/structured-data";
 
 export const metadata: Metadata = {
-  title: "We Love Lights - Philips Hue Control for Mac | Smart Home Lighting App",
-  description: "The easiest yet most powerful way to control your Philips Hue lights and Zigbee devices on macOS. Menu bar app & Studio window with multi-bridge support, remote access, scenes, automation, motion sensors, smart plugs, and Shortcuts integration. For Day-to-Day. For Pros.",
+  title: "We Love Lights - macOS App to Control Philips Hue from your Mac",
+  description: "The easiest yet most powerful way for Mac users to control your Philips Hue lights and Zigbee devices on macOS.",
   keywords: [
     // Primary Keywords
     "Philips Hue Mac app",
@@ -81,21 +81,21 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://welovelights.app",
     siteName: "We Love Lights",
-    title: "We Love Lights - Philips Hue Control for Mac | Smart Home Lighting App",
-    description: "The easiest yet most powerful way to control your Philips Hue lights and Zigbee devices on macOS. Menu bar app & Studio window with multi-bridge support.",
+    title: "We Love Lights - macOS App to Control Philips Hue from your Mac",
+    description: "The easiest yet most powerful way for Mac users to control your Philips Hue lights and Zigbee devices on macOS.",
     images: [
       {
         url: "https://welovelights.app/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "We Love Lights - Philips Hue Control for Mac",
+        alt: "We Love Lights - macOS App to Control Philips Hue from your Mac",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "We Love Lights - Philips Hue Control for Mac",
-    description: "The easiest yet most powerful way to control your Philips Hue lights and Zigbee devices on macOS.",
+    title: "We Love Lights - macOS App to Control Philips Hue from your Mac",
+    description: "The easiest yet most powerful way for Mac users to control your Philips Hue lights and Zigbee devices on macOS.",
     images: ["https://welovelights.app/opengraph-image.png"],
     creator: "@we_love_lights", // Add your Twitter handle
   },
