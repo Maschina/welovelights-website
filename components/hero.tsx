@@ -1,28 +1,13 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import macbookHeroImage from "@/assets/Macbook_Hero_Image@2x.png";
 import textLogoDark from "@/assets/text-logo-dark@2x.png";
 import downloadOnTheMacAppStoreBadgeUsUkRgbWht092917 from "@/assets/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_wht_092917.svg";
 import Link from "next/link";
+import { ScrollIndicator } from "./scroll-indicator";
+import { getLatestVersion } from "@/lib/changelog";
 
-export default function Hero() {
-    const [hasScrolled, setHasScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 0) {
-                setHasScrolled(true);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+export default async function Hero() {
+    const latestVersion = await getLatestVersion();
 
     return (
         <section className="flex hero-gradient pt-[136px] h-screen items-center">
@@ -55,7 +40,7 @@ export default function Hero() {
                             />
                         </Link>
                         <Link href="/changelog" className="flex text-muted text-xs hover:underline">
-                            Version 3.6.5, macOS 13.0+
+                            Version {latestVersion}, macOS 13.0+
                         </Link>
                         <Link href="https://testflight.apple.com/join/HAK6qEjT" className="flex text-muted text-xs hover:underline">Interested in Version 3.7 beta?</Link>
                     </div>
@@ -71,9 +56,7 @@ export default function Hero() {
             </div>
 
             {/* Scroll Down Indicator */}
-            <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-opacity duration-500 ${hasScrolled ? 'opacity-0 pointer-events-none' : 'animate-bounce'}`}>
-                <div className="w-6 h-6 border-l-2 border-b-2 border-white transform -rotate-45 opacity-70"></div>
-            </div>
+            <ScrollIndicator />
         </section>
     );
 }

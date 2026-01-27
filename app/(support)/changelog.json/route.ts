@@ -5,7 +5,7 @@ import path from 'path';
 export async function GET() {
   try {
     // Read the JSON file from public/assets
-    const filePath = path.join(process.cwd(), 'public', 'assets', 'changelog.json');
+    const filePath = path.join(process.cwd(), 'assets', 'changelog.json');
     const fileContents = fs.readFileSync(filePath, 'utf8');
 
     // Parse and validate JSON

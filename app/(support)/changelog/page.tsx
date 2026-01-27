@@ -1,19 +1,11 @@
 import { BugOff, CirclePlus } from "lucide-react";
 import Link from "next/link"
 import { cn } from "@/lib/utils";
-import fs from "fs";
-import path from "path";
+import { Metadata } from "next";
+import { getChangelogEntries, type ChangelogEntry } from "@/lib/changelog";
 
-export type ChangelogEntry = {
-  version: string;
-  date: string;
-  features?: string[];
-  bugfixes?: string[];
-  image?: string;
-  button?: {
-    url: string;
-    text: string;
-  };
+export const metadata: Metadata = {
+  title: "We Love Lights - Changelog",
 };
 
 export interface ChangelogProps {
@@ -21,17 +13,6 @@ export interface ChangelogProps {
   title?: string;
   description?: string;
   entries?: ChangelogEntry[];
-}
-
-async function getChangelogEntries(): Promise<ChangelogEntry[]> {
-  try {
-    const filePath = path.join(process.cwd(), 'public', 'assets', 'changelog.json');
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    return JSON.parse(fileContents);
-  } catch (error) {
-    console.error('Error reading changelog entries:', error);
-    return [];
-  }
 }
 
 const Changelog = async ({

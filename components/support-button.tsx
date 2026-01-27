@@ -37,7 +37,7 @@ export default function SupportButton() {
     return (
         <motion.div
             ref={containerRef}
-            className={`fixed z-50 bottom-[21px] right-[21px] bg-white backdrop-blur-md shadow-[0px_4px_4px_#00000040] ${isOpen ? '' : 'cursor-pointer'} overflow-hidden`}
+            className={`fixed z-10 bottom-[21px] right-[21px] bg-white backdrop-blur-md shadow-[0px_4px_4px_#00000040] ${isOpen ? '' : 'cursor-pointer'} overflow-hidden`}
             initial={false}
             animate={{
                 width: isOpen ? '14rem' : (isAboveSm ? '120px' : '36px'),

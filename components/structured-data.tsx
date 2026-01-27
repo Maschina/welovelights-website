@@ -1,4 +1,8 @@
-export function SoftwareApplicationSchema() {
+import { getLatestVersion } from "@/lib/changelog";
+
+export async function SoftwareApplicationSchema() {
+  const version = await getLatestVersion();
+  
   const schema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -17,7 +21,7 @@ export function SoftwareApplicationSchema() {
     },
     "description": "The easiest yet most powerful way to control your Philips Hue lights and Zigbee devices on macOS.",
     "screenshot": "https://welovelights.app/assets/app-window.png",
-    "softwareVersion": "3.6.5",
+    "softwareVersion": version,
     "downloadUrl": "https://apps.apple.com/app/apple-store/id1479422551"
   };
 
