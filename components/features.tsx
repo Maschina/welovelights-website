@@ -1,27 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import downloadOnTheMacAppStoreBadgeUsUkRgbWht092917 from "@/assets/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_wht_092917.svg";
-import { FeatureCard } from "./feature-card";
+import { FeatureCard, type Feature } from "./feature-card";
 
 export default function Hero() {
-    const features = [
+    const features: Feature[] = [
         {
             icon: "Feature_Icon_Menubar.svg",
             title: "Menubar\napplication",
             description: "For Day-to-Day.",
             details: "We Love Lights lives in your menubar, providing instant access to all your Philips Hue and deCONZ lights. Control brightness, colors, and scenes without opening a window. The menubar app is lightweight, fast, and designed to stay out of your way until you need it.",
+            video: "https://welovelights1.s3.eu-central-1.amazonaws.com/menubar.demo.mp4",
         },
         {
             icon: "Feature_Icon_Window.svg",
             title: "Window\napplication",
             description: "For Pros: We Love Lights Studio",
             details: "For those who prefer a traditional application window, We Love Lights offers a beautiful, intuitive interface with all features at your fingertips. The window application provides a comprehensive view of all your lights, rooms, and scenes with advanced controls and customization options.",
+            video: "https://welovelights1.s3.eu-central-1.amazonaws.com/studio.demo.mp4",
         },
         {
             icon: "Feature_Icon_Keyboard.svg",
             title: "Global\nhotkeys",
             description: "Control your lights without touching your mouse using customizable keyboard shortcuts.",
             details: "Set up global keyboard shortcuts to control your lights from any application. Toggle lights on and off, adjust brightness, switch scenes, and more—all without leaving your current task. Perfect for productivity enthusiasts and power users who prefer keyboard-driven workflows.",
+            images: [
+                "/screenshots/feature-hotkeys-1@2x.png",
+            ],
         },
         {
             icon: "Feature_Icon_Customization.svg",
@@ -82,15 +87,14 @@ export default function Hero() {
     return (
         <section className="bg-tertiary-dark" aria-label="We Love Lights Features">
             <div className="flex flex-col items-center gap-5 top-[51px]">
-                <header className="flex flex-col items-center gap-5 bg-tertiary-darker/80 shadow-[0px_12px_12px_#00000030] rounded-4xl px-6 sm:px-26 py-6 max-w-[1100px] mx-6 sm:mx-12">
+                <div className="flex flex-col items-center gap-5 bg-tertiary-darker/80 shadow-[0px_12px_12px_#00000030] rounded-4xl px-6 sm:px-26 py-6 max-w-[1100px] mx-6 sm:mx-12">
                     <h2 className="font-bold text-white text-3xl sm:text-5xl text-center sm:tracking-[-1.00px] leading-8 sm:leading-13 w-[230px] sm:w-full">
                         For Day-to-Day. For Pros.
                     </h2>
                     <p className="font-normal text-white text-base sm:text-xl text-center leading-6 sm:leading-8">
-                        We Love Lights is the easiest yet most powerful way to control your Philips Hue or Phoscon deCONZ lights and devices
-                        in macOS.
+                        We Love Lights is the easiest yet most powerful way for Mac users to control your Philips Hue lights and Zigbee devices on macOS.
                     </p>
-                </header>
+                </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 xs:gap-8">
                     {features.map((feature, index) => (

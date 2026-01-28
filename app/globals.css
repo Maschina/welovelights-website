@@ -205,3 +205,39 @@
     transform: translate(-50%, -40%) scale(1);
   }
 }
+
+/* Feature Card Video Styles */
+.video-mask {
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+}
+
+/* Swiper Styles */
+.swiper {
+  overflow: visible;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 24px !important;
+}
+
+.swiper-pagination-bullet {
+  background: white !important;
+}
+
+/* Hide navigation on small screens to prevent overflow */
+@media (max-width: 640px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}

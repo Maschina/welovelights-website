@@ -3,17 +3,16 @@ import { RootProvider as FumadocsRootProvider } from 'fumadocs-ui/provider/next'
 import type { ReactNode } from "react";
 import SupportButton from "@/components/support-button";
 import type { Metadata } from "next";
-import { OrganizationSchema } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "We Love Lights - macOS App to Control Philips Hue from your Mac",
   description: "The easiest yet most powerful way for Mac users to control your Philips Hue lights and Zigbee devices on macOS.",
   icons: {
     icon: [
-      { url: '/icon.png', type: 'image/png' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicons/icon.png', type: 'image/png' },
+      { url: '/favicons/icon.svg', type: 'image/svg+xml' },
     ],
-    apple: '/apple-icon.png',
+    apple: '/favicons/apple-icon.png',
   },
   // keywords: [
   //   // Primary Keywords

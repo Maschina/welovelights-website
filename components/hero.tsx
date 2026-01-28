@@ -24,6 +24,7 @@ export default async function Hero() {
                 <div className="flex flex-col items-center sm:items-start gap-[40px] pr-3 py-[17px] shrink-0">
                     <div className="flex relative">
                         <Image src={textLogoDark} alt="App Logo" className="w-[280px]" width={219} height={45} loading="eager" priority />
+                        <p className="sr-only">We Love Lights</p>
                     </div>
                     <h1 className="font-bold text-white text-center sm:text-left text-6xl sm:text-7xl tracking-tight leading-14 sm:leading-18">
                         Philips Hue <br />
