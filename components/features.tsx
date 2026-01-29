@@ -96,12 +96,6 @@ export default async function Hero() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 xs:gap-8">
-                    {features.map((feature, index) => (
-                        <FeatureCard key={index} feature={feature} />
-                    ))}
-                </div>
-
                 {/* SEO-friendly feature list - hidden visually but readable by crawlers */}
                 <div className="sr-only">
                     <h2>Complete Feature List</h2>
@@ -110,6 +104,12 @@ export default async function Hero() {
                             <h3>{feature.title.replace("\n", " ")}</h3>
                             <p>{feature.details}</p>
                         </div>
+                    ))}
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 xs:gap-8">
+                    {features.map((feature, index) => (
+                        <FeatureCard key={index} feature={feature} />
                     ))}
                 </div>
 
