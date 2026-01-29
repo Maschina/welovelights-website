@@ -32,10 +32,13 @@ const Changelog = ({
               This is a record of all the significant changes that have been made to We Love Lights.
             </p>
             <p className="text-base text-muted-foreground">
-             Click <Link
+             You can use <Link
                 href="/changelog.json"
                 className="underline"
-              >here</Link> for tool access.
+              >changelog.json</Link> or <Link
+                href="/changelog-latest.json"
+                className="underline"
+              >changelog-latest.json</Link> (preferred option) for tool access.
             </p>
           </div>
         </div>
