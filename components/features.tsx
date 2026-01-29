@@ -2,8 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import downloadOnTheMacAppStoreBadgeUsUkRgbWht092917 from "@/assets/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_wht_092917.svg";
 import { FeatureCard, type Feature } from "./feature-card";
+import { getPlaiceholder } from "plaiceholder";
+import fs from "node:fs/promises";
+import path from "node:path";
 
-export default function Hero() {
+export default async function Hero() {
     const features: Feature[] = [
         {
             icon: "Feature_Icon_Menubar.svg",
@@ -84,6 +87,32 @@ export default function Hero() {
         },
     ];
 
+    // Generate blur data URLs for all images
+    const featuresWithImageBlurData = await Promise.all(
+        features.map(async (feature) => {
+            if (!feature.images) return feature;
+
+            const blurData = await Promise.all(
+                feature.images.map(async (imagePath) => {
+                    try {
+                        const fullPath = path.join(process.cwd(), "public", imagePath);
+                        const buffer = await fs.readFile(fullPath);
+                        const { base64 } = await getPlaiceholder(buffer);
+                        return base64;
+                    } catch (error) {
+                        console.error(`Failed to generate blur for ${imagePath}:`, error);
+                        return undefined;
+                    }
+                })
+            );
+
+            return {
+                ...feature,
+                imageBlurData: blurData.filter((url): url is string => url !== undefined),
+            };
+        })
+    );
+
     return (
         <section className="bg-tertiary-dark" aria-label="We Love Lights Features">
             <div className="flex flex-col items-center gap-5 top-[51px]">
@@ -97,7 +126,7 @@ export default function Hero() {
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 xs:gap-8">
-                    {features.map((feature, index) => (
+                    {featuresWithImageBlurData.map((feature, index) => (
                         <FeatureCard key={index} feature={feature} />
                     ))}
                 </div>
@@ -105,7 +134,7 @@ export default function Hero() {
                 {/* SEO-friendly feature list - hidden visually but readable by crawlers */}
                 <div className="sr-only">
                     <h2>Complete Feature List</h2>
-                    {features.map(feature => (
+                    {featuresWithImageBlurData.map(feature => (
                         <div key={feature.title}>
                             <h3>{feature.title.replace("\n", " ")}</h3>
                             <p>{feature.details}</p>

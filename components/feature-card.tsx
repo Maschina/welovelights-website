@@ -17,6 +17,7 @@ export type Feature = {
     details: string;
     video?: string;
     images?: string[];
+    imageBlurData?: string[];
 };
 
 function FeatureDialogContent({ feature }: { feature: Feature }) {
@@ -70,6 +71,8 @@ function FeatureDialogContent({ feature }: { feature: Feature }) {
                                     fill
                                     className="object-contain"
                                     priority={index === 0}
+                                    placeholder="blur"
+                                    blurDataURL={feature.imageBlurData?.[index]}
                                 />
                             </div>
                         </SwiperSlide>
@@ -99,7 +102,7 @@ export function FeatureCard({ feature }: { feature: Feature }) {
                 >
                     <div className="relative">
                         {/* Glowing gradient background */}
-                        <div className="absolute inset-0 bg-linear-to-br from-yellow-500 via-amber-600 to-orange-500 rounded-full blur-xl opacity-0 group-hover:opacity-75 transition-opacity duration-500 animate-pulse" />
+                        <div className="absolute inset-0 rounded-full blur-xl opacity-0 group-hover:opacity-75" />
                         <Image
                             className="relative h-[50px] sm:h-[60px] max-w-[55px] sm:max-w-[65px] transition-[transform,filter] duration-300 group-hover:filter-[drop-shadow(0_2px_32px_rgba(255,255,255,0.5))_drop-shadow(0_0_5px_rgba(251,191,36,0.3))]"
                             alt={`${feature.title.replace("\n", " ")} - We Love Lights feature for Philips Hue control on macOS`}

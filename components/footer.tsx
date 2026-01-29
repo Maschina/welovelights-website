@@ -27,7 +27,7 @@ const Footer = ({
     <footer className={cn("pt-20 md:pt-30 pb-16 px-4 w-full flex flex-col items-center justify-center bg-tertiary-darkest", className)}>
       <Icon src={LogoSVG} className="w-full max-w-3xl px-4 text-white/10 pb-8 sm:pb-0" alt="App Logo" />
       <p className="text-center text-white/40 text-sm">
-        We Love Lights is a solo-project maintained by <Link href="https://www.linkedin.com/in/profile-robert-hahn/" className="hover:text-primary">Robert Hahn</Link>, made in Germany.
+        We Love Lights is a solo-project developed and maintained by <Link href="https://www.linkedin.com/in/profile-robert-hahn/" className="hover:text-primary">Robert Hahn</Link>, made in Germany.
         {/* <Link href="/" className="hover:text-primary">Learn more about the author</Link> */}
       </p> 
       <CopyrightFooter className="text-white/40" />

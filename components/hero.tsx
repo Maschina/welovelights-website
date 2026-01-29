@@ -1,5 +1,5 @@
 import Image from "next/image";
-import macbookHeroImage from "@/assets/Macbook_Hero_Image@2x.png";
+import macbookHeroImage from "@/assets/Macbook_Hero_Image.png";
 import textLogoDark from "@/assets/text-logo-dark@2x.png";
 import downloadOnTheMacAppStoreBadgeUsUkRgbWht092917 from "@/assets/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_wht_092917.svg";
 import Link from "next/link";
@@ -15,8 +15,8 @@ export default function Hero() {
                 <Image
                     src={macbookHeroImage}
                     alt="We Love Lights Screenshot with open menu from the menu bar and open Studio window"
-                    width={628}
-                    height={508}
+                    width={1256}
+                    height={1016}
                     loading="eager"
                     className="hidden sm:block relative w-[628px] h-[508px]"
                     priority

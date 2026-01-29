@@ -15,7 +15,7 @@ export async function GET() {
     return NextResponse.json(jsonData, {
       headers: {
         'Content-Type': 'application/json',
-        'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
+        'Cache-Control': 'public, max-age=86400', // Cache for 24 hours
       },
     });
   } catch (error) {

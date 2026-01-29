@@ -2,6 +2,9 @@ import { createMDX } from 'fumadocs-mdx/next';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    qualities: [25, 50, 75, 100],
+  },
   reactCompiler: true,
   reactStrictMode: true,
   turbopack: {
