@@ -54,7 +54,7 @@ const Changelog = ({
                 className="relative flex gap-8 items-start"
               >
                 {/* Timeline capsule (hidden on mobile) */}
-                <div className={cn("hidden xs:flex relative z-10 py-3 flex-col items-center justify-center w-[140px] rounded-3xl shrink-0 bg-tertiary-darker")}>
+                <div className={cn("hidden xs:flex relative z-10 py-4 flex-col items-center justify-center w-[140px] rounded-3xl shrink-0 bg-tertiary-darker shadow-[0px_12px_12px_#00000030]")}>
                   <span className="text-xl text-white font-bold">
                     {entry.version}
                   </span>
@@ -66,7 +66,7 @@ const Changelog = ({
                 </div>
 
                 {/* Changelog entry */}
-                <div className="flex flex-col sm:flex-row gap-6 sm:gap-2 w-full text-white bg-tertiary-darker p-4 rounded-3xl">
+                <div className="flex flex-col sm:flex-row gap-6 w-full text-white bg-tertiary-darker py-4 px-5 sm:px-7 rounded-3xl shadow-[0px_12px_12px_#00000030]">
 
                   {/* Version and date (mobile only) */}
                   <div className="xs:hidden flex flex-col w-full">
