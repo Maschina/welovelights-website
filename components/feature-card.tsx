@@ -1,10 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import { WarpDialog, WarpDialogContent, WarpDialogTrigger, useWarpDialogContext } from "./ui/warp-dialog";
 import { Button } from "./ui/button";
 import { Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
+import {
+    Dialog,
+    DialogClose,
+    DialogContent,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
+import { Spotlight } from "@/components/ui/spotlight-new";
 
 import "swiper/css"
 import "swiper/css/navigation"
@@ -17,12 +26,9 @@ export type Feature = {
     details: string;
     video?: string;
     images?: string[];
-    imageBlurData?: string[];
 };
 
 function FeatureDialogContent({ feature }: { feature: Feature }) {
-    const { setOpen } = useWarpDialogContext();
-
     return (
         <div className="flex flex-col items-center gap-6 w-[calc(100vw-1rem)] sm:w-auto max-w-2xl mx-auto px-3">
             <div className="relative">
@@ -35,6 +41,11 @@ function FeatureDialogContent({ feature }: { feature: Feature }) {
                 />
             </div>
             <div className="text-center space-y-4 w-full">
+                <Spotlight
+                    className="hidden md:block"
+                    translateY={-600}
+                    duration={20}
+                />
                 <h3 className="text-3xl font-bold text-white px-4">
                     {feature.title.replace("\n", " ")}
                 </h3>
@@ -69,10 +80,9 @@ function FeatureDialogContent({ feature }: { feature: Feature }) {
                                     src={image}
                                     alt={`${feature.title.replace("\n", " ")}`}
                                     fill
+                                    sizes="100vw"
                                     className="object-contain"
                                     priority={index === 0}
-                                    placeholder="blur"
-                                    blurDataURL={feature.imageBlurData?.[index]}
                                 />
                             </div>
                         </SwiperSlide>
@@ -80,23 +90,14 @@ function FeatureDialogContent({ feature }: { feature: Feature }) {
                     </Swiper>
                 </div>
             )}
-            <div className="flex gap-4 mt-4">
-                <Button 
-                    variant="default" 
-                    className="bg-white hover:bg-white/90 backdrop-blur-md shadow-[0px_4px_4px_#00000040] cursor-pointer overflow-hidden" 
-                    onClick={() => setOpen(false)}
-                >
-                    Close
-                </Button>
-            </div>
         </div>
     );
 }
 
 export function FeatureCard({ feature }: { feature: Feature }) {
     return (
-        <WarpDialog>
-            <WarpDialogTrigger asChild>
+        <Dialog>
+            <DialogTrigger asChild>
                 <article
                     className="group justify-self-center flex flex-col items-center gap-2 sm:gap-4 p-2.5 rounded-2xl cursor-pointer transition-all duration-300 ease-in-out"
                 >
@@ -115,10 +116,18 @@ export function FeatureCard({ feature }: { feature: Feature }) {
                         {feature.title}
                     </h3>
                 </article>
-            </WarpDialogTrigger>
-            <WarpDialogContent>
+            </DialogTrigger>
+            <DialogContent showCloseButton={false} className="max-w-[100vw] ring-0 bg-tertiary-darker/0 rounded-4xl p-0">
+                <DialogHeader className="sr-only">
+                    <DialogTitle>{feature.title.replace("\n", " ")}</DialogTitle>
+                </DialogHeader>
                 <FeatureDialogContent feature={feature} />
-            </WarpDialogContent>
-        </WarpDialog>
+                <DialogFooter className="flex-row justify-center sm:justify-center">
+                    <DialogClose asChild>
+                        <Button type="button" className="bg-white hover:bg-white/90 backdrop-blur-md shadow-[0px_4px_4px_#00000040] cursor-pointer overflow-hidden">Close</Button>
+                    </DialogClose>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
     );
 }

@@ -2,25 +2,22 @@ import Image from "next/image";
 import Link from "next/link";
 import downloadOnTheMacAppStoreBadgeUsUkRgbWht092917 from "@/assets/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_wht_092917.svg";
 import { FeatureCard, type Feature } from "./feature-card";
-import { getPlaiceholder } from "plaiceholder";
-import fs from "node:fs/promises";
-import path from "node:path";
 
 export default async function Hero() {
     const features: Feature[] = [
-        {
-            icon: "Feature_Icon_Menubar.svg",
-            title: "Menubar\napplication",
-            description: "For Day-to-Day.",
-            details: "We Love Lights lives in your menubar, providing instant access to all your Philips Hue and deCONZ lights. Control brightness, colors, and scenes without opening a window. The menubar app is lightweight, fast, and designed to stay out of your way until you need it.",
-            video: "https://welovelights1.s3.eu-central-1.amazonaws.com/menubar.demo.mp4",
-        },
         {
             icon: "Feature_Icon_Window.svg",
             title: "Window\napplication",
             description: "For Pros: We Love Lights Studio",
             details: "For those who prefer a traditional application window, We Love Lights offers a beautiful, intuitive interface with all features at your fingertips. The window application provides a comprehensive view of all your lights, rooms, and scenes with advanced controls and customization options.",
             video: "https://welovelights1.s3.eu-central-1.amazonaws.com/studio.demo.mp4",
+        },
+        {
+            icon: "Feature_Icon_Menubar.svg",
+            title: "Menubar\napplication",
+            description: "For Day-to-Day.",
+            details: "We Love Lights lives in your menubar, providing instant access to all your Philips Hue and deCONZ lights. Control brightness, colors, and scenes without opening a window. The menubar app is lightweight, fast, and designed to stay out of your way until you need it.",
+            video: "https://welovelights1.s3.eu-central-1.amazonaws.com/menubar.demo.mp4",
         },
         {
             icon: "Feature_Icon_Keyboard.svg",
@@ -45,7 +42,7 @@ export default async function Hero() {
         },
         {
             icon: "Feature_Icon_MotionSensor.svg",
-            title: "Motion Sensor\ncontrol",
+            title: "Motion Sensor\nmanagement",
             description: "Automate your lighting with motion sensors for hands-free control.",
             details: "Configure and manage your Philips Hue motion sensors directly from the app. Set up automated lighting rules based on motion detection, adjust sensitivity, and customize behavior for different times of day. Create smart lighting that responds to your presence automatically.",
         },
@@ -87,32 +84,6 @@ export default async function Hero() {
         },
     ];
 
-    // Generate blur data URLs for all images
-    const featuresWithImageBlurData = await Promise.all(
-        features.map(async (feature) => {
-            if (!feature.images) return feature;
-
-            const blurData = await Promise.all(
-                feature.images.map(async (imagePath) => {
-                    try {
-                        const fullPath = path.join(process.cwd(), "public", imagePath);
-                        const buffer = await fs.readFile(fullPath);
-                        const { base64 } = await getPlaiceholder(buffer);
-                        return base64;
-                    } catch (error) {
-                        console.error(`Failed to generate blur for ${imagePath}:`, error);
-                        return undefined;
-                    }
-                })
-            );
-
-            return {
-                ...feature,
-                imageBlurData: blurData.filter((url): url is string => url !== undefined),
-            };
-        })
-    );
-
     return (
         <section className="bg-tertiary-dark" aria-label="We Love Lights Features">
             <div className="flex flex-col items-center gap-5 top-[51px]">
@@ -126,7 +97,7 @@ export default async function Hero() {
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 xs:gap-8">
-                    {featuresWithImageBlurData.map((feature, index) => (
+                    {features.map((feature, index) => (
                         <FeatureCard key={index} feature={feature} />
                     ))}
                 </div>
@@ -134,7 +105,7 @@ export default async function Hero() {
                 {/* SEO-friendly feature list - hidden visually but readable by crawlers */}
                 <div className="sr-only">
                     <h2>Complete Feature List</h2>
-                    {featuresWithImageBlurData.map(feature => (
+                    {features.map(feature => (
                         <div key={feature.title}>
                             <h3>{feature.title.replace("\n", " ")}</h3>
                             <p>{feature.details}</p>

@@ -5,12 +5,17 @@ import downloadOnTheMacAppStoreBadgeUsUkRgbWht092917 from "@/assets/Download_on_
 import Link from "next/link";
 import { ScrollIndicator } from "./scroll-indicator";
 import { getLatestVersion } from "@/lib/changelog";
+import { Spotlight } from "@/components/ui/spotlight";
 
 export default function Hero() {
     const latestVersion = getLatestVersion();
 
     return (
         <section className="flex hero-gradient pt-[136px] h-screen items-center">
+            <Spotlight
+                className="hidden md:block"
+                fill="white"
+            />
             <div className="flex flex-row gap-[38px] w-full items-center justify-center sm:items-start sm:justify-end xl:justify-center overflow-hidden">
                 <Image
                     src={macbookHeroImage}

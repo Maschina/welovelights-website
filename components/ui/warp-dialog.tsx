@@ -104,7 +104,6 @@ function WarpDialogOverlay({
 
 export function WarpDialogContent({
   children,
-  className,
   ...props
 }: React.ComponentProps<typeof motion.div>) {
   const { open, setOpen } = useWarpDialogContext()
@@ -206,46 +205,37 @@ function WarpAnimations() {
         }}
       />
       <motion.div
-        className="absolute top-[-25%] left-[-50%] h-full w-full rounded-full bg-tertiary-darker blur-[100px]"
-        initial={{ opacity: 0 }}
+        className="absolute top-[-25%] left-[-50%] h-full w-full rounded-full bg-tertiary-darker blur-[100px] will-change-[opacity]"
+        initial={{ opacity: 0, scale: 0.85 }}
         animate={{
           opacity: 0.9,
+          scale: 1,
           transition: {
             duration: enterDuration,
-            scale: {
-              duration: 15,
-              repeat: Infinity,
-              repeatType: "loop",
-              ease: "easeInOut",
-              delay: 0.35,
-            },
+            ease: "easeInOut",
           },
-          scale: [1, 0.7, 1],
         }}
         exit={{
           opacity: 0,
+          scale: 0.85,
           transition: { duration: exitDuration },
         }}
       />
       <motion.div
-        className="absolute top-[25%] left-[50%] h-full w-full rounded-full bg-tertiary-darkest blur-[100px]"
-        initial={{ opacity: 0 }}
+        className="absolute top-[25%] left-[50%] h-full w-full rounded-full bg-tertiary-darkest blur-[100px] will-change-[opacity]"
+        initial={{ opacity: 0, scale: 0.85 }}
         animate={{
           opacity: 0.9,
+          scale: 1,
           transition: {
             duration: enterDuration,
-            scale: {
-              duration: 15,
-              repeat: Infinity,
-              repeatType: "loop",
-              ease: "easeInOut",
-              delay: 0.35,
-            },
+            ease: "easeInOut",
+            delay: 0.1,
           },
-          scale: [1, 0.7, 1],
         }}
         exit={{
           opacity: 0,
+          scale: 0.85,
           transition: { duration: exitDuration },
         }}
       />

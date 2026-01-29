@@ -19,10 +19,10 @@ export function SoftwareApplicationSchema() {
       "ratingValue": "4.7", // Update with actual rating
       "ratingCount": "130" // Update with actual count
     },
-    "description": "The easiest yet most powerful way to control your Philips Hue lights and Zigbee devices on macOS.",
+    "description": "We Love Lights is the easiest yet most powerful way for Mac users to control your Philips Hue lights and Zigbee devices on macOS.",
     "screenshot": "https://welovelights.app/assets/app-window.png",
     "softwareVersion": version,
-    "downloadUrl": "https://apps.apple.com/app/apple-store/id1479422551"
+    "downloadUrl": "https://apps.apple.com/app/apple-store/id1479422551?pt=120333038&ct=WeLoveLights.app&mt=8"
   };
 
   return (
