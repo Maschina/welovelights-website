@@ -6,8 +6,8 @@ import Link from "next/link";
 import { ScrollIndicator } from "./scroll-indicator";
 import { getLatestVersion } from "@/lib/changelog";
 
-export default async function Hero() {
-    const latestVersion = await getLatestVersion();
+export default function Hero() {
+    const latestVersion = getLatestVersion();
 
     return (
         <section className="flex hero-gradient pt-[136px] h-screen items-center">

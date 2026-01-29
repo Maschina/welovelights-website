@@ -1,7 +1,8 @@
 [
   {
     "version": "3.6.5",
-    "date": "Dec 9, 2025",
+    "build": "1087",
+    "date": "2025-12-09",
     "features": [
       "Optional telemetry support has been added to improve tracing of user and performance issues",
       "Added community support with UserJot"
@@ -15,7 +16,8 @@
   },
   {
     "version": "3.6.4",
-    "date": "Oct 23, 2025",
+    "build": "1075",
+    "date": "2025-10-23",
     "features": [
       "Upgraded to macOS Tahoe glass design"
     ],
@@ -26,7 +28,8 @@
   },
   {
     "version": "3.6.3",
-    "date": "May 9, 2025",
+    "build": "1062",
+    "date": "2025-05-09",
     "bugfixes": [
       "Fixed the reset of keyboard shortcuts when reloading from the bridge",
       "Resolved an issue that may cause memory leaks in rare cases when reloading from the bridge",
@@ -37,7 +40,8 @@
   },
   {
     "version": "3.6.2",
-    "date": "April 16, 2025",
+    "build": "1048",
+    "date": "2025-04-16",
     "features": [
       "App Intents for the Shortcut App support variables"
     ],
@@ -53,7 +57,7 @@
   },
   {
     "version": "3.6.1",
-    "date": "April 2, 2025",
+    "date": "2025-04-02",
     "features": [
       "Add an option to change the order of groups (Rooms before Zones, Zones before Rooms, Mixed)",
       "Change layout for group items in Menu, when the option is enabled to show a brightness slider",
@@ -66,7 +70,7 @@
   },
   {
     "version": "3.6",
-    "date": "March 27, 2025",
+    "date": "2025-03-27",
     "features": [
       "Away From Home: Work seamlessly with your smart home by adding your Hue account and remotely connect to your Hue Bridge",
       "Split View for groups in Studio: Minimise scrolling with new side-by-side list design for lights/devices and scenes ",
@@ -84,7 +88,7 @@
   },
   {
     "version": "3.5",
-    "date": "April 10, 2023",
+    "date": "2023-04-10",
     "features": [
       "Added search toolbar item for lights, devices, scenes, motion sensors, switches and status sensors (Studio Mode only)",
       "Favorites for lights, devices and scenes (for both Menu and Studio Mode)",
@@ -103,7 +107,7 @@
   },
   {
     "version": "3.4.2",
-    "date": "December 16, 2022",
+    "date": "2022-12-16",
     "features": [
       "Demo mode for testing the app without requiring an active hub connection"
     ],
@@ -113,7 +117,7 @@
   },
   {
     "version": "3.4.1",
-    "date": "December 14, 2022",
+    "date": "2022-12-14",
     "features": [
       "Added button in Switches configuration to quickly switch over Cycle State mode (offering Automatic Configuration)",
       "App-wide keyboard shortcut (Cmd+W) to hide the App Window"
@@ -126,7 +130,7 @@
   },
   {
     "version": "3.4",
-    "date": "November 29, 2022",
+    "date": "2022-11-29",
     "features": [
       "Support for Shortcut App",
       "Breaking change: macOS 12+ required as minimum target"
@@ -137,14 +141,14 @@
   },
   {
     "version": "3.3.4",
-    "date": "November 14, 2022",
+    "date": "2022-11-14",
     "bugfixes": [
       "Fixes an issue that caused connection issues after stand-by, hibernate, or Wifi re-connect"
     ]
   },
   {
     "version": "3.3.3",
-    "date": "",
+    "date": "2022-11-12",
     "features": [
       "Reload button to enforce bridge update",
       "Support color gamuts for innr Lights",
@@ -160,7 +164,7 @@
   },
   {
     "version": "3.3.2",
-    "date": "October 22, 2022",
+    "date": "2022-10-22",
     "features": [
       "Quickly open Studio in Menu Mode with Hotkey or Command-Click onto app icon",
       "Better visibility that a list section is collapsed"
@@ -174,7 +178,7 @@
   },
   {
     "version": "3.3.1",
-    "date": "September 24, 2022",
+    "date": "2022-09-24",
     "bugfixes": [
       "Remove menu entry \"Add new Bridge\" in Menu Mode ",
       "Fix a bug where existing lights cannot be added to Zones",
@@ -188,7 +192,7 @@
   },
   {
     "version": "3.3",
-    "date": "September 15, 2022",
+    "date": "2022-09-15",
     "features": [
       "Configuration wizard for Motion sensors (Time-based pattern and generic pattern)",
       "Configuration wizard for Switches (Scene-cycle pattern and generic pattern)",
@@ -207,7 +211,7 @@
   },
   {
     "version": "3.2",
-    "date": "June 16, 2022",
+    "date": "2022-06-16",
     "features": [
       "New color pickers for lights (temperature picker for color lights, hue/saturation picker, red/green/blue picker, CIE 1931 color space picker)",
       "Copy and Paste color and brightness values for lights",
@@ -235,21 +239,21 @@
   },
   {
     "version": "3.1.4",
-    "date": "April 12, 2022",
+    "date": "2022-04-12",
     "bugfixes": [
       "Fix after changes in the bridge firmware 1.50"
     ]
   },
   {
     "version": "3.1.3",
-    "date": "December 28, 2021",
+    "date": "2021-12-28",
     "bugfixes": [
       "Fixing an issue causing the app hanging after wake-up"
     ]
   },
   {
     "version": "3.1.2",
-    "date": "December 24, 2021",
+    "date": "2021-12-24",
     "bugfixes": [
       "Fix crash when navigating through group list in Studio/Floating Mode",
       "Remove auto-hovering in group list while being in Floating Mode"
@@ -257,7 +261,7 @@
   },
   {
     "version": "3.1.1",
-    "date": "December 10, 2021",
+    "date": "2021-12-10",
     "bugfixes": [
       "Do not unfold menu before downloading data from bridge in Menu Mode",
       "Scenes are not updated after launch causing no color gradients",
@@ -267,7 +271,7 @@
   },
   {
     "version": "3.1",
-    "date": "December 1, 2021",
+    "date": "2021-12-01",
     "features": [
       "Bring back Menu Mode (and combine it in a set of 3 different user interface modes)",
       "Option to open the app silently",
@@ -282,7 +286,7 @@
   },
   {
     "version": "3.0.2",
-    "date": "November 11, 2021",
+    "date": "2021-11-11",
     "bugfixes": [
       "Preference window cannot be opened from the menu",
       "Fix Window/Floating mode control",
@@ -292,7 +296,7 @@
   },
   {
     "version": "3.0",
-    "date": "October 30, 2021",
+    "date": "2021-10-30",
     "features": [
       "Rebuild User Interface based on SwiftUI"
     ],
@@ -302,7 +306,7 @@
   },
   {
     "version": "2.2.1",
-    "date": "October 12, 2020",
+    "date": "2020-10-12",
     "features": [
       "Remove of HueSDK to support Apple Silicon architecture"
     ],
@@ -315,7 +319,7 @@
   },
   {
     "version": "2.2",
-    "date": "September 27, 2020",
+    "date": "2020-09-27",
     "features": [
       "Support for multiple connected Hue bridges",
       "Replace YouTracker with Redmine to improve stability of bug reporting",
@@ -331,7 +335,7 @@
   },
   {
     "version": "2.1",
-    "date": "April 17, 2020",
+    "date": "2020-04-17",
     "features": [
       "Support for Zones: A zone describes a group of lights that can be controlled together. Zones can be useful to control a group of lights that belong to a specific area (e.g. attic of a house). Lights can be added to multiple zones."
     ],
@@ -343,7 +347,7 @@
   },
   {
     "version": "2.0.2",
-    "date": "April 3, 2020",
+    "date": "2020-04-03",
     "features": [
       "Introduction of We Love Lights Studio: Create, Design and Organize your Hue bridge",
       "Not only groups, but all resources (Groups, Lights, Scenes) can be set hidden",
@@ -367,7 +371,7 @@
   },
   {
     "version": "1.2.1",
-    "date": "January 07, 2020",
+    "date": "2020-01-07",
     "bugfixes": [
       "Fix an issue with discovering new bridges for specific network conditions",
       "Fix an issue where not all group items have been cleaned-up after disconnecting from the bridge"
@@ -375,7 +379,7 @@
   },
   {
     "version": "1.2",
-    "date": "December 17, 2019",
+    "date": "2019-12-17",
     "features": [
       "Support for Osram SMART+",
       "Hidden rooms (hover mouse over group switch)",
@@ -391,7 +395,7 @@
   },
   {
     "version": "1.1.2",
-    "date": "November 19, 2019",
+    "date": "2019-11-19",
     "bugfixes": [
       "Fix an issue with Scene Buttons that made them hard to read in Dark Mode",
       "Fix an issue with the general display of Scene Button"
@@ -399,7 +403,7 @@
   },
   {
     "version": "1.1.1",
-    "date": "November 11, 2019",
+    "date": "2019-11-11",
     "bugfixes": [
       "Fix an issue that caused broken connection with some Macbook models",
       "Fix the foreground text color in the Changelog while being in Dark Mode"
@@ -407,7 +411,7 @@
   },
   {
     "version": "1.1",
-    "date": "November 6, 2019",
+    "date": "2019-11-06",
     "features": [
       "Add a _Getting Started_ and several help messages to give more explanations",
       "Add _Release Notes_",
@@ -423,7 +427,7 @@
   },
   {
     "version": "1.0.1",
-    "date": "September 15, 2019",
+    "date": "2019-09-15",
     "bugfixes": [
       "Fix minor performance issues"
     ]

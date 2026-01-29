@@ -3,25 +3,29 @@ import path from "path";
 
 export type ChangelogEntry = {
     version: string;
-    date: string;
+    build?: number;
+    date?: Date;
     features?: string[];
     bugfixes?: string[];
-    image?: string;
-    button?: {
-        url: string;
-        text: string;
-    };
 };
 
 /**
- * Fetches and parses the changelog from the filesystem
+ * Fetches and parses the changelog from the filesystem.
+ * The changelog.json file is a JSON file in the assets folder.
+ * 
  * @returns Array of changelog entries
  */
-export async function getChangelogEntries(): Promise<ChangelogEntry[]> {
+export function getChangelogEntries(): ChangelogEntry[] {
     try {
+        // changelog.json is a JSON file in the assets folder
         const filePath = path.join(process.cwd(), 'assets', 'changelog.json');
         const fileContents = fs.readFileSync(filePath, 'utf8');
-        return JSON.parse(fileContents);
+        const rawData = JSON.parse(fileContents) as Array<Omit<ChangelogEntry, 'date'> & { date?: string }>;
+        
+        return rawData.map(({ date, ...entry }) => ({
+            ...entry,
+            date: date ? new Date(date) : undefined
+        }));
     } catch (error) {
         console.error('Error reading changelog:', error);
         return [];
@@ -32,23 +36,26 @@ export async function getChangelogEntries(): Promise<ChangelogEntry[]> {
  * Gets the latest version from the changelog by parsing dates
  * @returns The latest version string (e.g., "3.6.5")
  */
-export async function getLatestVersion(): Promise<string> {
+export function getLatestVersion(): string {
     try {
-        const data = await getChangelogEntries();
+        const data = getChangelogEntries();
         
-        if (data && data.length > 0) {
-            // Parse dates and sort to ensure we get the latest
+        if (data.length > 0) {
             const sorted = data.sort((a, b) => {
-                const dateA = new Date(a.date);
-                const dateB = new Date(b.date);
-                return dateB.getTime() - dateA.getTime();
+                if (a.date && b.date) {
+                    return b.date.getTime() - a.date.getTime();
+                }
+                if (a.build && b.build) {
+                    return b.build - a.build;
+                }
+                return 0;
             });
             return sorted[0].version;
         }
-        return "3.6.5"; // Fallback
+        return "0.0.0"; // Fallback
     } catch (error) {
         console.error('Error getting latest version:', error);
-        return "3.6.5"; // Fallback
+        return "0.0.0"; // Fallback
     }
 }
 
@@ -57,7 +64,15 @@ export async function getLatestVersion(): Promise<string> {
  * @param version - The version to find (e.g., "3.6.5")
  * @returns The changelog entry or undefined if not found
  */
-export async function getChangelogByVersion(version: string): Promise<ChangelogEntry | undefined> {
-    const entries = await getChangelogEntries();
-    return entries.find(entry => entry.version === version);
+export function getChangelogByVersion(version: string): ChangelogEntry | undefined {
+    return getChangelogEntries().find(entry => entry.version === version);
+}
+
+/**
+ * Gets a specific changelog entry by build
+ * @param build - The build to find (e.g., 1087)
+ * @returns The changelog entry or undefined if not found
+ */
+export function getChangelogByBuild(build: number): ChangelogEntry | undefined {
+    return getChangelogEntries().find(entry => entry.build === build);
 }

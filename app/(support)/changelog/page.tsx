@@ -15,11 +15,11 @@ export interface ChangelogProps {
   entries?: ChangelogEntry[];
 }
 
-const Changelog = async ({
+const Changelog = ({
   entries: propEntries,
   className,
 }: ChangelogProps) => {
-  const entries = propEntries || await getChangelogEntries();
+  const entries = propEntries || getChangelogEntries();
   return (
     <section className={cn("", className)}>
       <div className="container mx-auto px-4 max-w-5xl">
@@ -55,9 +55,11 @@ const Changelog = async ({
                   <span className="text-xl text-white font-bold">
                     {entry.version}
                   </span>
-                  <span className="text-muted-foreground text-xs">
-                    {entry.date}
-                  </span>
+                  {entry.date && (
+                    <span className="text-muted-foreground text-xs">
+                    {entry.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                    </span>
+                  )}
                 </div>
 
                 {/* Changelog entry */}
@@ -68,9 +70,11 @@ const Changelog = async ({
                     <span className="text-xl text-white font-bold">
                       Version {entry.version}
                     </span>
-                    <span className="text-muted-foreground text-xs">
-                      {entry.date}
-                    </span>
+                    {entry.date && (
+                      <span className="text-muted-foreground text-xs">
+                        {entry.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                      </span>
+                    )}
                   </div>
 
                   {/* Features */}

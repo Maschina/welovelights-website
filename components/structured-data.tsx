@@ -1,7 +1,7 @@
 import { getLatestVersion } from "@/lib/changelog";
 
-export async function SoftwareApplicationSchema() {
-  const version = await getLatestVersion();
+export function SoftwareApplicationSchema() {
+  const version = getLatestVersion();
   
   const schema = {
     "@context": "https://schema.org",
