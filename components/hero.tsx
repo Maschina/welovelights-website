@@ -13,12 +13,12 @@ export default function Hero() {
     const latestVersion = getLatestVersion();
 
     return (
-        <section className="flex hero-gradient pt-[136px] h-screen items-center">
+        <section className="flex hero-gradient pt-[70px] h-screen items-center">
             <Spotlight
                 className="hidden md:block"
                 fill="white"
             />
-            <div className="flex flex-row gap-[38px] w-full items-center justify-center sm:items-start sm:justify-end xl:justify-center overflow-hidden">
+            <div className="flex flex-row gap-[40px] w-full items-center justify-center sm:items-start sm:justify-end xl:justify-center overflow-hidden">
                 <div className="hidden sm:block w-[628px] shrink-0">
                     <Zoom
                         zoomMargin={60}
@@ -38,7 +38,7 @@ export default function Hero() {
                         />
                     </Zoom>
                 </div>
-                <div className="flex flex-col items-center sm:items-start gap-[40px] pr-3 py-[17px] shrink-0">
+                <div className="flex flex-col items-center sm:items-start gap-[40px] pr-3 py-[8px] shrink-0">
                     <div className="flex relative">
                         <Image
                             src={textLogoDark}
