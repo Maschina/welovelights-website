@@ -14,10 +14,13 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 import { Spotlight } from "@/components/ui/spotlight-new";
+import { useState, useEffect } from "react";
+import { Spinner } from "@/components/spinner";
 
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
+
 
 export type Feature = {
     icon: string;
@@ -113,22 +116,56 @@ function FeatureDialogContent({ feature }: { feature: Feature }) {
                     >
                         {feature.images.map((image, index) => (
                             <SwiperSlide key={index}>
-                                <div className="relative aspect-video overflow-hidden rounded-lg">
-                                    <Image
-                                        src={image}
-                                        alt={`${feature.title.replace("\n", " ")}`}
-                                        fill
-                                        sizes="100vw"
-                                        className="max-w-full max-h-full"
-                                        style={{ objectFit: 'scale-down' }}
-                                        priority={index === 0}
-                                    />
-                                </div>
+                                <FeatureImage
+                                    src={image}
+                                    alt={`${feature.title.replace("\n", " ")}`}
+                                    priority={index === 0}
+                                />
                             </SwiperSlide>
                         ))}
                     </Swiper>
                 </div>
             )}
+        </div>
+    );
+}
+
+function FeatureImage({ src, alt, priority }: { src: string; alt: string; priority?: boolean }) {
+    const [isLoading, setIsLoading] = useState(true);
+    const [showSpinner, setShowSpinner] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (isLoading) {
+                setShowSpinner(true);
+            }
+        }, 200); // 200ms delay to prevent flickering
+
+        return () => clearTimeout(timer);
+    }, [isLoading]);
+
+    const handleLoad = () => {
+        setIsLoading(false);
+        setShowSpinner(false);
+    };
+
+    return (
+        <div className="relative aspect-video overflow-hidden rounded-lg flex items-center justify-center">
+            {showSpinner && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <Spinner />
+                </div>
+            )}
+            <Image
+                src={src}
+                alt={alt}
+                fill
+                sizes="100vw"
+                className="max-w-full max-h-full"
+                style={{ objectFit: 'scale-down' }}
+                priority={priority}
+                onLoad={handleLoad}
+            />
         </div>
     );
 }
