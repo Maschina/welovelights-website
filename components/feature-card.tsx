@@ -28,72 +28,6 @@ export type Feature = {
     images?: string[];
 };
 
-function FeatureDialogContent({ feature }: { feature: Feature }) {
-    return (
-        <div className="flex flex-col items-center gap-6 w-[calc(100vw-1rem)] sm:w-auto max-w-2xl mx-auto px-3">
-            <div className="relative">
-                <Image
-                    className="relative h-[60px] w-[60px]"
-                    alt={feature.title.replace("\n", " ")}
-                    src={`/assets/${feature.icon}`}
-                    width={80}
-                    height={80}
-                />
-            </div>
-            <div className="text-center space-y-4 w-full">
-                <Spotlight
-                    className="hidden md:block"
-                    translateY={-600}
-                    duration={20}
-                />
-                <h3 className="text-3xl font-bold text-white px-4">
-                    {feature.title.replace("\n", " ")}
-                </h3>
-                {feature.video && (
-                    <div className="video-mask shadow-[0px_12px_12px_#00000030] h-auto w-full aspect-video rounded-lg">
-                        <video preload="none" autoPlay muted loop className="w-full" aria-label="Video player">
-                            <source src={feature.video} type="video/mp4" className="rounded-lg"/>
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                )}
-                <div className="px-4">
-                    <p className="text-base text-white/75 text-center leading-relaxed max-w-prose mx-auto">
-                        {feature.details}
-                    </p>
-                </div>
-            </div>
-            {feature.images && (
-                <div className="w-full">
-                    <Swiper
-                        modules={[Navigation, Pagination]}
-                        navigation
-                        pagination={{ clickable: true }}
-                        spaceBetween={30}
-                        slidesPerView={1}
-                        className="rounded-lg"
-                    >
-                    {feature.images.map((image, index) => (
-                        <SwiperSlide key={index}>
-                            <div className="relative aspect-video overflow-hidden rounded-lg">
-                                <Image
-                                    src={image}
-                                    alt={`${feature.title.replace("\n", " ")}`}
-                                    fill
-                                    sizes="100vw"
-                                    className="object-contain"
-                                    priority={index === 0}
-                                />
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                    </Swiper>
-                </div>
-            )}
-        </div>
-    );
-}
-
 export function FeatureCard({ feature }: { feature: Feature }) {
     return (
         <Dialog>
@@ -129,5 +63,72 @@ export function FeatureCard({ feature }: { feature: Feature }) {
                 </DialogFooter>
             </DialogContent>
         </Dialog>
+    );
+}
+
+function FeatureDialogContent({ feature }: { feature: Feature }) {
+    return (
+        <div className="flex flex-col items-center gap-6 w-[calc(100vw-1rem)] sm:w-auto max-w-2xl mx-auto px-3">
+            <div className="relative">
+                <Image
+                    className="relative h-[60px] w-[60px]"
+                    alt={feature.title.replace("\n", " ")}
+                    src={`/assets/${feature.icon}`}
+                    width={80}
+                    height={80}
+                />
+            </div>
+            <div className="text-center space-y-4 w-full">
+                <Spotlight
+                    className="hidden md:block"
+                    translateY={-600}
+                    duration={20}
+                />
+                <h3 className="text-3xl font-bold text-white px-4">
+                    {feature.title.replace("\n", " ")}
+                </h3>
+                {feature.video && (
+                    <div className="video-mask shadow-[0px_12px_12px_#00000030] h-auto w-full aspect-video rounded-lg">
+                        <video preload="none" autoPlay muted loop className="w-full" aria-label="Video player">
+                            <source src={feature.video} type="video/mp4" className="rounded-lg" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                )}
+                <div className="px-4">
+                    <p className="text-base text-white/75 text-center leading-relaxed max-w-prose mx-auto">
+                        {feature.details}
+                    </p>
+                </div>
+            </div>
+            {feature.images && (
+                <div className="w-full">
+                    <Swiper
+                        modules={[Navigation, Pagination]}
+                        navigation
+                        pagination={{ clickable: true }}
+                        spaceBetween={30}
+                        slidesPerView={1}
+                        className="rounded-lg"
+                    >
+                        {feature.images.map((image, index) => (
+                            <SwiperSlide key={index}>
+                                <div className="relative aspect-video overflow-hidden rounded-lg">
+                                    <Image
+                                        src={image}
+                                        alt={`${feature.title.replace("\n", " ")}`}
+                                        fill
+                                        sizes="100vw"
+                                        className="max-w-full max-h-full"
+                                        style={{ objectFit: 'scale-down' }}
+                                        priority={index === 0}
+                                    />
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+            )}
+        </div>
     );
 }
