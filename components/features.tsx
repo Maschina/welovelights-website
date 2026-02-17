@@ -122,7 +122,7 @@ export default async function Hero() {
     return (
         <section className="bg-tertiary-dark" aria-label="We Love Lights Features">
             <div className="flex flex-col items-center gap-5 top-[51px]">
-                <div className="flex flex-col items-center gap-5 bg-tertiary-darker/80 shadow-[0px_12px_12px_#00000030] rounded-4xl px-6 sm:px-26 py-6 max-w-[1100px] mx-6 sm:mx-12">
+                <div className="flex flex-col items-center gap-5 bg-tertiary-darker/80 shadow-[0px_12px_12px_#00000030] rounded-4xl px-6 sm:px-26 py-6 max-w-[1100px] mx-6 sm:mx-12 z-200">
                     <h2 className="font-bold text-white text-3xl sm:text-5xl text-center sm:tracking-[-1.00px] leading-8 sm:leading-13 w-[230px] sm:w-full">
                         For Day-to-Day. For Pros.
                     </h2>
@@ -142,7 +142,7 @@ export default async function Hero() {
                     ))}
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 xs:gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 xs:gap-8 px-5">
                     {features.map((feature, index) => (
                         <FeatureCard key={index} feature={feature} />
                     ))}

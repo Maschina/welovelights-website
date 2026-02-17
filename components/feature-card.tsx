@@ -36,7 +36,7 @@ export function FeatureCard({ feature }: { feature: Feature }) {
         <Dialog>
             <DialogTrigger asChild>
                 <article
-                    className="group justify-self-center flex flex-col items-center gap-2 sm:gap-4 p-2.5 rounded-2xl cursor-pointer transition-all duration-300 ease-in-out"
+                    className="group justify-self-center flex flex-col items-center gap-2 sm:gap-4 p-2.5 cursor-pointer transition-all duration-300 ease-in-out max-w-[250px]"
                 >
                     <div className="relative">
                         {/* Glowing gradient background */}
