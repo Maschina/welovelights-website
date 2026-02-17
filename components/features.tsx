@@ -7,21 +7,21 @@ export default async function Hero() {
     const features: Feature[] = [
         {
             icon: "Feature_Icon_Window.svg",
-            title: "Window\napplication",
+            title: "Window Application",
             description: "For Pros: We Love Lights Studio",
             details: "For those who prefer a traditional application window, We Love Lights offers a beautiful, intuitive interface with all features at your fingertips. The window application provides a comprehensive view of all your lights, devices, rooms, motion sensors, switches, status sensors, and scenes with advanced controls and customization options.",
             video: "https://welovelights1.s3.eu-central-1.amazonaws.com/studio.demo.mp4",
         },
         {
             icon: "Feature_Icon_Menubar.svg",
-            title: "Menubar\napplication",
+            title: "Menubar Application",
             description: "For Day-to-Day.",
             details: "We Love Lights lives in your menubar, providing instant access to all your Philips Hue lights. Control brightness, colors, and scenes without opening a window. The menubar app is lightweight, fast, and designed to stay out of your way until you need it.",
             video: "https://welovelights1.s3.eu-central-1.amazonaws.com/menubar.demo.mp4",
         },
         {
             icon: "Feature_Icon_Keyboard.svg",
-            title: "Global\nhotkeys",
+            title: "Global Hotkeys",
             description: "Control your lights without touching your mouse using customizable keyboard shortcuts.",
             details: "Set up global keyboard shortcuts to control your lights and devices from anywhere in macOS. Toggle lights on and off, adjust brightness, switch scenes, and more—all without leaving your current task. Perfect for productivity enthusiasts and power users who prefer keyboard-driven workflows.",
             images: [
@@ -30,7 +30,7 @@ export default async function Hero() {
         },
         {
             icon: "Feature_Icon_Customization.svg",
-            title: "Customizable\nLights",
+            title: "Customizable Lights",
             description: "Fine-tune every aspect of your lighting experience with advanced customization options.",
             details: "We Love Lights gives you complete control over your lighting setup. Adjust colors with precision using HSB, RGB, or XY color pickers. Set exact brightness levels, color temperatures, and transition times. Group lights, rename them, and organize your space exactly how you want it.",
             images: [
@@ -45,7 +45,7 @@ export default async function Hero() {
         },
         {
             icon: "Feature_Icon_Scenes.svg",
-            title: "Color\nscenes",
+            title: "Color Scenes",
             description: "Create and activate beautiful lighting scenes for any mood or occasion.",
             details: "Save your favorite lighting configurations as scenes and recall them instantly. Create scenes for work, relaxation, movie nights, or any activity. We Love Lights supports all native Hue scenes and lets you create unlimited custom scenes with precise control over every light in your setup.",
             images: [
@@ -56,7 +56,7 @@ export default async function Hero() {
         },
         {
             icon: "Feature_Icon_MotionSensor.svg",
-            title: "Motion Sensor\nmanagement",
+            title: "Motion Sensor Management",
             description: "Automate your lighting with motion sensors for hands-free control.",
             details: "Configure and manage your Philips Hue motion sensors directly from the app. Set up automated lighting rules based on motion detection, adjust sensitivity, and customize behavior for different times of day. Create smart lighting that responds to your presence automatically.",
             images: [
@@ -67,7 +67,7 @@ export default async function Hero() {
         },
         {
             icon: "Feature_Icon_Switch.svg",
-            title: "Switch\ncontrol",
+            title: "Switch Control",
             description: "Configure and manage your Hue switches and dimmer switches effortlessly.",
             details: "Take full control of your Philips Hue switches. Customize button actions, assign scenes, and create complex lighting behaviors. We Love Lights provides an intuitive interface for programming your switches exactly how you want them to work.",
             images: [
@@ -77,7 +77,7 @@ export default async function Hero() {
         },
         {
             icon: "Feature_Icon_RuleEditor.svg",
-            title: "Rule\neditor",
+            title: "Rule Editor",
             description: "Create powerful automation rules to make your lights, motion sensors, and switches truly smart.",
             details: "The built-in rule editor lets you create sophisticated automation based on sensors, switches, time schedules, and more. Set up rules for automatic dimming, motion-activated lighting, or complex multi-light sequences. The visual rule editor makes it easy to build powerful automations without coding.",
             images: [
@@ -88,7 +88,7 @@ export default async function Hero() {
         },
         {
             icon: "Feature_Icon_Shortcuts.svg",
-            title: "Shortcuts\nintegration",
+            title: "Shortcuts Integration",
             description: "Integrate with Apple Shortcuts for unlimited automation possibilities.",
             details: "We Love Lights integrates seamlessly with Apple Shortcuts, allowing you to control your lights as part of larger automation workflows. Trigger lighting changes from Siri, create complex multi-app automations, or control your lights based on location, time, or any other Shortcuts trigger.",
             images: [
@@ -97,7 +97,7 @@ export default async function Hero() {
         },
         {
             icon: "Feature_Icon_MultiBridge.svg",
-            title: "Multi-Bridge\nsupport",
+            title: "Multi-Bridge Support",
             description: "Manage multiple Hue bridges from a single application.",
             details: "If you have multiple Philips Hue bridges across different locations—home, office, or vacation property - We Love Lights can manage them all from one place. Switch between bridges seamlessly, control lights across multiple locations, and maintain separate configurations for each setup.",
             images: [
@@ -107,13 +107,13 @@ export default async function Hero() {
         },
         {
             icon: "Feature_Icon_Remote.svg",
-            title: "Remote\naccess",
+            title: "Remote Access",
             description: "Control your lights from anywhere in the world with remote access.",
             details: "Connect to your lights remotely through Philips Hue's secure cloud service. Check if you left lights on while you're away, turn them on before you arrive home, or create the appearance that someone's home while you're traveling. Remote access works seamlessly with all We Love Lights features.",
         },
         {
             icon: "Feature_Icon_Native.svg",
-            title: "Blazing Fast\nmacOS App",
+            title: "Blazing Fast macOS App",
             description: "Built natively for macOS with Apple Silicon optimization.",
             details: "We Love Lights is a 100% native macOS application built with Swift and optimized for Apple Silicon. It launches instantly, uses minimal battery power, and feels right at home on your Mac. With support for all macOS features including Dark Mode, full keyboard navigation, system integration, and Retina displays, it's the Mac app you expect.",
         },
@@ -127,7 +127,7 @@ export default async function Hero() {
                         For Day-to-Day. For Pros.
                     </h2>
                     <p className="font-normal text-white text-base sm:text-xl text-center leading-6 sm:leading-8">
-                        We Love Lights is the easiest yet most powerful way for Mac users to control your Philips Hue lights and Zigbee devices on macOS.
+                        We Love Lights is the easiest yet most powerful app for Mac users to control your Philips Hue lights and Zigbee devices on macOS.
                     </p>
                 </div>
 
