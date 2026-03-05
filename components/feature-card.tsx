@@ -54,7 +54,7 @@ export function FeatureCard({ feature }: { feature: Feature }) {
                     </h3>
                 </article>
             </DialogTrigger>
-            <DialogContent showCloseButton={false} className="max-w-[100vw] ring-0 bg-tertiary-darker/0 rounded-4xl p-0">
+            <DialogContent showCloseButton={false} className="max-w-[100vw] ring-0 bg-tertiary-darker/0 rounded-4xl p-0 z-1000">
                 <DialogHeader className="sr-only">
                     <DialogTitle>{feature.title.replace("\n", " ")}</DialogTitle>
                 </DialogHeader>
@@ -71,7 +71,7 @@ export function FeatureCard({ feature }: { feature: Feature }) {
 
 function FeatureDialogContent({ feature }: { feature: Feature }) {
     return (
-        <div className="flex flex-col items-center gap-6 w-[calc(100vw-1rem)] sm:w-auto max-w-2xl mx-auto px-3">
+        <div className="flex flex-col items-center gap-6 w-[calc(100vw-1rem)] sm:w-auto max-w-2xl mx-auto px-3 z-1000">
             <div className="relative">
                 <Image
                     className="relative h-[60px] w-[60px]"
