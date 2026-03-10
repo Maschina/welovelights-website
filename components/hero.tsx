@@ -68,12 +68,12 @@ export default function Hero() {
 						>
 							Version {latestVersion}, macOS 13.0+
 						</Link>
-						<Link
+						{/* <Link
 							href="https://testflight.apple.com/join/HAK6qEjT"
 							className="flex text-muted text-xs hover:underline"
 						>
-							Interested in Version 3.7 beta?
-						</Link>
+							Interested in Version 4.0 beta?
+						</Link> */}
 					</div>
 					<Image
 						src={heroImage}
