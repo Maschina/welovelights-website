@@ -1,5 +1,28 @@
 [
   {
+    "version": "3.7",
+    "build": "1144",
+    "date": "2026-03-10",
+    "features": [
+      "Backported to macOS 13 to reach a wider audience",
+      "Redesigned toggle buttons and sliders with new styles and animations for a more engaging interface",
+      "Added option to use accent colors instead of colors reflecting the current light state",
+      "New languages added: Dutch, Spanish, and Catalan",
+      "New menubar icon rendering",
+      "Brightness value animation on group menu toggle buttons"
+    ],
+    "bugfixes": [
+      "Fixed a foreground color issue with group and device buttons in light mode",
+      "Disabled background polling in remote mode to improve performance",
+      "Fixed crashes during SSL handshaking",
+      "Fixed group and device buttons not being tappable when background style is set to transparent",
+      "Fixed a glitch with collapsible section headers on macOS 26",
+      "Fixed misplaced menu icon popover",
+      "Fixed potential memory leaks",
+      "Improved performance by caching bridge service objects"
+    ]
+  },
+  {
     "version": "3.6.5",
     "build": "1087",
     "date": "2025-12-09",
